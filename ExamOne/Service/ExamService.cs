@@ -49,7 +49,7 @@ namespace ExamOne.Service
 
         public async Task<ResponderData<string>> CompleteExam(ExamAnswerModel model)
         {
-            var now = DateTime.Now.ToString();
+            var now = Constant.GetDateTimeFromMongo(DateTime.Now).ToString();
             var result = new ResponderData<string>();
             if(model == null || string.IsNullOrEmpty(model.Id) || string.IsNullOrEmpty(model.ExamAnswer))
             {
