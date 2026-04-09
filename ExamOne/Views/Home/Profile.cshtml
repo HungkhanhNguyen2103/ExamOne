@@ -1,0 +1,200 @@
+﻿@{
+    ViewData["Title"] = "Thông tin cá nhân";
+}
+@model ProfileModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestTokenChild()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<main class="max-w-4xl w-full mx-auto mt-10 mb-20 bg-white rounded-2xl shadow-lg p-8 text-center relative">
+
+    <!-- Background -->
+    <div class="z-[-1] fixed inset-0 bg-cover bg-center
+        bg-[url('https://images.unsplash.com/photo-1523580494863-6f3031224c94')]
+        bg-black/40 bg-blend-darken">
+    </div>
+
+    <!-- Fireworks -->
+    @* <canvas id="fireworksCanvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-0"></canvas> *@
+
+    <!-- Avatar -->
+    <div class="flex justify-center mb-6">
+        <label for="avatarInput" class="cursor-pointer relative">
+            <img id="avatarPreview"
+                 src="@Model.Avatar"
+                 class="w-32 h-32 rounded-full object-cover border-4 border-blue-400 shadow-lg" />
+            <input id="avatarInput"
+                   type="file"
+                   asp-for="Avatar"
+                   accept="image/*"
+                   class="hidden"
+                   onchange="previewAvatar(event)" />
+            <span class="absolute bottom-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-lg text-sm shadow">
+                Đổi
+            </span>
+        </label>
+    </div>
+
+    <div id="avatarNotice" class="text-sm mt-2"></div>
+    <input type="hidden" id="AvatarBase64" name="AvatarBase64" value="@Model.Avatar" />   
+
+    <!-- Form thông tin cá nhân -->
+    <form class="text-left mx-auto max-w-xl space-y-4" id="formUser" method="post">
+        <!-- Họ tên -->
+        <div>
+            <label class="font-semibold">Họ tên</label>
+            <input type="text" id="fullName"
+                   class="w-full mt-1 px-4 py-2 border rounded-lg"
+                   asp-for="FullName"/>
+        </div>
+
+        <!-- User -->
+        <div>
+            <label class="font-semibold">Tài khoản</label>
+            <input type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"
+                   asp-for="UserName" />
+        </div>
+
+        <!-- CCCD -->
+        <div>
+            <label class="font-semibold">CCCD</label>
+            <input asp-for="CCCD" type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg" />
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label class="font-semibold">Email</label>
+            <input type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"
+                   value="@User.FindFirst("Email")?.Value" />
+        </div>
+
+        <!-- Chi đoàn -->
+        <div>
+            <label class="font-semibold">Chi đoàn</label>
+            <input asp-for="Location" type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"/>
+        </div>
+        <!-- Nút -->
+        <div class="flex justify-center gap-4">
+            <button type="button" onclick="update()"
+                    class="bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+                Lưu thay đổi
+            </button>
+
+            <button type="button" onclick="window.location.href='/'"
+                    class="bg-gray-600 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+                Trờ về
+            </button>
+        </div>
+    </form>
+
+    <hr class="my-8">
+
+    <!-- Kết quả bài thi -->
+    @if(Model.ExamStatus == ProfileStatus.Marked)
+    {
+        <h2 class="text-3xl font-bold text-green-600 mb-4">
+            Chúc mừng bạn đã hoàn thành bài test!
+        </h2>
+
+        <p class="text-gray-700 text-lg mb-6">
+            Bạn đã trả lời đúng
+            <strong id="correctAnswers">@Model.TotalCorrectAnswer</strong>
+            trên
+            <strong id="totalQuestions">@Model.TotalQuestions</strong>
+            câu hỏi với thời gian <strong>@Model.DurationTime</strong>. Xếp hạng <strong>@Model.Rank</strong>
+        </p>
+    }
+    else if(Model.ExamStatus == ProfileStatus.Done){
+        <h2 class="text-3xl font-bold text-blue-600 mb-4">
+            Cảm ơn bạn đã tham gia làm bài test!
+        </h2>
+
+        <p class="text-gray-700 text-lg mb-6">
+            Chúng tôi sẽ sớm cập nhật kết quả
+        </p>
+    }
+    else if(Model.ExamStatus == ProfileStatus.NotYet)
+    {
+        <h2 class="text-3xl font-bold text-red-600 mb-4">
+            Bạn đã sẵn sàng làm bài test chưa ?
+        </h2>
+
+        <button onclick="window.location.href='/bai-thi'" class="mt-auto px-7 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition w-max">
+            Bắt đầu bài thi ngay
+        </button>
+    }
+
+</main>
+
+<script>
+    function previewAvatar(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const notice = document.getElementById("avatarNotice");
+        notice.innerText = "";
+        notice.classList.remove("text-red-600", "text-green-600");
+
+        if (!file.type.startsWith("image/")) {
+            notice.innerText = "Vui lòng chọn đúng định dạng ảnh (PNG, JPG, JPEG, WEBP...).";
+            notice.classList.add("text-red-600");
+            return;
+        }
+
+        const maxSize = 5 * 1024 * 1024; 
+        if (file.size > maxSize) {
+            notice.innerText = "Ảnh vượt quá 5MB. Vui lòng chọn ảnh nhỏ hơn.";
+            notice.classList.add("text-red-600");
+            return;
+        }
+
+        const img = document.getElementById("avatarPreview");
+        img.src = URL.createObjectURL(file);
+
+        const reader = new FileReader();
+        reader.onload = function () {
+            const base64String = reader.result;
+
+            const hiddenBase64 = document.getElementById("AvatarBase64");
+            if (hiddenBase64) hiddenBase64.value = base64String;
+
+            notice.innerText = "Ảnh hợp lệ và đã được tải lên.";
+            notice.classList.add("text-green-600");
+        };
+
+        reader.readAsDataURL(file);
+    }
+
+    function update() {
+        let formData = {
+            Avatar: $('#AvatarBase64').val(),
+            FullName: $('#fullName').val()
+        };
+        console.log(formData);
+
+        submitAjax({
+            url: "/tai-khoan/thong-tin-ca-nhan",
+            method: "POST",
+            data: formData,
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestTokenChild()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    notyf.success(res.message);
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    notyf.error(res.message || "Thất bại!");
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        })
+    }
+</script>

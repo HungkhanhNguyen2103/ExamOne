@@ -1,0 +1,264 @@
+﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+          crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="~/js/event.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+
+        .returnList{
+            cursor:pointer;
+        }
+
+        .d-none{
+            display:none;
+        }
+
+        #scrollTopBtn {
+            transform: translateY(20px);
+        }
+
+            #scrollTopBtn.show {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0);
+            }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col items-center font-sans">
+
+    <!-- Header -->
+    <header class="w-full sticky top-0 z-50 bg-blue-600 text-white flex justify-between items-center px-6 py-4 shadow-md">
+        <!-- Logo + Name -->
+        <div class="flex items-center gap-2 @(ViewData["Exam"] == "Hidden" ? "" : "returnList")">
+            <button class="rounded-full">
+                <img src="~/img/logo2.png" alt="logo" style="height:50px"/>
+@*                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg> *@
+            </button>
+            <span class="text-lg font-semibold"></span>
+        </div>
+
+        <!-- Timer + User -->
+        <div class="flex items-center gap-6">
+            <!-- Timer -->
+            <div class="flex flex-col items-end">
+                <span class="text-xs opacity-75 tracking-wider1 d-none">Thời gian còn lại</span>
+                <span id="tracking-wider" class="text-xl font-bold tracking-wider tracking-wider1 d-none">00:00</span>
+            </div>
+@*             <button class="bg-white text-blue-600 text-sm font-medium px-3 py-1 rounded-md hover:bg-blue-50 transition">
+                Hide Time
+            </button> *@
+
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <div class="flex items-center gap-3">
+                    <a href="tai-khoan/dang-nhap"
+                       class="bg-white text-blue-600 font-medium px-4 py-2 rounded-lg border border-blue-200
+                          hover:bg-blue-50 transition">
+                        Đăng nhập
+                    </a>
+
+                    <a href="tai-khoan/dang-ki"
+                       class="bg-yellow-400 text-blue-900 font-semibold px-4 py-2 rounded-lg shadow
+                          hover:bg-yellow-300 transition">
+                        Đăng ký
+                    </a>
+                </div>
+            }
+            else
+            {
+
+                <!-- User Menu -->
+                @if (ViewData["Exam"] == "Hidden")
+                {
+                    <div class="relative" x-data="{ open: false }">
+                        <button class="flex items-center gap-2 px-3 py-2 rounded-lg transition">
+                            <img src="@User.FindFirst("Avatar")?.Value" class="w-8 h-8 rounded-full border border-blue-300" alt="avatar">
+                            <span class="font-medium">@User.FindFirst("FullName")?.Value</span>
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <div class="relative" x-data="{ open: false }">
+                        <button @@click="open = !open" class="flex items-center gap-2 hover:bg-blue-400 px-3 py-2 rounded-lg transition">
+                            <img src="@User.FindFirst("Avatar")?.Value" class="w-8 h-8 rounded-full border border-blue-300" alt="avatar">
+                            <span class="font-medium">@User.FindFirst("FullName")?.Value</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown -->
+                        <div x-show="open"
+                             @@click.away="open = false"
+                             x-transition
+                             style="width:200px"
+                             class="absolute right-0 mt-2 bg-white text-gray-700 rounded-lg shadow-md border border-gray-100 overflow-hidden z-50">
+                            <div class="px-4 py-3 border-b border-gray-100">
+                                <p class="text-sm font-medium">@User.FindFirst("FullName")?.Value</p>
+                                <p class="text-xs text-gray-500">@User.FindFirst("Email")?.Value</p>
+                            </div>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a href="/quan-ly"
+                                   class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         class="h-4 w-4 text-blue-500"
+                                         fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M3 3h7v7H3V3zM14 3h7v4h-7V3zM14 11h7v10h-7V11zM3 11h7v10H3V11z" />
+                                    </svg>
+                                    <span class="text-blue-600 font-medium">Trang quản lý</span>
+                                </a>
+                            }
+                            <a href="/thong-tin-ca-nhan"
+                               class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     class="h-4 w-4 text-blue-500"
+                                     fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.314 0-6 2.014-6 4.5V21h12v-2.5c0-2.486-2.686-4.5-6-4.5z" />
+                                </svg>
+                                <span class="text-blue-600 font-medium">Thông tin cá nhân</span>
+                            </a>
+                            <a href="/doi-mat-khau"
+                               class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     class="h-4 w-4 text-blue-500"
+                                     fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor"
+                                     role="img" aria-label="Change password icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M7 11V8a5 5 0 0110 0v3" />
+                                    <rect x="4" y="11" width="16" height="10" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 15v-1a1 1 0 10-2 0v1a1 1 0 002 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M16.5 8.5l-6 6L9 18l3.5-.5 6-6L16.5 8.5z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M18.5 6.5l-1 1" />
+                                </svg>
+
+                                <span class="text-blue-600 font-medium">Đổi mật khẩu</span>
+                            </a>
+                            <a href="/bai-thi"
+                               class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     class="h-4 w-4 text-blue-500"
+                                     fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M12 8c1.657 0 3 .895 3 2v1h-6v-1c0-1.105 1.343-2 3-2zM5 13h14v6H5v-6z" />
+                                </svg>
+                                <span class="text-blue-600 font-medium">Làm bài thi</span>
+                            </a>
+
+                            <button onclick="logout()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1m0-10V5m-6 7h.01" />
+                                </svg>
+                                <span class="text-red-500 font-medium">Đăng xuất</span>
+                            </button>
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+        </div>
+    </header>
+    
+    @RenderBody()
+    <button id="scrollTopBtn"
+            class="fixed bottom-20 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg
+           hover:bg-blue-700 transition-all duration-300 opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+             class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 bg-blue-700 text-white text-center py-4 mt-12 w-full">
+        <p class="text-sm">© 2025 Hệ thống thi Thanh Niên Số</p>
+    </footer>
+    <script>
+        const notyf = new Notyf({
+            duration: 5000,
+            position: { x: 'right', y: 'top' },
+            dismissible: true
+        });
+        function logout() {
+            submitAjax({
+                url: "/tai-khoan/dang-xuat",
+                method: "POST",
+                data: {},
+                headers:{
+                    "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                },
+                success: function(res){
+                    if(res.isSuccess){
+                        notyf.success(res.message || "Đăng xuất thành công!");
+                        if(res.isSuccess){
+                            window.location.href = '/';
+                        }
+                    } else {
+                        notyf.error(res.message || "Đăng xuất thất bại!");
+                    }
+                },
+                error: function(xhr){
+                    notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+                }
+            })
+        }
+
+        const btn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+        });
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        $('.returnList').on('click', function(){
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

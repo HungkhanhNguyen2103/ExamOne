@@ -1,0 +1,260 @@
+﻿@using System.Text.Json
+@{
+    ViewData["Title"] = "Bài thi";
+    ViewData["Exam"] = "Hidden";
+    var questionCount = Model?.Questions?.Count;
+    var questions = @Html.Raw(JsonSerializer.Serialize(Model?.Questions));
+}
+@model ExamModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestTokenChild()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<!-- Main Question Section -->
+<main id="mainContent" style="height: 64vh;" class="max-w-6xl w-full bg-white rounded-2xl shadow-lg mt-8 flex flex-col lg:flex-row">
+
+    <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1523580494863-6f3031224c94')]
+            bg-black/40 bg-blend-darken">
+    </div>
+
+    <!-- Left Side: Question -->
+    <section class="flex-1 p-8 border-b lg:border-b-0 lg:border-r border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-700 flex items-center gap-1">
+            Question <span id="questionIndex" class="text-blue-600"></span>
+            of <span class="text-gray-600">@questionCount</span>
+
+            <!-- SVG Table Icon -->
+            <button onclick="showSummary()" class="p-0 flex items-center" title="Bảng câu hỏi">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                     class="w-5 h-5 text-[#1E56FF]">
+                    <path d="M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h18v2H3v-2zm0 4h18v2H3v-2zm0 4h18v2H3v-2z" />
+                </svg>
+            </button>
+        </h2>
+
+        <div id="questionContent">
+
+        </div>
+    </section>
+
+    <!-- Right Side: Options -->
+    <section class="w-full lg:w-1/3 p-8 flex flex-col gap-4">
+        <form class="flex flex-col gap-3" id="optionContent">
+@*             <label class="flex items-center gap-3 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
+                <input type="radio" name="answer" class="accent-blue-600 w-4 h-4">
+                <span class="text-gray-700 font-medium">35</span>
+            </label> *@
+        </form>
+    </section>
+</main>
+
+<!-- Footer Buttons -->
+<div class="flex justify-between w-full max-w-6xl mt-6 mb-10 px-4">
+    <button id="backQuestion" type="button" onclick="backQuestion()" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Câu trước
+    </button>
+
+    <button id="nextQuestion" type="button" onclick="nextQuestion()" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+        <span id="nextQuestionText">Câu tiếp theo</span>
+        <svg id="nextQuestionIcon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </button>
+
+</div>
+<script>
+    let sId = '@ViewBag.SId';
+    function showSummary(){
+        window.location.href = `/bai-thi/tom-tat?sId=${sId}`;
+    }
+    let questions = @questions;
+
+    $(document).ready(() => {
+        sessionStorage.setItem('questionCount',@questionCount);
+        $('.tracking-wider1').removeClass('d-none');
+        //progressSummary(null,null);
+        calculationTime();
+        getContent();  
+    });
+
+    function backQuestion(){
+        var questionIndex = sessionStorage.getItem('questionIndex');
+        sessionStorage.setItem('questionIndex',Number(questionIndex) - 1);
+        getContent();
+    }
+
+    function progressSummary(index,answerId){
+        let listQuestionProgress = sessionStorage.getItem('listQuestionProgress');
+        if(!listQuestionProgress){
+            listQuestionProgress = [];
+            questions.forEach(item => {
+                listQuestionProgress.push({id:item.Id, index: item.QuestionIndex, answerId: null,isRead: false });
+            });
+            sessionStorage.setItem('listQuestionProgress',JSON.stringify(listQuestionProgress));
+        }
+        else if(index){
+            listQuestionProgress = JSON.parse(listQuestionProgress);
+            listQuestionProgress = listQuestionProgress.map(x =>
+                x.index == index ? { ...x, isRead: true,  answerId: answerId} : x
+            );
+            sessionStorage.setItem('listQuestionProgress',JSON.stringify(listQuestionProgress));
+        }
+    }
+
+    $(document).on('change', '.option-answer', function() {
+        let answerId = $(this).val();
+        let questionIndex = sessionStorage.getItem('questionIndex');
+        progressSummary(questionIndex,answerId);
+    });
+
+    function nextQuestion(){
+        var questionIndex = sessionStorage.getItem('questionIndex');
+        var questionCount = sessionStorage.getItem('questionCount');
+        if(questionIndex < questionCount){
+            sessionStorage.setItem('questionIndex',Number(questionIndex) + 1);
+            getContent();
+        }
+        else{
+            if(confirm("Bạn có muốn nộp bài ?")){
+                submitExam();
+            }
+        }
+
+    }
+
+    function submitExam(){
+        let examSessionId = sessionStorage.getItem('examSessionId');
+        let listQuestionProgressBase = sessionStorage.getItem('listQuestionProgress');
+        let data = {
+            Id: examSessionId,
+            ExamAnswer: listQuestionProgressBase
+        }
+        submitAjax({
+            url: "/bai-thi/hoan-tat",
+            method: "POST",
+            data: data,
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestTokenChild()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    window.location.href = `/bai-thi/ket-qua?sId=${examSessionId}`;
+                } else {
+                    notyf.error(res.message || "Thất bại!");
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        })
+    }
+
+    function calculationTime(){
+        var startTime = sessionStorage.getItem('startTime');
+        if(!startTime){
+            startTime = '@Model?.StartTime.ToString("yyyy-MM-ddTHH:mm:ss")';
+            sessionStorage.setItem('startTime',startTime);
+        }
+        var duration = sessionStorage.getItem('duration');
+        if(!duration){
+            duration = @Model?.DurationMinutes;
+            sessionStorage.setItem('duration',duration);
+        }
+        let remainingTime = getRemainingTime(startTime, duration);
+        $('#tracking-wider').html(remainingTime);
+        sessionStorage.setItem('remainingTime', remainingTime);
+
+        setInterval(() => {
+            let remainingTime = getRemainingTime(startTime,duration);
+            $('#tracking-wider').html(remainingTime);
+            sessionStorage.setItem('remainingTime',remainingTime);
+            
+        },1000);
+    }
+
+    function getRemainingTime(startTime, durationMinutes) {
+        const start = new Date(startTime);
+        const end = new Date(start.getTime() + durationMinutes * 60 * 1000);
+        const now = new Date();
+
+        let diff = end - now;
+
+        if (diff <= 0){
+            submitExam();
+            return `<span>00:00</span>`;
+        }
+
+        const minutes = Math.floor(diff / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+
+        const mm = String(minutes).padStart(2, '0');
+        const ss = String(seconds).padStart(2, '0');
+        //if(minutes <= 1) return `<span style="color:#FFA500">${mm}:${ss}</span>`;
+
+        return `${mm}:${ss}`;
+    }
+
+
+    function getContent(){
+        let listQuestionProgressBase = sessionStorage.getItem('listQuestionProgress');
+        if(listQuestionProgressBase) listQuestionProgressBase = JSON.parse(listQuestionProgressBase);
+
+        var questionIndex = sessionStorage.getItem('questionIndex');
+        //console.log(questions);
+        if(!questionIndex){
+            sessionStorage.setItem('questionIndex',1);
+            questionIndex = 1;
+        }
+        $('#backQuestion').prop('disabled', true);
+        $('#backQuestion').removeClass('bg-blue-600').addClass('bg-blue-400');
+        $('#nextQuestionText').text('Câu tiếp theo');
+        $('#nextQuestionIcon').show();
+        if(questionIndex > 1 && questionIndex <= @questionCount){
+            $('#backQuestion').prop('disabled', false);
+            $('#backQuestion').removeClass('bg-blue-400').addClass('bg-blue-600');
+            if(questionIndex == @questionCount){
+                $('#nextQuestionText').text('Hoàn tất');
+                $('#nextQuestionIcon').hide();
+            }
+        }
+
+        var item = questions.find(i => i.QuestionIndex == questionIndex);
+        $('#questionContent').html('');
+        $('#questionIndex').html('');
+        $('#optionContent').html('');
+        if(item){
+            let html = `${item.Article}
+                        <p>${item.Question}</p>`;
+            $('#questionContent').html(html);
+            $('#questionIndex').html(questionIndex);
+            let option = '';
+            item.Items.forEach(i => {
+
+                let checkedItem = '';
+                if(listQuestionProgressBase){
+                    let progressItem = listQuestionProgressBase.find(ix => ix.answerId == i.Id);
+                    checkedItem = progressItem ? 'checked' : '';
+                }
+
+                option += `
+                        <label for="${i.Id}" class="flex items-center gap-3 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
+                            <input type="radio" name="answer-${item.Id}" id="${i.Id}" ${checkedItem} value="${i.Id}" class="option-answer accent-blue-600 w-4 h-4">
+                            <span class="text-gray-700 font-medium">${String.fromCharCode(65 + i.SortOrder)}. ${i.OptionText}</span>
+                        </label>`;
+            });
+            $('#optionContent').html(option);
+            
+            setTimeout(() => {
+                let answerId = $(`input[name="answer-${item.Id}"]:checked`).val() ?? null;
+                progressSummary(questionIndex,answerId);
+            },100);
+        }
+
+    }
+</script>

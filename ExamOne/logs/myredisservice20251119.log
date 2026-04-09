@@ -1,0 +1,868 @@
+2025-11-19 00:00:20.174 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - application/x-www-form-urlencoded; charset=UTF-8 374
+2025-11-19 00:00:20.179 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:00:20.184 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:00:42.791 +07:00 [INF] Task started at: "2025-11-19T00:00:42.7911620+07:00"
+2025-11-19 00:00:42.791 +07:00 [INF] Checking Redis connection at: "2025-11-19T00:00:42.7916232+07:00"
+2025-11-19 00:00:42.791 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:00:42.797 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 22612.8034ms
+2025-11-19 00:00:42.799 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:00:42.800 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - 200 null application/json; charset=utf-8 22626.0837ms
+2025-11-19 00:00:42.801 +07:00 [INF] Task finished at: "2025-11-19T00:00:42.8015879+07:00"
+2025-11-19 00:00:42.801 +07:00 [INF] Waiting 2 minutes before next run...
+2025-11-19 00:01:00.933 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - null null
+2025-11-19 00:01:00.939 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:01:00.942 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:01:00.947 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2025-11-19 00:01:00.949 +07:00 [INF] Executing ViewResult, running view Register.
+2025-11-19 00:01:00.957 +07:00 [INF] Executed ViewResult - view Register executed in 9.4609ms.
+2025-11-19 00:01:00.958 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 15.6448ms
+2025-11-19 00:01:00.958 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:01:00.958 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - 200 null text/html; charset=utf-8 25.8107ms
+2025-11-19 00:01:00.979 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:01:00.979 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:01:00.980 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.6188ms
+2025-11-19 00:01:00.991 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.1375ms
+2025-11-19 00:02:15.117 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - null null
+2025-11-19 00:02:15.122 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:02:15.124 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:02:15.128 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2025-11-19 00:02:15.130 +07:00 [INF] Executing ViewResult, running view Register.
+2025-11-19 00:02:15.150 +07:00 [INF] Executed ViewResult - view Register executed in 21.7417ms.
+2025-11-19 00:02:15.151 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 27.1579ms
+2025-11-19 00:02:15.152 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:02:15.156 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - 200 null text/html; charset=utf-8 38.9263ms
+2025-11-19 00:02:15.174 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:02:15.174 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:02:15.176 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.7877ms
+2025-11-19 00:02:15.186 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.5013ms
+2025-11-19 00:02:17.581 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - null null
+2025-11-19 00:02:17.584 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:02:17.584 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:02:17.587 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2025-11-19 00:02:17.588 +07:00 [INF] Executing ViewResult, running view Register.
+2025-11-19 00:02:17.591 +07:00 [INF] Executed ViewResult - view Register executed in 3.6933ms.
+2025-11-19 00:02:17.591 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 7.1404ms
+2025-11-19 00:02:17.592 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:02:17.592 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - 200 null text/html; charset=utf-8 11.1525ms
+2025-11-19 00:02:17.616 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:02:17.616 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:02:17.617 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.2887ms
+2025-11-19 00:02:17.625 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.9797ms
+2025-11-19 00:02:42.810 +07:00 [INF] Task started at: "2025-11-19T00:02:42.8107286+07:00"
+2025-11-19 00:02:42.810 +07:00 [INF] Checking Redis connection at: "2025-11-19T00:02:42.8109116+07:00"
+2025-11-19 00:02:42.814 +07:00 [INF] Task finished at: "2025-11-19T00:02:42.8149646+07:00"
+2025-11-19 00:02:42.815 +07:00 [INF] Waiting 2 minutes before next run...
+2025-11-19 00:03:40.747 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - application/x-www-form-urlencoded; charset=UTF-8 375
+2025-11-19 00:03:40.748 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:03:40.751 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:03:45.535 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:03:50.514 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:03:50.516 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 9764.8654ms
+2025-11-19 00:03:50.516 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:03:50.516 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - 200 null application/json; charset=utf-8 9769.0835ms
+2025-11-19 00:03:50.531 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:03:50.536 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:03:50.540 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:03:50.551 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:03:50.553 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:03:50.555 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:03:50.556 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:03:50.563 +07:00 [INF] Executed ViewResult - view Index executed in 6.907ms.
+2025-11-19 00:03:50.564 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 23.599ms
+2025-11-19 00:03:50.564 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:03:50.564 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 33.0977ms
+2025-11-19 00:03:50.589 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:03:50.590 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.1654ms
+2025-11-19 00:03:50.683 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:03:50.692 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.8734ms
+2025-11-19 00:04:42.819 +07:00 [INF] Task started at: "2025-11-19T00:04:42.8198566+07:00"
+2025-11-19 00:04:42.819 +07:00 [INF] Checking Redis connection at: "2025-11-19T00:04:42.8199737+07:00"
+2025-11-19 00:04:42.822 +07:00 [INF] Task finished at: "2025-11-19T00:04:42.8228861+07:00"
+2025-11-19 00:04:42.823 +07:00 [INF] Waiting 2 minutes before next run...
+2025-11-19 00:04:59.334 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:04:59.337 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:04:59.340 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:04:59.350 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:04:59.351 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:04:59.353 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:04:59.354 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:04:59.358 +07:00 [INF] Executed ViewResult - view Index executed in 4.7286ms.
+2025-11-19 00:04:59.359 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 18.4967ms
+2025-11-19 00:04:59.359 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:04:59.359 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 25.6711ms
+2025-11-19 00:04:59.378 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:04:59.378 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:04:59.379 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.1778ms
+2025-11-19 00:04:59.387 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.0035ms
+2025-11-19 00:05:09.181 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - null null
+2025-11-19 00:05:09.185 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:05:09.188 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:05:09.192 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2025-11-19 00:05:09.194 +07:00 [INF] Executing ViewResult, running view Register.
+2025-11-19 00:05:09.227 +07:00 [INF] Executed ViewResult - view Register executed in 34.0854ms.
+2025-11-19 00:05:09.227 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 38.7512ms
+2025-11-19 00:05:09.227 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:05:09.227 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - 200 null text/html; charset=utf-8 46.987ms
+2025-11-19 00:05:09.272 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:05:09.278 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:05:09.281 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.7297ms
+2025-11-19 00:05:09.298 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.8974ms
+2025-11-19 00:05:30.197 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - application/x-www-form-urlencoded; charset=UTF-8 373
+2025-11-19 00:05:30.199 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:05:30.201 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:05:41.315 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:03.306 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:06:03.351 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 33148.9961ms
+2025-11-19 00:06:03.351 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:03.352 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - 200 null application/json; charset=utf-8 33154.7305ms
+2025-11-19 00:06:03.383 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:06:03.387 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:06:03.388 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:06:03.403 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:03.406 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:03.409 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:03.410 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:06:03.416 +07:00 [INF] Executed ViewResult - view Index executed in 7.1458ms.
+2025-11-19 00:06:03.416 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 28.7519ms
+2025-11-19 00:06:03.416 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:06:03.417 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 33.934ms
+2025-11-19 00:06:03.565 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:06:03.566 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.406ms
+2025-11-19 00:06:03.610 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:06:03.619 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.2542ms
+2025-11-19 00:06:07.042 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - null null
+2025-11-19 00:06:07.045 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:07.047 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:06:07.051 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2025-11-19 00:06:07.052 +07:00 [INF] Executing ViewResult, running view Register.
+2025-11-19 00:06:07.058 +07:00 [INF] Executed ViewResult - view Register executed in 6.1758ms.
+2025-11-19 00:06:07.058 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 10.105ms
+2025-11-19 00:06:07.058 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:07.058 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - 200 null text/html; charset=utf-8 16.1962ms
+2025-11-19 00:06:07.096 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:06:07.100 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:06:07.102 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.2309ms
+2025-11-19 00:06:07.106 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.8555ms
+2025-11-19 00:06:32.436 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - application/x-www-form-urlencoded; charset=UTF-8 374
+2025-11-19 00:06:32.438 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:32.440 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:06:35.200 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:40.104 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:06:40.106 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 7665.5001ms
+2025-11-19 00:06:40.106 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:40.106 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - 200 null application/json; charset=utf-8 7669.8143ms
+2025-11-19 00:06:42.834 +07:00 [INF] Task started at: "2025-11-19T00:06:42.8346607+07:00"
+2025-11-19 00:06:42.834 +07:00 [INF] Checking Redis connection at: "2025-11-19T00:06:42.8347588+07:00"
+2025-11-19 00:06:42.837 +07:00 [INF] Task finished at: "2025-11-19T00:06:42.8372773+07:00"
+2025-11-19 00:06:42.837 +07:00 [INF] Waiting 2 minutes before next run...
+2025-11-19 00:06:49.505 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - application/x-www-form-urlencoded; charset=UTF-8 374
+2025-11-19 00:06:49.505 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:49.505 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:06:49.509 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:49.520 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-11-19 00:06:49.530 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__model_CCCD_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[CCCD] = @__model_CCCD_0
+2025-11-19 00:06:49.598 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:49.684 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 13), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [BranchCode], [CCCD], [ConcurrencyStamp], [Discriminator], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [ProvinceCode], [SecurityStamp], [TwoFactorEnabled], [UserName], [WardCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20);
+2025-11-19 00:06:49.701 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-11-19 00:06:49.736 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-11-19 00:06:49.740 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-11-19 00:06:49.750 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:49.782 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p21='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p22='?' (Size = 4000), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (DbType = DateTimeOffset), @p11='?' (Size = 256), @p12='?' (Size = 256), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256), @p20='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [BranchCode] = @p3, [CCCD] = @p4, [ConcurrencyStamp] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FullName] = @p8, [LockoutEnabled] = @p9, [LockoutEnd] = @p10, [NormalizedEmail] = @p11, [NormalizedUserName] = @p12, [PasswordHash] = @p13, [PhoneNumber] = @p14, [PhoneNumberConfirmed] = @p15, [ProvinceCode] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19, [WardCode] = @p20
+OUTPUT 1
+WHERE [Id] = @p21 AND [ConcurrencyStamp] = @p22;
+2025-11-19 00:06:49.817 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-11-19 00:06:49.836 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-11-19 00:06:49.843 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-19 00:06:49.849 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-11-19 00:06:49.855 +07:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-11-19 00:06:49.855 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:06:49.856 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 350.23ms
+2025-11-19 00:06:49.856 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:06:49.856 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-ki - 200 null application/json; charset=utf-8 350.9624ms
+2025-11-19 00:06:49.866 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:06:49.873 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:06:49.876 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:06:49.881 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:49.883 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:49.885 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:06:49.886 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:06:49.890 +07:00 [INF] Executed ViewResult - view Index executed in 3.7502ms.
+2025-11-19 00:06:49.890 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 13.8748ms
+2025-11-19 00:06:49.890 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:06:49.890 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 24.36ms
+2025-11-19 00:06:49.912 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:06:49.913 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:06:49.913 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.6284ms
+2025-11-19 00:06:49.920 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.0105ms
+2025-11-19 00:07:15.181 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-xuat - null 0
+2025-11-19 00:07:15.186 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Logout (ExamOne)'
+2025-11-19 00:07:15.188 +07:00 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:07:15.191 +07:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-11-19 00:07:15.192 +07:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-11-19 00:07:15.192 +07:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-11-19 00:07:15.192 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:07:15.192 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Logout (ExamOne) in 3.9233ms
+2025-11-19 00:07:15.192 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Logout (ExamOne)'
+2025-11-19 00:07:15.192 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-xuat - 200 null application/json; charset=utf-8 11.5841ms
+2025-11-19 00:07:15.202 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:07:15.206 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:15.206 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:07:15.216 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:15.218 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:15.220 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:15.221 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:15.223 +07:00 [INF] Executed ViewResult - view Index executed in 2.1755ms.
+2025-11-19 00:07:15.224 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 17.1336ms
+2025-11-19 00:07:15.224 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:15.224 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 22.3029ms
+2025-11-19 00:07:15.252 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:15.252 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:15.254 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.3392ms
+2025-11-19 00:07:15.268 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.4378ms
+2025-11-19 00:07:16.723 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-nhap - null null
+2025-11-19 00:07:16.725 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:07:16.726 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:07:16.728 +07:00 [INF] Executing ViewResult, running view Login.
+2025-11-19 00:07:16.742 +07:00 [INF] Executed ViewResult - view Login executed in 14.6381ms.
+2025-11-19 00:07:16.743 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Login (ExamOne) in 16.3618ms
+2025-11-19 00:07:16.743 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:07:16.743 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-nhap - 200 null text/html; charset=utf-8 20.1987ms
+2025-11-19 00:07:16.774 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:16.778 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:16.779 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.7119ms
+2025-11-19 00:07:16.784 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.3766ms
+2025-11-19 00:07:19.768 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-nhap - application/x-www-form-urlencoded; charset=UTF-8 251
+2025-11-19 00:07:19.769 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:07:19.771 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:07:19.776 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:19.837 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-11-19 00:07:19.840 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-11-19 00:07:19.842 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-19 00:07:19.844 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-11-19 00:07:19.845 +07:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-11-19 00:07:19.845 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:07:19.845 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Login (ExamOne) in 73.8658ms
+2025-11-19 00:07:19.845 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:07:19.845 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-nhap - 200 null application/json; charset=utf-8 76.9978ms
+2025-11-19 00:07:19.855 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:07:19.859 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:19.859 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:07:19.866 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:19.867 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:19.869 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:19.870 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:19.872 +07:00 [INF] Executed ViewResult - view Index executed in 2.7366ms.
+2025-11-19 00:07:19.872 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 13.0195ms
+2025-11-19 00:07:19.873 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:19.873 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 18.0757ms
+2025-11-19 00:07:19.893 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:19.893 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:19.894 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.2797ms
+2025-11-19 00:07:19.902 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.8177ms
+2025-11-19 00:07:21.835 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly - null null
+2025-11-19 00:07:21.837 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.Index (ExamOne)'
+2025-11-19 00:07:21.838 +07:00 [INF] Route matched with {action = "Index", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:21.840 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:21.851 +07:00 [INF] Executed ViewResult - view Index executed in 10.9477ms.
+2025-11-19 00:07:21.851 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.Index (ExamOne) in 12.8557ms
+2025-11-19 00:07:21.851 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.Index (ExamOne)'
+2025-11-19 00:07:21.851 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly - 200 null text/html; charset=utf-8 16.5693ms
+2025-11-19 00:07:21.889 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:21.890 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.3035ms
+2025-11-19 00:07:21.903 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:21.910 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.399ms
+2025-11-19 00:07:24.477 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly/ngan-hang-cau-hoi - null null
+2025-11-19 00:07:24.479 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne)'
+2025-11-19 00:07:24.482 +07:00 [INF] Route matched with {action = "ListQuestionBank", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ListQuestionBank() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:24.496 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [q].[Id], [q].[Article], [q].[CreateDate], [q].[CreatedBy], [q].[Description], [q].[Explanation], [q].[Items], [q].[Question], [q].[Type]
+FROM [QuestionBanks] AS [q]
+ORDER BY [q].[CreateDate] DESC
+2025-11-19 00:07:24.512 +07:00 [INF] Executing ViewResult, running view ListQuestionBank.
+2025-11-19 00:07:24.521 +07:00 [INF] Executed ViewResult - view ListQuestionBank executed in 10.1131ms.
+2025-11-19 00:07:24.521 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne) in 38.9263ms
+2025-11-19 00:07:24.521 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne)'
+2025-11-19 00:07:24.522 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly/ngan-hang-cau-hoi - 200 null text/html; charset=utf-8 44.4892ms
+2025-11-19 00:07:24.541 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:24.541 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:24.542 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.5013ms
+2025-11-19 00:07:24.550 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.3326ms
+2025-11-19 00:07:26.461 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly/ngan-hang-cau-hoi - null null
+2025-11-19 00:07:26.465 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne)'
+2025-11-19 00:07:26.466 +07:00 [INF] Route matched with {action = "ListQuestionBank", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ListQuestionBank() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:26.468 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [q].[Id], [q].[Article], [q].[CreateDate], [q].[CreatedBy], [q].[Description], [q].[Explanation], [q].[Items], [q].[Question], [q].[Type]
+FROM [QuestionBanks] AS [q]
+ORDER BY [q].[CreateDate] DESC
+2025-11-19 00:07:26.469 +07:00 [INF] Executing ViewResult, running view ListQuestionBank.
+2025-11-19 00:07:26.471 +07:00 [INF] Executed ViewResult - view ListQuestionBank executed in 2.3163ms.
+2025-11-19 00:07:26.472 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne) in 5.978ms
+2025-11-19 00:07:26.472 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne)'
+2025-11-19 00:07:26.472 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly/ngan-hang-cau-hoi - 200 null text/html; charset=utf-8 10.6969ms
+2025-11-19 00:07:26.491 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:26.491 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:26.492 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.3488ms
+2025-11-19 00:07:26.500 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.382ms
+2025-11-19 00:07:38.397 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly/danh-sach-bai-thi - null null
+2025-11-19 00:07:38.399 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.ExamResult (ExamOne)'
+2025-11-19 00:07:38.405 +07:00 [INF] Route matched with {action = "ExamResult", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExamResult() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:38.410 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [q].[Id], [q].[Article], [q].[CreateDate], [q].[CreatedBy], [q].[Description], [q].[Explanation], [q].[Items], [q].[Question], [q].[Type]
+FROM [QuestionBanks] AS [q]
+ORDER BY [q].[CreateDate] DESC
+2025-11-19 00:07:38.411 +07:00 [INF] Executing ViewResult, running view ExamResult.
+2025-11-19 00:07:38.421 +07:00 [INF] Executed ViewResult - view ExamResult executed in 9.9989ms.
+2025-11-19 00:07:38.421 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.ExamResult (ExamOne) in 16.108ms
+2025-11-19 00:07:38.421 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.ExamResult (ExamOne)'
+2025-11-19 00:07:38.422 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly/danh-sach-bai-thi - 200 null text/html; charset=utf-8 24.9607ms
+2025-11-19 00:07:38.443 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:38.443 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:38.444 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.3551ms
+2025-11-19 00:07:38.453 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.4812ms
+2025-11-19 00:07:40.234 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly/ngan-hang-cau-hoi - null null
+2025-11-19 00:07:40.236 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne)'
+2025-11-19 00:07:40.236 +07:00 [INF] Route matched with {action = "ListQuestionBank", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ListQuestionBank() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:40.238 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [q].[Id], [q].[Article], [q].[CreateDate], [q].[CreatedBy], [q].[Description], [q].[Explanation], [q].[Items], [q].[Question], [q].[Type]
+FROM [QuestionBanks] AS [q]
+ORDER BY [q].[CreateDate] DESC
+2025-11-19 00:07:40.239 +07:00 [INF] Executing ViewResult, running view ListQuestionBank.
+2025-11-19 00:07:40.241 +07:00 [INF] Executed ViewResult - view ListQuestionBank executed in 2.2461ms.
+2025-11-19 00:07:40.241 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne) in 5.3583ms
+2025-11-19 00:07:40.241 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.ListQuestionBank (ExamOne)'
+2025-11-19 00:07:40.241 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly/ngan-hang-cau-hoi - 200 null text/html; charset=utf-8 7.8563ms
+2025-11-19 00:07:40.265 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:40.265 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:40.266 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.4073ms
+2025-11-19 00:07:40.273 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.5862ms
+2025-11-19 00:07:41.126 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly/danh-sach-bai-thi - null null
+2025-11-19 00:07:41.128 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.ExamResult (ExamOne)'
+2025-11-19 00:07:41.128 +07:00 [INF] Route matched with {action = "ExamResult", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExamResult() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:41.131 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [q].[Id], [q].[Article], [q].[CreateDate], [q].[CreatedBy], [q].[Description], [q].[Explanation], [q].[Items], [q].[Question], [q].[Type]
+FROM [QuestionBanks] AS [q]
+ORDER BY [q].[CreateDate] DESC
+2025-11-19 00:07:41.132 +07:00 [INF] Executing ViewResult, running view ExamResult.
+2025-11-19 00:07:41.135 +07:00 [INF] Executed ViewResult - view ExamResult executed in 3.0009ms.
+2025-11-19 00:07:41.135 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.ExamResult (ExamOne) in 6.6311ms
+2025-11-19 00:07:41.135 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.ExamResult (ExamOne)'
+2025-11-19 00:07:41.135 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly/danh-sach-bai-thi - 200 null text/html; charset=utf-8 8.8142ms
+2025-11-19 00:07:41.156 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:41.156 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:41.158 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.5503ms
+2025-11-19 00:07:41.166 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.6954ms
+2025-11-19 00:07:41.785 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/quan-ly - null null
+2025-11-19 00:07:41.787 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AdminController.Index (ExamOne)'
+2025-11-19 00:07:41.787 +07:00 [INF] Route matched with {action = "Index", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller ExamOne.Controllers.AdminController (ExamOne).
+2025-11-19 00:07:41.787 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:41.789 +07:00 [INF] Executed ViewResult - view Index executed in 1.6752ms.
+2025-11-19 00:07:41.789 +07:00 [INF] Executed action ExamOne.Controllers.AdminController.Index (ExamOne) in 2.2095ms
+2025-11-19 00:07:41.789 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AdminController.Index (ExamOne)'
+2025-11-19 00:07:41.789 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/quan-ly - 200 null text/html; charset=utf-8 4.8266ms
+2025-11-19 00:07:41.810 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:41.810 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:41.811 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.155ms
+2025-11-19 00:07:41.818 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.4494ms
+2025-11-19 00:07:44.485 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:07:44.487 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:44.487 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:07:44.494 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:44.495 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:44.496 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:44.497 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:44.499 +07:00 [INF] Executed ViewResult - view Index executed in 2.6997ms.
+2025-11-19 00:07:44.499 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 12.3062ms
+2025-11-19 00:07:44.499 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:44.500 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 15.4128ms
+2025-11-19 00:07:44.523 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:44.524 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:44.524 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.2658ms
+2025-11-19 00:07:44.533 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.2957ms
+2025-11-19 00:07:46.175 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-xuat - null 0
+2025-11-19 00:07:46.177 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Logout (ExamOne)'
+2025-11-19 00:07:46.177 +07:00 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:07:46.177 +07:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-11-19 00:07:46.177 +07:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-11-19 00:07:46.178 +07:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-11-19 00:07:46.178 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:07:46.178 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Logout (ExamOne) in 0.5435ms
+2025-11-19 00:07:46.178 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Logout (ExamOne)'
+2025-11-19 00:07:46.178 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-xuat - 200 null application/json; charset=utf-8 3.0165ms
+2025-11-19 00:07:46.187 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:07:46.188 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:46.189 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:07:46.195 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:46.199 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:46.201 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:46.201 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:46.203 +07:00 [INF] Executed ViewResult - view Index executed in 2.1635ms.
+2025-11-19 00:07:46.203 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 14.7817ms
+2025-11-19 00:07:46.203 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:46.203 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 17.1903ms
+2025-11-19 00:07:46.236 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:46.240 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:46.241 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.5609ms
+2025-11-19 00:07:46.252 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.2392ms
+2025-11-19 00:07:47.881 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - null null
+2025-11-19 00:07:47.882 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:07:47.883 +07:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:07:47.886 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2025-11-19 00:07:47.886 +07:00 [INF] Executing ViewResult, running view Register.
+2025-11-19 00:07:47.889 +07:00 [INF] Executed ViewResult - view Register executed in 2.5172ms.
+2025-11-19 00:07:47.889 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Register (ExamOne) in 6.2594ms
+2025-11-19 00:07:47.889 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Register (ExamOne)'
+2025-11-19 00:07:47.889 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-ki - 200 null text/html; charset=utf-8 8.6523ms
+2025-11-19 00:07:47.920 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:47.926 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:47.928 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.304ms
+2025-11-19 00:07:47.932 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.0968ms
+2025-11-19 00:07:49.673 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:07:49.674 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:49.675 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:07:49.681 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:49.684 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:49.685 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:07:49.686 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:07:49.689 +07:00 [INF] Executed ViewResult - view Index executed in 3.3032ms.
+2025-11-19 00:07:49.689 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 14.5933ms
+2025-11-19 00:07:49.689 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:07:49.689 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 16.8224ms
+2025-11-19 00:07:49.724 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:49.732 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:49.733 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.4431ms
+2025-11-19 00:07:49.742 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.4831ms
+2025-11-19 00:07:50.670 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-nhap - null null
+2025-11-19 00:07:50.671 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:07:50.672 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:07:50.672 +07:00 [INF] Executing ViewResult, running view Login.
+2025-11-19 00:07:50.674 +07:00 [INF] Executed ViewResult - view Login executed in 2.0218ms.
+2025-11-19 00:07:50.675 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Login (ExamOne) in 2.935ms
+2025-11-19 00:07:50.675 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:07:50.675 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-nhap - 200 null text/html; charset=utf-8 5.2999ms
+2025-11-19 00:07:50.706 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:07:50.711 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:07:50.712 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.0637ms
+2025-11-19 00:07:50.718 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.8355ms
+2025-11-19 00:08:00.572 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/tai-khoan/dang-nhap - application/x-www-form-urlencoded; charset=UTF-8 250
+2025-11-19 00:08:00.572 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:08:00.572 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ExamOne.Models.AccountModel) on controller ExamOne.Controllers.AccountController (ExamOne).
+2025-11-19 00:08:00.576 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:00.632 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-11-19 00:08:00.635 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-11-19 00:08:00.637 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-11-19 00:08:00.639 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-11-19 00:08:00.639 +07:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-11-19 00:08:00.639 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:08:00.639 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Login (ExamOne) in 66.9373ms
+2025-11-19 00:08:00.639 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2025-11-19 00:08:00.639 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/tai-khoan/dang-nhap - 200 null application/json; charset=utf-8 67.7587ms
+2025-11-19 00:08:00.651 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:08:00.656 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:08:00.657 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:00.665 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:00.667 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:00.668 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:00.669 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:08:00.673 +07:00 [INF] Executed ViewResult - view Index executed in 4.237ms.
+2025-11-19 00:08:00.673 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 16.5547ms
+2025-11-19 00:08:00.673 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:08:00.673 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 22.3009ms
+2025-11-19 00:08:00.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:00.698 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:00.699 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.7195ms
+2025-11-19 00:08:00.708 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.4093ms
+2025-11-19 00:08:07.117 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi - null null
+2025-11-19 00:08:07.120 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Exam (ExamOne)'
+2025-11-19 00:08:07.123 +07:00 [INF] Route matched with {action = "Exam", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Exam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:07.130 +07:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-11-19 00:08:07.135 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreateDate], [e].[DurationMinutes], [e].[Instructions], [e].[TotalQuestions]
+FROM [Exams] AS [e]
+2025-11-19 00:08:07.173 +07:00 [INF] Executing ViewResult, running view Exam.
+2025-11-19 00:08:07.185 +07:00 [INF] Executed ViewResult - view Exam executed in 11.9736ms.
+2025-11-19 00:08:07.185 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Exam (ExamOne) in 62.0187ms
+2025-11-19 00:08:07.185 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Exam (ExamOne)'
+2025-11-19 00:08:07.185 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi - 200 null text/html; charset=utf-8 67.8052ms
+2025-11-19 00:08:07.215 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:07.215 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:07.216 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.3204ms
+2025-11-19 00:08:07.224 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.6452ms
+2025-11-19 00:08:12.392 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/bai-thi - null 0
+2025-11-19 00:08:12.393 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.StartExam (ExamOne)'
+2025-11-19 00:08:12.395 +07:00 [INF] Route matched with {action = "StartExam", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] StartExam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:12.400 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreateDate], [e].[DurationMinutes], [e].[Instructions], [e].[TotalQuestions]
+FROM [Exams] AS [e]
+2025-11-19 00:08:12.453 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:08:12.453 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.StartExam (ExamOne) in 57.7763ms
+2025-11-19 00:08:12.453 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.StartExam (ExamOne)'
+2025-11-19 00:08:12.453 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/bai-thi - 200 null application/json; charset=utf-8 61.8612ms
+2025-11-19 00:08:12.462 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - null null
+2025-11-19 00:08:12.464 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:12.468 +07:00 [INF] Route matched with {action = "DetailQuestion", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DetailQuestion(System.String) on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:12.480 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreateDate], [e].[DurationMinutes], [e].[Instructions], [e].[TotalQuestions]
+FROM [Exams] AS [e]
+2025-11-19 00:08:12.495 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [q].[Id], [q].[Article], [q].[CreateDate], [q].[CreatedBy], [q].[Description], [q].[Explanation], [q].[Items], [q].[Question], [q].[Type]
+FROM [QuestionBanks] AS [q]
+ORDER BY NEWID()
+2025-11-19 00:08:12.533 +07:00 [INF] Executing ViewResult, running view DetailQuestion.
+2025-11-19 00:08:12.539 +07:00 [INF] Executed ViewResult - view DetailQuestion executed in 6.6575ms.
+2025-11-19 00:08:12.540 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.DetailQuestion (ExamOne) in 71.2968ms
+2025-11-19 00:08:12.540 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:12.540 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - 200 null text/html; charset=utf-8 77.3503ms
+2025-11-19 00:08:12.565 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:12.566 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:12.567 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.2567ms
+2025-11-19 00:08:12.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.0532ms
+2025-11-19 00:08:15.403 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/tom-tat - null null
+2025-11-19 00:08:15.406 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.SummaryExam (ExamOne)'
+2025-11-19 00:08:15.407 +07:00 [INF] Route matched with {action = "SummaryExam", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SummaryExam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:15.408 +07:00 [INF] Executing ViewResult, running view SummaryExam.
+2025-11-19 00:08:15.414 +07:00 [INF] Executed ViewResult - view SummaryExam executed in 6.4012ms.
+2025-11-19 00:08:15.414 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.SummaryExam (ExamOne) in 7.2842ms
+2025-11-19 00:08:15.415 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.SummaryExam (ExamOne)'
+2025-11-19 00:08:15.415 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/tom-tat - 200 null text/html; charset=utf-8 11.9778ms
+2025-11-19 00:08:15.439 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:15.443 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:15.444 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.9181ms
+2025-11-19 00:08:15.449 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.1999ms
+2025-11-19 00:08:16.842 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - null null
+2025-11-19 00:08:16.844 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:16.844 +07:00 [INF] Route matched with {action = "DetailQuestion", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DetailQuestion(System.String) on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:16.850 +07:00 [INF] Executing ViewResult, running view DetailQuestion.
+2025-11-19 00:08:16.853 +07:00 [INF] Executed ViewResult - view DetailQuestion executed in 2.42ms.
+2025-11-19 00:08:16.853 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.DetailQuestion (ExamOne) in 8.7775ms
+2025-11-19 00:08:16.853 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:16.853 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - 200 null text/html; charset=utf-8 11.4182ms
+2025-11-19 00:08:16.880 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:16.880 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:16.881 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.3554ms
+2025-11-19 00:08:16.889 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.3104ms
+2025-11-19 00:08:20.755 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/tom-tat - null null
+2025-11-19 00:08:20.757 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.SummaryExam (ExamOne)'
+2025-11-19 00:08:20.758 +07:00 [INF] Route matched with {action = "SummaryExam", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SummaryExam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:20.758 +07:00 [INF] Executing ViewResult, running view SummaryExam.
+2025-11-19 00:08:20.759 +07:00 [INF] Executed ViewResult - view SummaryExam executed in 1.4782ms.
+2025-11-19 00:08:20.760 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.SummaryExam (ExamOne) in 2.1894ms
+2025-11-19 00:08:20.760 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.SummaryExam (ExamOne)'
+2025-11-19 00:08:20.760 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/tom-tat - 200 null text/html; charset=utf-8 5.3972ms
+2025-11-19 00:08:20.791 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:20.795 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:20.797 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.2061ms
+2025-11-19 00:08:20.802 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.0836ms
+2025-11-19 00:08:21.984 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - null null
+2025-11-19 00:08:21.985 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:21.986 +07:00 [INF] Route matched with {action = "DetailQuestion", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DetailQuestion(System.String) on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:21.986 +07:00 [INF] Executing ViewResult, running view DetailQuestion.
+2025-11-19 00:08:21.989 +07:00 [INF] Executed ViewResult - view DetailQuestion executed in 2.4708ms.
+2025-11-19 00:08:21.989 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.DetailQuestion (ExamOne) in 3.7538ms
+2025-11-19 00:08:21.990 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:21.990 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - 200 null text/html; charset=utf-8 6.6946ms
+2025-11-19 00:08:22.017 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:22.021 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:22.023 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.5618ms
+2025-11-19 00:08:22.027 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.8131ms
+2025-11-19 00:08:23.592 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/tom-tat - null null
+2025-11-19 00:08:23.593 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.SummaryExam (ExamOne)'
+2025-11-19 00:08:23.594 +07:00 [INF] Route matched with {action = "SummaryExam", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SummaryExam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:23.594 +07:00 [INF] Executing ViewResult, running view SummaryExam.
+2025-11-19 00:08:23.595 +07:00 [INF] Executed ViewResult - view SummaryExam executed in 1.3897ms.
+2025-11-19 00:08:23.596 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.SummaryExam (ExamOne) in 2.0025ms
+2025-11-19 00:08:23.596 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.SummaryExam (ExamOne)'
+2025-11-19 00:08:23.596 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/tom-tat - 200 null text/html; charset=utf-8 4.6985ms
+2025-11-19 00:08:23.622 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:23.625 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:23.627 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.9034ms
+2025-11-19 00:08:23.631 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.7718ms
+2025-11-19 00:08:24.885 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - null null
+2025-11-19 00:08:24.888 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:24.888 +07:00 [INF] Route matched with {action = "DetailQuestion", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DetailQuestion(System.String) on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:24.888 +07:00 [INF] Executing ViewResult, running view DetailQuestion.
+2025-11-19 00:08:24.893 +07:00 [INF] Executed ViewResult - view DetailQuestion executed in 4.9456ms.
+2025-11-19 00:08:24.893 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.DetailQuestion (ExamOne) in 5.7175ms
+2025-11-19 00:08:24.894 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.DetailQuestion (ExamOne)'
+2025-11-19 00:08:24.894 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/khoi-dong?sId=691ca7fcb9211471dc772f26 - 200 null text/html; charset=utf-8 8.2401ms
+2025-11-19 00:08:24.921 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:24.926 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:24.927 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.7182ms
+2025-11-19 00:08:24.931 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.6722ms
+2025-11-19 00:08:30.189 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/bai-thi/hoan-tat - application/x-www-form-urlencoded; charset=UTF-8 288
+2025-11-19 00:08:30.190 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.CompleteExam (ExamOne)'
+2025-11-19 00:08:30.193 +07:00 [INF] Route matched with {action = "CompleteExam", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CompleteExam(ExamOne.Models.ExamAnswerModel) on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:30.205 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:08:30.206 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.CompleteExam (ExamOne) in 12.6468ms
+2025-11-19 00:08:30.206 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.CompleteExam (ExamOne)'
+2025-11-19 00:08:30.206 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/bai-thi/hoan-tat - 200 null application/json; charset=utf-8 16.5919ms
+2025-11-19 00:08:30.214 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/bai-thi/ket-qua - null null
+2025-11-19 00:08:30.216 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.ResultExam (ExamOne)'
+2025-11-19 00:08:30.218 +07:00 [INF] Route matched with {action = "ResultExam", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResultExam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:30.225 +07:00 [INF] Executing ViewResult, running view ResultExam.
+2025-11-19 00:08:30.230 +07:00 [INF] Executed ViewResult - view ResultExam executed in 5.7764ms.
+2025-11-19 00:08:30.230 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.ResultExam (ExamOne) in 12.3588ms
+2025-11-19 00:08:30.230 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.ResultExam (ExamOne)'
+2025-11-19 00:08:30.230 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/bai-thi/ket-qua - 200 null text/html; charset=utf-8 15.9841ms
+2025-11-19 00:08:30.255 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:30.259 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:30.260 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.4822ms
+2025-11-19 00:08:30.264 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.1706ms
+2025-11-19 00:08:36.074 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7027/bai-thi/ket-thuc - null 0
+2025-11-19 00:08:36.074 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.DoneExam (ExamOne)'
+2025-11-19 00:08:36.075 +07:00 [INF] Route matched with {action = "DoneExam", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult DoneExam() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:36.076 +07:00 [INF] Executing JsonResult, writing value of type 'ExamOne.Models.ResponderData`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-11-19 00:08:36.076 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.DoneExam (ExamOne) in 0.8842ms
+2025-11-19 00:08:36.076 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.DoneExam (ExamOne)'
+2025-11-19 00:08:36.076 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7027/bai-thi/ket-thuc - 200 null application/json; charset=utf-8 2.6394ms
+2025-11-19 00:08:36.085 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:08:36.087 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:08:36.087 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:08:36.095 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:36.099 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:36.100 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:36.101 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:08:36.101 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:08:36.103 +07:00 [INF] Executed ViewResult - view Index executed in 2.3026ms.
+2025-11-19 00:08:36.103 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 16.3421ms
+2025-11-19 00:08:36.103 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:08:36.103 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 18.453ms
+2025-11-19 00:08:36.126 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:08:36.127 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:08:36.128 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.0303ms
+2025-11-19 00:08:36.136 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.7591ms
+2025-11-19 00:08:42.840 +07:00 [INF] Task started at: "2025-11-19T00:08:42.8400133+07:00"
+2025-11-19 00:08:42.840 +07:00 [INF] Checking Redis connection at: "2025-11-19T00:08:42.8401621+07:00"
+2025-11-19 00:08:42.858 +07:00 [INF] Task finished at: "2025-11-19T00:08:42.8587515+07:00"
+2025-11-19 00:08:42.858 +07:00 [INF] Waiting 2 minutes before next run...
+2025-11-19 00:10:29.796 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2025-11-19 00:10:29.807 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:10:29.807 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2025-11-19 00:10:29.813 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:10:29.814 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:10:29.815 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:10:29.815 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-11-19 00:10:29.816 +07:00 [INF] Executing ViewResult, running view Index.
+2025-11-19 00:10:29.818 +07:00 [INF] Executed ViewResult - view Index executed in 2.6923ms.
+2025-11-19 00:10:29.819 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 12.3345ms
+2025-11-19 00:10:29.819 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2025-11-19 00:10:29.819 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 23.6968ms
+2025-11-19 00:10:29.842 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2025-11-19 00:10:29.843 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2025-11-19 00:10:29.843 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.478ms
+2025-11-19 00:10:29.857 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.0794ms
+2025-11-19 00:10:42.872 +07:00 [INF] Task started at: "2025-11-19T00:10:42.8726611+07:00"
+2025-11-19 00:10:42.873 +07:00 [INF] Checking Redis connection at: "2025-11-19T00:10:42.8728157+07:00"
+2025-11-19 00:10:42.876 +07:00 [INF] Task finished at: "2025-11-19T00:10:42.8762156+07:00"
+2025-11-19 00:10:42.876 +07:00 [INF] Waiting 2 minutes before next run...

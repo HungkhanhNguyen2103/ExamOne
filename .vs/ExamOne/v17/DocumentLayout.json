@@ -1,0 +1,1145 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\VisualCode\\WebExam\\ExamOne\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\service\\scoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\service\\scoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\admin\\examresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\admin\\examresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\service\\examservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\service\\examservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\service\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\service\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\admin\\setting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\admin\\setting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\admin\\questionbank.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\admin\\questionbank.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\admin\\listquestionbank.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\admin\\listquestionbank.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\admin\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\admin\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\wwwroot\\js\\event.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\wwwroot\\js\\event.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\service\\myredisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\service\\myredisservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\exam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\exam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\helper\\imagemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\helper\\imagemanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\summaryexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\summaryexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\detailquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\detailquestion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\account\\_accountlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\account\\_accountlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\helper\\constant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\helper\\constant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\rankingmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\rankingmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\examquestionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\examquestionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\examprogressmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\examprogressmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\resultexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\resultexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\service\\questionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\service\\questionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\helper\\validatordata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\helper\\validatordata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\appclaimsprincipalfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\appclaimsprincipalfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\examhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\examhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\examonemongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\examonemongodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\resultexammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\resultexammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\profilemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\profilemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\responderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\responderdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\passwordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\passwordmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\accountmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\branchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\branchmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\aeshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\aeshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\adminonlyattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\adminonlyattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\customauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\customauthorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\examanswermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\examanswermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\branch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\branch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\examonedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\examonedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\wwwroot\\js\\chidoan.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\wwwroot\\js\\chidoan.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\exammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\exammodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\questionbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\questionbank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\entity\\examscore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\entity\\examscore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251110031129_addexamtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251110031129_addexamtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251109162337_adddatauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251109162337_adddatauser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251109160403_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251109160403_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251109160648_init2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251109160648_init2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\examonedbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\examonedbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251110144642_addexamscoretable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251110144642_addexamscoretable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251118164232_addtablebranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251118164232_addtablebranch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251122105600_changedata2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251122105600_changedata2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251122104857_addcolumntableaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251122104857_addcolumntableaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|e:\\visualcode\\webexam\\examone\\examone\\migrations\\20251122104419_changedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0E33EB6-BF2E-4D35-8E11-BA26B81CEEB8}|ExamOne\\ExamOne.csproj|solutionrelative:examone\\migrations\\20251122104419_changedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Program.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Program.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Program.cs",
+              "RelativeToolTip": "ExamOne\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T15:58:51.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAMcAAAAAAAAAAEBVwNEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T14:34:48.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAFsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T08:34:59.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ExamOne\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAQwDkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T15:08:35.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExamService.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\ExamService.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Service\\ExamService.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\ExamService.cs",
+              "RelativeToolTip": "ExamOne\\Service\\ExamService.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAIwMkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T04:44:39.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScoreService.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\ScoreService.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Service\\ScoreService.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\ScoreService.cs",
+              "RelativeToolTip": "ExamOne\\Service\\ScoreService.cs",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAIwK8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T09:55:04.48Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\appsettings.json",
+              "RelativeDocumentMoniker": "ExamOne\\appsettings.json",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\appsettings.json",
+              "RelativeToolTip": "ExamOne\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-09T15:48:14.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExamResult.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\ExamResult.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Admin\\ExamResult.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\ExamResult.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Admin\\ExamResult.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T10:11:52.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Controllers\\AdminController.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "ExamOne\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAD4vygAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T14:47:19.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\AccountService.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Service\\AccountService.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\AccountService.cs",
+              "RelativeToolTip": "ExamOne\\Service\\AccountService.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAlwMoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:26:37.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "ExamOne\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwCkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T14:47:55.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ListQuestionBank.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\ListQuestionBank.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Admin\\ListQuestionBank.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\ListQuestionBank.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Admin\\ListQuestionBank.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAACBjwHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T15:21:17.425Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "event.js",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\wwwroot\\js\\event.js",
+              "RelativeDocumentMoniker": "ExamOne\\wwwroot\\js\\event.js",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\wwwroot\\js\\event.js",
+              "RelativeToolTip": "ExamOne\\wwwroot\\js\\event.js",
+              "ViewState": "AgIAABwAAAAAAAAAAIBZwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-09T17:21:27.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Setting.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\Setting.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Admin\\Setting.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\Setting.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Admin\\Setting.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAQwE4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T08:38:19.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Admin\\_AdminLayout.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\_AdminLayout.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Admin\\_AdminLayout.cshtml",
+              "ViewState": "AgIAALMAAAAAAAAAAAAlwLcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T15:03:14.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "QuestionBank.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\QuestionBank.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Admin\\QuestionBank.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\QuestionBank.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Admin\\QuestionBank.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwFUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T16:36:20.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "site.js",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "ExamOne\\wwwroot\\js\\site.js",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "ExamOne\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-24T04:16:31.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAIBZwAEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T15:02:58.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MyRedisService.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\MyRedisService.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Service\\MyRedisService.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\MyRedisService.cs",
+              "RelativeToolTip": "ExamOne\\Service\\MyRedisService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAuwD8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T04:47:16.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Exam.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Exam.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\Exam.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Exam.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\Exam.cshtml",
+              "ViewState": "AgIAAF8AAAAAAAAAACBjwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T08:13:27.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ImageManagement.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Helper\\ImageManagement.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Helper\\ImageManagement.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Helper\\ImageManagement.cs",
+              "RelativeToolTip": "ExamOne\\Helper\\ImageManagement.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwC4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T17:11:40.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SummaryExam.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\SummaryExam.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\SummaryExam.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\SummaryExam.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\SummaryExam.cshtml",
+              "ViewState": "AgIAALwAAAAAAAAAAAAgwMwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T14:34:15.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DetailQuestion.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\DetailQuestion.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\DetailQuestion.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\DetailQuestion.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\DetailQuestion.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAlwHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T15:09:17.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Constant.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Helper\\Constant.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Helper\\Constant.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Helper\\Constant.cs",
+              "RelativeToolTip": "ExamOne\\Helper\\Constant.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwBYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T06:46:05.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAIBZwCUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T14:48:34.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_AccountLayout.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\_AccountLayout.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Account\\_AccountLayout.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\_AccountLayout.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Account\\_AccountLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T14:48:56.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RankingModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\RankingModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\RankingModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\RankingModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\RankingModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T09:59:45.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ExamQuestionModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamQuestionModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ExamQuestionModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamQuestionModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ExamQuestionModel.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwBEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T04:46:17.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "QuestionService.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\QuestionService.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Service\\QuestionService.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Service\\QuestionService.cs",
+              "RelativeToolTip": "ExamOne\\Service\\QuestionService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAwwCoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T15:10:50.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ExamProgressModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamProgressModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ExamProgressModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamProgressModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ExamProgressModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T04:33:56.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ResultExam.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\ResultExam.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\ResultExam.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\ResultExam.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\ResultExam.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAIBZwIAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-12T07:17:25.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ValidatorData.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Helper\\ValidatorData.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Helper\\ValidatorData.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Helper\\ValidatorData.cs",
+              "RelativeToolTip": "ExamOne\\Helper\\ValidatorData.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:35:42.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AppClaimsPrincipalFactory.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\AppClaimsPrincipalFactory.cs",
+              "RelativeDocumentMoniker": "ExamOne\\AppClaimsPrincipalFactory.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\AppClaimsPrincipalFactory.cs",
+              "RelativeToolTip": "ExamOne\\AppClaimsPrincipalFactory.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T05:34:35.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ExamHistory.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamHistory.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\ExamHistory.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamHistory.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\ExamHistory.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAEBdwA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T04:38:38.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ExamOneMongoDBContext.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamOneMongoDBContext.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\ExamOneMongoDBContext.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamOneMongoDBContext.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\ExamOneMongoDBContext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAlwA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T04:36:09.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ResultExamModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ResultExamModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ResultExamModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ResultExamModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ResultExamModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T07:33:58.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\SeedData.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\SeedData.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\SeedData.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\SeedData.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwCMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:09:45.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Account.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\Account.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\Account.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\Account.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\Account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T16:10:45.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ProfileModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ProfileModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ProfileModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ProfileModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ProfileModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T14:37:53.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ResponderData.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ResponderData.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ResponderData.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ResponderData.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ResponderData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:27:28.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\ChangePassword.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\ChangePassword.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\ChangePassword.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAQwBoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-24T03:24:42.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AccountModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\AccountModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\AccountModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\AccountModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\AccountModel.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:30:18.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "PasswordModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\PasswordModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\PasswordModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\PasswordModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\PasswordModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T03:25:08.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Account\\Register.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAPMAAAAAAAAAACBjwAQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-06T14:48:42.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Profile.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\Profile.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Profile.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\Profile.cshtml",
+              "ViewState": "AgIAAHsAAAAAAAAAAIBZwIQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-22T10:58:48.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "BranchModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\BranchModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\BranchModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\BranchModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\BranchModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T16:46:35.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-16T16:19:25.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "AesHelper.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\AesHelper.cs",
+              "RelativeDocumentMoniker": "ExamOne\\AesHelper.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\AesHelper.cs",
+              "RelativeToolTip": "ExamOne\\AesHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T06:40:44.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "AdminOnlyAttribute.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\AdminOnlyAttribute.cs",
+              "RelativeDocumentMoniker": "ExamOne\\AdminOnlyAttribute.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\AdminOnlyAttribute.cs",
+              "RelativeToolTip": "ExamOne\\AdminOnlyAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T14:56:06.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "CustomAuthorizeAttribute.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\CustomAuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "ExamOne\\CustomAuthorizeAttribute.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\CustomAuthorizeAttribute.cs",
+              "RelativeToolTip": "ExamOne\\CustomAuthorizeAttribute.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T14:48:58.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "20251122105600_changeData2.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251122105600_changeData2.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251122105600_changeData2.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251122105600_changeData2.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251122105600_changeData2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:56:00.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "20251122104857_addColumnTableAccount.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251122104857_addColumnTableAccount.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251122104857_addColumnTableAccount.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251122104857_addColumnTableAccount.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251122104857_addColumnTableAccount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:48:57.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "20251122104419_changeData.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251122104419_changeData.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251122104419_changeData.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251122104419_changeData.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251122104419_changeData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T10:44:19.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ExamAnswerModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamAnswerModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ExamAnswerModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamAnswerModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ExamAnswerModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:35:06.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Branch.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\Branch.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\Branch.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\Branch.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\Branch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T16:37:51.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ExamOneDbContext.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamOneDbContext.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\ExamOneDbContext.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamOneDbContext.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\ExamOneDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T16:16:19.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "chidoan.js",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\wwwroot\\js\\chidoan.js",
+              "RelativeDocumentMoniker": "ExamOne\\wwwroot\\js\\chidoan.js",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\wwwroot\\js\\chidoan.js",
+              "RelativeToolTip": "ExamOne\\wwwroot\\js\\chidoan.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-18T16:32:44.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "20251118164232_addTableBranch.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251118164232_addTableBranch.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251118164232_addTableBranch.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251118164232_addTableBranch.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251118164232_addTableBranch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T16:42:32.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Exam.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\Exam.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\Exam.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\Exam.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\Exam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T03:06:37.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ExamModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ExamModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ExamModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ExamModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T07:39:02.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "QuestionBank.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\QuestionBank.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\QuestionBank.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\QuestionBank.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\QuestionBank.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T16:00:56.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "ExamOne\\Views\\Account\\AccessDenied.cshtml",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeToolTip": "ExamOne\\Views\\Account\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-10T14:50:05.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "20251110144642_addExamScoreTable.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251110144642_addExamScoreTable.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251110144642_addExamScoreTable.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251110144642_addExamScoreTable.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251110144642_addExamScoreTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T14:46:42.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ExamScore.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamScore.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Entity\\ExamScore.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Entity\\ExamScore.cs",
+              "RelativeToolTip": "ExamOne\\Entity\\ExamScore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T14:34:37.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "20251110031129_addExamTable.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251110031129_addExamTable.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251110031129_addExamTable.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251110031129_addExamTable.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251110031129_addExamTable.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAwCYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T03:11:30.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Models\\ErrorViewModel.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "ExamOne\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:30:30.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "20251109162337_addDataUser.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251109162337_addDataUser.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251109162337_addDataUser.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251109162337_addDataUser.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251109162337_addDataUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:23:37.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "20251109160403_init.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251109160403_init.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251109160403_init.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251109160403_init.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251109160403_init.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:04:03.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "20251109160648_init2.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251109160648_init2.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\20251109160648_init2.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\20251109160648_init2.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\20251109160648_init2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:06:48.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ExamOneDbContextModelSnapshot.cs",
+              "DocumentMoniker": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\ExamOneDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "ExamOne\\Migrations\\ExamOneDbContextModelSnapshot.cs",
+              "ToolTip": "E:\\VisualCode\\WebExam\\ExamOne\\ExamOne\\Migrations\\ExamOneDbContextModelSnapshot.cs",
+              "RelativeToolTip": "ExamOne\\Migrations\\ExamOneDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T16:05:42.512Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

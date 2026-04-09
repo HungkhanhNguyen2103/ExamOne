@@ -1,0 +1,253 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    var top10RankingPersons = ViewBag.Top10RankingPersons as List<RankingModel>;
+    var top10RankingPersonsFrom4th = top10RankingPersons != null ? top10RankingPersons.Where(c => c.Rank > 3).ToList() : new List<RankingModel>();
+
+    var top10RankingBranches = ViewBag.Top10RankingBranches as List<RankingBranchModel>;
+    var top10RankingBranchesFrom4th = top10RankingBranches != null ? top10RankingBranches.Where(c => c.Rank > 3).ToList() : new List<RankingBranchModel>();
+
+}
+<main class="bg-slate-100 w-full">
+    <section class="w-full h-64 bg-cover bg-center flex items-center justify-center text-white"
+             style="background-image: url('/img/background.jpg');height:800px">
+        <div class="bg-black/80 p-6 rounded-2xl text-center w-11/12 md:w-2/3">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Cuộc thi Trắc nghiệm Tìm hiểu luật phòng chống Ma Túy</h1>
+            <p class="text-sm md:text-base opacity-90">Nâng cao hiểu biết, lan tỏa tri thức, thúc đẩy luật phòng chống Ma Túy tại phường Hồng An</p>
+        </div>
+    </section>
+
+    <!-- Giới thiệu -->
+    <section class="py-12 max-w-7xl px-10 mx-auto bg-slate-100">
+        <h2 class="text-2xl font-bold text-blue-700 mb-4">Giới thiệu về hệ thống</h2>
+        <p class="text-gray-700 leading-relaxed">
+            Hệ thống thi trắc nghiệm trực tuyến dành cho Thanh Niên Số của phường Hồng An. Nền tảng giúp các bạn trẻ
+            tiếp cận cuộc thi một cách dễ dàng, nhanh chóng và chính xác. Mọi kết quả đều được lưu trữ và xếp hạng minh bạch,
+            hỗ trợ phường trong công tác tổng hợp và đánh giá.
+        </p>
+    </section>
+    <section class="relative py-10 px-40 grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+             x-data="streamText()"
+             x-init="start()">
+
+        <!-- LEFT: TEXT -->
+        <div class="flex flex-col">
+            <h2 class="text-2xl font-bold text-blue-700">
+                <span class="text-blue-600">Lộ trình</span>
+            </h2>
+
+            <!-- Wrapper text -->
+            <div class="mb-6 min-h-[6rem]">
+                <p class="leading-relaxed text-gray-700 whitespace-pre-line text-lg">
+                    <span x-html="output"></span><span class="inline-block animate-blink">|</span>
+                </p>
+            </div>
+
+            <button onclick="window.location.href='/bai-thi'" class="mt-auto px-7 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition w-max">
+                Bắt đầu bài thi ngay
+            </button>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="relative h-full">
+            <video class="rounded-xl shadow-xl border border-blue-200 w-full h-full object-cover" controls>
+                <source src="/video/test.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            @* <img src="hero-demo.png" alt="Demo" class="rounded-xl shadow-xl border border-blue-200" /> *@
+        </div>
+    </section>
+
+    <style>
+        /* Blinking cursor */
+        @@keyframes blink {
+            0%, 50%, 100%
+
+        {
+            opacity: 1;
+        }
+
+        25%, 75% {
+            opacity: 0;
+        }
+
+        }
+
+        .animate-blink {
+            display: inline-block;
+            margin-left: 1px;
+            animation: blink 1s step-start infinite;
+        }
+    </style>
+
+    <script>
+        function streamText() {
+            return {
+                part1: `<strong>Vòng 1: “Test”</strong>`,
+                part2: `<strong>Vòng 2: “1 QR – 1 Câu chuyện”</strong> Mỗi chi đoàn tạo một mã QR dẫn đến 1 sản phẩm số do mình làm. Khi chấm, ban giám khảo chỉ cần “quét QR” để khám phá.`,
+                output: '',
+                index: 0,
+                fullText: '',
+
+                start() {
+                    this.fullText = this.part1 + this.part2;
+                    this.type();
+                },
+
+                type() {
+                    if (this.index < this.fullText.length) {
+                        this.output += this.fullText[this.index];
+                        this.index++;
+                        setTimeout(() => this.type(), 50);
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Top điểm nhân viên -->
+    <section class="py-16 bg-gradient-to-b from-white to-slate-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Bảng Xếp Hạng Chi Đoàn</h2>
+
+            <!-- TOP 1-3 Ladder Style -->
+            <div data-aos="fade-right" class="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
+
+                <!-- TOP 2 -->
+                <div class="bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-gray-300 transform md:translate-y-6 hover:scale-105 transition">
+                    <img src="/img/medal.gif" class="w-14 h-14 mx-auto mb-3" />
+                    <h3 class="font-bold text-gray-700 text-lg">#2 - @(top10RankingBranches.Count >= 2 ? top10RankingBranches[1].BranchName : "No data")</h3>
+                    <p class="text-gray-600">Điểm: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 2 ? top10RankingBranches[1].AverageCorrectAnswerCeil : "No data")</span></p>
+                    <p class="text-gray-600">Số lượng thành viên: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 2 ? top10RankingBranches[1].Users.Count : "No data")</span></p>
+                    <p class="text-gray-600">Thời gian làm bài: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 2 ? top10RankingBranches[1].AverageCompletionTime : "No data")</span></p>
+                </div>
+
+                <!-- TOP 1 -->
+                <div class="bg-white w-72 text-center rounded-2xl shadow-xl p-8 border-t-8 border-yellow-400 transform hover:scale-110 transition">
+                    <img src="/img/hand-holding-flag.gif" class="w-16 h-16 mx-auto mb-3" />
+                    <h3 class="font-bold text-yellow-700 text-xl">#1 - @(top10RankingBranches.Count >= 1 ? top10RankingBranches[0].BranchName : "No data")</h3>
+                    <p class="text-gray-700 text-lg">Điểm: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 1 ? top10RankingBranches[0].AverageCorrectAnswerCeil : "No data")</span></p>
+                    <p class="text-gray-700 text-lg">Số lượng thành viên: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 1 ? top10RankingBranches[0].Users.Count : "No data")</span></p>
+                    <p class="text-gray-700 text-lg">Thời gian làm bài: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 1 ? top10RankingBranches[0].AverageCompletionTime : "No data")</span></p>
+                </div>
+
+                <!-- TOP 3 -->
+                <div class="bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-orange-300 transform md:translate-y-6 hover:scale-105 transition">
+                    <img src="/img/manger.gif" class="w-14 h-14 mx-auto mb-3" />
+                    <h3 class="font-bold text-orange-700 text-lg">#3 - @(top10RankingBranches.Count >= 3 ? top10RankingBranches[2].BranchName : "No data")</h3>
+                    <p class="text-gray-600">Điểm: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 3 ? top10RankingBranches[2].AverageCorrectAnswerCeil : "No data")</span></p>
+                    <p class="text-gray-600">Số lượng thành viên: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 3 ? top10RankingBranches[2].Users.Count : "No data")</span></p>
+                    <p class="text-gray-600">Thời gian làm bài: <span class="font-semibold text-green-600">@(top10RankingBranches.Count >= 3 ? top10RankingBranches[2].AverageCompletionTime : "No data")</span></p>
+                </div>
+
+            </div>
+
+            <!-- TABLE TOP 4-10 -->
+            <div data-aos="fade-right" class="bg-white shadow-lg rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-blue-600 text-white text-sm uppercase">
+                        <tr>
+                            <th class="py-3 px-4">Hạng</th>
+                            <th class="py-3 px-4">Chi đoàn</th>
+                            <th class="py-3 px-4">Thời gian làm bài</th>
+                            <th class="py-3 px-4">Số lượng thành viên</th>
+                            <th class="py-3 px-4">Điểm</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        @if (top10RankingBranchesFrom4th.Count == 0)
+                        {
+                            <tr class="hover:bg-blue-50 transition">
+                                <td colspan="4" class="py-3 px-4 font-semibold text-center text-blue-600">Chưa có thông tin</td>
+                            </tr>
+                        }
+                        @foreach (var item in top10RankingBranchesFrom4th)
+                        {
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="py-3 px-4 font-semibold text-blue-600">#@item.Rank</td>
+                                <td class="py-3 px-4">@item.BranchName</td>
+                                <td class="py-3 px-4">@item.AverageCompletionTime</td>
+                                <td class="py-3 px-4">@item.Users.Count</td>
+                                <td class="py-3 px-4 font-semibold">@item.AverageCorrectAnswer</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-b from-white to-slate-100 mb-10">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Bảng Xếp Hạng Cá nhân</h2>
+
+            <!-- TOP 1-3 Ladder Style -->
+            <div data-aos="fade-right" class="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
+
+                <!-- TOP 2 -->
+                <div class="bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-gray-300 transform md:translate-y-6 hover:scale-105 transition">
+                    <img src="@(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].Avatar : "/img/user.jpg")" class="w-14 h-14 mx-auto mb-3" />
+                    <h3 class="font-bold text-gray-700 text-lg">#2 - @(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].Name : "No data")</h3>
+                    <p class="text-gray-600">Điểm: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].CorrectAnswer : "No data")</span></p>
+                    <p class="text-gray-600">Thời gian làm bài: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].CompletionTime : "No data")</span></p>
+                </div>
+
+                <!-- TOP 1 -->
+                <div class="bg-white w-72 text-center rounded-2xl shadow-xl p-8 border-t-8 border-yellow-400 transform hover:scale-110 transition">
+                    <img src="@(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].Avatar : "/img/user.jpg")" class="w-16 h-16 mx-auto mb-3" />
+                    <h3 class="font-bold text-yellow-700 text-xl">#1 - @(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].Name : "No data")</h3>
+                    <p class="text-gray-700 text-lg">Điểm: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].CorrectAnswer : "No data")</span></p>
+                    <p class="text-gray-700 text-lg">Thời gian làm bài: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].CompletionTime : "No data")</span></p>
+                </div>
+
+                <!-- TOP 3 -->
+                <div class="bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-orange-300 transform md:translate-y-6 hover:scale-105 transition">
+                    <img src="@(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].Avatar : "/img/user.jpg")" class="w-14 h-14 mx-auto mb-3" />
+                    <h3 class="font-bold text-orange-700 text-lg">#3 - @(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].Name : "No data")</h3>
+                    <p class="text-gray-600">Điểm: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].CorrectAnswer : "No data")</span></p>
+                    <p class="text-gray-600">Thời gian làm bài: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].CompletionTime : "No data")</span></p>
+                </div>
+
+            </div>
+
+            <!-- TABLE TOP 4-10 -->
+            <div data-aos="fade-right" class="bg-white shadow-lg rounded-xl overflow-hidden">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-blue-600 text-white text-sm uppercase">
+                        <tr>
+                            <th class="py-3 px-4">Hạng</th>
+                            <th class="py-3 px-4">Họ Tên</th>
+                            <th class="py-3 px-4">Thời gian làm bài</th>
+                            <th class="py-3 px-4">Điểm</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        @if(top10RankingPersonsFrom4th.Count == 0)
+                        {
+                            <tr class="hover:bg-blue-50 transition">
+                                <td colspan="4" class="py-3 px-4 font-semibold text-center text-blue-600">Chưa có thông tin</td>
+                            </tr>
+                        }
+                        @foreach (var item in top10RankingPersonsFrom4th)
+                        {
+                            <tr class="hover:bg-blue-50 transition">
+                                <td class="py-3 px-4 font-semibold text-blue-600">#@item.Rank</td>
+                                <td class="py-3 px-4">@item.Name</td>
+                                <td class="py-3 px-4">@item.CompletionTime</td>
+                                <td class="py-3 px-4 font-semibold">@item.CorrectAnswer</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+</main>
+<script>
+    AOS.init({
+      duration: 1000, 
+      once: false,  
+      mirror: true   
+    });
+
+</script>

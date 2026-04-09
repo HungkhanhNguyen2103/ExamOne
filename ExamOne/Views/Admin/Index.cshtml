@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Quản lý";
+}
+<!-- Main content -->
+<main class="flex-1 p-6 sm:ml-0">
+    <section style="max-height:50rem" class="sm:w-full w-full bg-white shadow rounded-lg overflow-hidden mb-6">
+        <div class="flex items-center justify-between p-4 border-b">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-semibold">Bảng xếp hạng chi đoàn</h2>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <table id="questionTable" class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Xếp hạng</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Chi đoàn</th>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Thời gian làm bài (Avg)</th>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Số lượng thành viên</th>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Điểm (Avg)</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="tableBody">
+                @foreach (RankingBranchModel item in ViewBag.RankingBranches)
+                {
+                    <tr class="hover:bg-blue-50 cursor-pointer">
+                        <td class="px-3 py-2 text-center">@item.Rank</td>
+                        <td class="px-3 py-2">@item.BranchNameFull</td>
+                        <td class="px-3 py-2 text-center">@item.AverageCompletionTime</td>
+                        <td class="px-3 py-2 text-center">@item.Users.Count</td>
+                        <td class="px-3 py-2 text-center">@item.AverageCorrectAnswerCeil</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+    <section style="max-height:50rem" class="sm:w-full w-full bg-white shadow rounded-lg overflow-hidden">
+        <div class="flex items-center justify-between p-4 border-b">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-semibold">Bảng xếp hạng cá nhân</h2>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <table id="questionTable2" class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Xếp hạng</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Họ tên</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Chi đoàn</th>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Thời gian làm bài</th>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Điểm</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="tableBody">
+                @foreach (RankingModel item in ViewBag.RankingPersons)
+                {
+                    <tr class="hover:bg-blue-50 cursor-pointer">
+                        <td class="px-3 py-2 text-center">@item.Rank</td>
+                        <td class="px-3 py-2">@item.Name</td>
+                        <td class="px-3 py-2">@item.BranchName</td>
+                        <td class="px-3 py-2 text-center">@item.CompletionTime</td>
+                        <td class="px-3 py-2 text-center">@item.CorrectAnswer</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+</main>
+<script>
+    $('#dashboardId').addClass('bg-gray-200');
+
+    $(document).ready(function() {
+        $('#questionTable').DataTable({
+            pageLength: 10,
+            lengthMenu: [10,50,100,200],
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Tìm kiếm...",
+                paginate: {
+                    previous: "<",
+                    next: ">"
+                }
+            },
+            dom:
+                "<'flex justify-between mb-2'lf>" +
+                "t" + // table
+                "<'flex justify-between mt-2'ip>"
+        });
+
+        $('#questionTable2').DataTable({
+            pageLength: 10,
+            lengthMenu: [10,50,100,200],
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Tìm kiếm...",
+                paginate: {
+                    previous: "<",
+                    next: ">"
+                }
+            },
+            dom:
+                "<'flex justify-between mb-2'lf>" +
+                "t" + // table
+                "<'flex justify-between mt-2'ip>"
+        });
+
+    });
+</script>

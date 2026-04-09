@@ -1,0 +1,145 @@
+2026-04-08 23:56:20.169 +07:00 [INF] User profile is available. Using 'C:\Users\Admin\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-08 23:56:20.202 +07:00 [INF] MyRedisService started at: "2026-04-08T23:56:20.2012433+07:00"
+2026-04-08 23:56:20.204 +07:00 [INF] Task started at: "2026-04-08T23:56:20.2041923+07:00"
+2026-04-08 23:56:20.206 +07:00 [INF] Checking Redis connection at: "2026-04-08T23:56:20.2069159+07:00"
+2026-04-08 23:56:20.389 +07:00 [INF] Task finished at: "2026-04-08T23:56:20.3898696+07:00"
+2026-04-08 23:56:20.390 +07:00 [INF] Waiting 2 minutes before next run...
+2026-04-08 23:56:20.547 +07:00 [INF] Now listening on: https://localhost:7027
+2026-04-08 23:56:20.547 +07:00 [INF] Now listening on: http://localhost:5280
+2026-04-08 23:56:20.572 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-08 23:56:20.573 +07:00 [INF] Hosting environment: Development
+2026-04-08 23:56:20.573 +07:00 [INF] Content root path: E:\VisualCode\WebExam\ExamOne\ExamOne
+2026-04-08 23:56:21.859 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2026-04-08 23:56:22.023 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2026-04-08 23:56:22.054 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2026-04-08 23:56:23.995 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2026-04-08 23:56:24.198 +07:00 [INF] Executed DbCommand (69ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:56:24.238 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:56:24.239 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:56:24.241 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:56:24.242 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:56:24.273 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2026-04-08 23:56:24.291 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-08 23:56:24.367 +07:00 [INF] Executed ViewResult - view Index executed in 75.1784ms.
+2026-04-08 23:56:24.371 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 2316.0526ms
+2026-04-08 23:56:24.372 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2026-04-08 23:56:24.384 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/img/hand-holding-flag.gif - null null
+2026-04-08 23:56:24.384 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/js/event.js?v=e-TdWEj1UYYvaNpQ7gYu15ibUCkeOQTPRlQayqBOyog - null null
+2026-04-08 23:56:24.384 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/img/medal.gif - null null
+2026-04-08 23:56:24.387 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 2536.3365ms
+2026-04-08 23:56:24.395 +07:00 [INF] Sending file. Request path: '/js/event.js'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\js\event.js'
+2026-04-08 23:56:24.395 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/js/event.js?v=e-TdWEj1UYYvaNpQ7gYu15ibUCkeOQTPRlQayqBOyog - 200 1230 text/javascript 10.9769ms
+2026-04-08 23:56:24.460 +07:00 [INF] Sending file. Request path: '/img/hand-holding-flag.gif'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\img\hand-holding-flag.gif'
+2026-04-08 23:56:24.460 +07:00 [INF] Sending file. Request path: '/img/medal.gif'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\img\medal.gif'
+2026-04-08 23:56:24.460 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/img/hand-holding-flag.gif - 200 970137 image/gif 76.0987ms
+2026-04-08 23:56:24.460 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/img/medal.gif - 200 1011159 image/gif 76.1708ms
+2026-04-08 23:56:24.471 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/uploads/avatar/user1.png?v=639112893842387531 - null null
+2026-04-08 23:56:24.471 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/img/manger.gif - null null
+2026-04-08 23:56:24.483 +07:00 [INF] Sending file. Request path: '/uploads/avatar/user1.png'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\uploads\avatar\user1.png'
+2026-04-08 23:56:24.484 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/uploads/avatar/user1.png?v=639112893842387531 - 200 74590 image/png 12.4754ms
+2026-04-08 23:56:24.487 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/uploads/avatar/user5.png?v=639112893842330446 - null null
+2026-04-08 23:56:24.525 +07:00 [INF] Sending file. Request path: '/uploads/avatar/user5.png'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\uploads\avatar\user5.png'
+2026-04-08 23:56:24.525 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/uploads/avatar/user5.png?v=639112893842330446 - 200 593022 image/png 38.6378ms
+2026-04-08 23:56:24.529 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-08 23:56:24.534 +07:00 [INF] Sending file. Request path: '/img/manger.gif'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\img\manger.gif'
+2026-04-08 23:56:24.534 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/img/manger.gif - 200 1187971 image/gif 62.9569ms
+2026-04-08 23:56:24.535 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 6.546ms
+2026-04-08 23:56:24.730 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/uploads/avatar/user3.png?v=639112893842402198 - null null
+2026-04-08 23:56:24.773 +07:00 [INF] Sending file. Request path: '/uploads/avatar/user3.png'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\uploads\avatar\user3.png'
+2026-04-08 23:56:24.773 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/uploads/avatar/user3.png?v=639112893842402198 - 200 885720 image/png 46.3793ms
+2026-04-08 23:56:24.776 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2026-04-08 23:56:24.817 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.7299ms
+2026-04-08 23:56:24.995 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/video/test.mp4 - null null
+2026-04-08 23:56:25.003 +07:00 [INF] Sending ["bytes 0-2806742/2806743"] of file E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\video\test.mp4
+2026-04-08 23:56:25.102 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/video/test.mp4 - null null
+2026-04-08 23:56:25.104 +07:00 [INF] Sending ["bytes 1884160-2806742/2806743"] of file E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\video\test.mp4
+2026-04-08 23:56:25.104 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/video/test.mp4 - 206 2806743 video/mp4 109.7405ms
+2026-04-08 23:56:25.105 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/video/test.mp4 - 499 922583 video/mp4 3.5686ms
+2026-04-08 23:56:25.107 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/video/test.mp4 - null null
+2026-04-08 23:56:25.107 +07:00 [INF] Sending ["bytes 1884160-2806742/2806743"] of file E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\video\test.mp4
+2026-04-08 23:56:25.146 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/video/test.mp4 - 206 922583 video/mp4 39.2891ms
+2026-04-08 23:56:25.483 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/favicon.ico - null null
+2026-04-08 23:56:25.499 +07:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\favicon.ico'
+2026-04-08 23:56:25.500 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/favicon.ico - 200 5430 image/x-icon 17.6512ms
+2026-04-08 23:58:20.400 +07:00 [INF] Task started at: "2026-04-08T23:58:20.4002362+07:00"
+2026-04-08 23:58:20.400 +07:00 [INF] Checking Redis connection at: "2026-04-08T23:58:20.4007940+07:00"
+2026-04-08 23:58:20.405 +07:00 [INF] Task finished at: "2026-04-08T23:58:20.4055476+07:00"
+2026-04-08 23:58:20.405 +07:00 [INF] Waiting 2 minutes before next run...
+2026-04-08 23:58:33.639 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/tai-khoan/dang-nhap - null null
+2026-04-08 23:58:33.663 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2026-04-08 23:58:33.668 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ExamOne.Controllers.AccountController (ExamOne).
+2026-04-08 23:58:33.676 +07:00 [INF] Executing ViewResult, running view Login.
+2026-04-08 23:58:33.710 +07:00 [INF] Executed ViewResult - view Login executed in 35.8582ms.
+2026-04-08 23:58:33.711 +07:00 [INF] Executed action ExamOne.Controllers.AccountController.Login (ExamOne) in 42.3313ms
+2026-04-08 23:58:33.711 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.AccountController.Login (ExamOne)'
+2026-04-08 23:58:33.712 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/tai-khoan/dang-nhap - 200 null text/html; charset=utf-8 72.9112ms
+2026-04-08 23:58:33.740 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2026-04-08 23:58:33.740 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-08 23:58:33.741 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 1.8207ms
+2026-04-08 23:58:33.754 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.9384ms
+2026-04-08 23:58:36.202 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/ - null null
+2026-04-08 23:58:36.207 +07:00 [INF] Executing endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2026-04-08 23:58:36.207 +07:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller ExamOne.Controllers.HomeController (ExamOne).
+2026-04-08 23:58:36.223 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2026-04-08 23:58:36.227 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:58:36.229 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:58:36.230 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:58:36.231 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:58:36.232 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Discriminator], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[Avatar], [a].[BranchCode], [a].[CCCD], [a].[FullName], [a].[ProvinceCode], [a].[WardCode]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Discriminator] = N'Account' AND [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-04-08 23:58:36.233 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name]
+FROM [Branches] AS [b]
+2026-04-08 23:58:36.236 +07:00 [INF] Executing ViewResult, running view Index.
+2026-04-08 23:58:36.239 +07:00 [INF] Executed ViewResult - view Index executed in 2.9384ms.
+2026-04-08 23:58:36.239 +07:00 [INF] Executed action ExamOne.Controllers.HomeController.Index (ExamOne) in 32.0596ms
+2026-04-08 23:58:36.239 +07:00 [INF] Executed endpoint 'ExamOne.Controllers.HomeController.Index (ExamOne)'
+2026-04-08 23:58:36.240 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/ - 200 null text/html; charset=utf-8 37.8237ms
+2026-04-08 23:58:36.263 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-08 23:58:36.263 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/uploads/avatar/user1.png?v=639112895162296223 - null null
+2026-04-08 23:58:36.263 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/uploads/avatar/user5.png?v=639112895162284130 - null null
+2026-04-08 23:58:36.268 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/uploads/avatar/user3.png?v=639112895162309261 - null null
+2026-04-08 23:58:36.268 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 2.541ms
+2026-04-08 23:58:36.273 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7027/_vs/browserLink - null null
+2026-04-08 23:58:36.306 +07:00 [INF] Sending file. Request path: '/uploads/avatar/user1.png'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\uploads\avatar\user1.png'
+2026-04-08 23:58:36.310 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/uploads/avatar/user1.png?v=639112895162296223 - 200 74590 image/png 44.2723ms
+2026-04-08 23:58:36.326 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.0464ms
+2026-04-08 23:58:36.338 +07:00 [INF] Sending file. Request path: '/uploads/avatar/user5.png'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\uploads\avatar\user5.png'
+2026-04-08 23:58:36.338 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/uploads/avatar/user5.png?v=639112895162284130 - 200 593022 image/png 75.888ms
+2026-04-08 23:58:36.345 +07:00 [INF] Sending file. Request path: '/uploads/avatar/user3.png'. Physical path: 'E:\VisualCode\WebExam\ExamOne\ExamOne\wwwroot\uploads\avatar\user3.png'
+2026-04-08 23:58:36.345 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7027/uploads/avatar/user3.png?v=639112895162309261 - 200 885720 image/png 76.7741ms

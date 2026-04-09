@@ -1,0 +1,220 @@
+﻿@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Cập nhật câu hỏi";
+}
+@model ExamQuestionModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<main class="flex flex-col sm:flex-row flex-1 p-6 gap-4">
+
+    <section class="sm:w-full w-full bg-white shadow rounded-lg overflow-hidden p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Chi tiết câu hỏi</h2>
+        </div>
+
+        <form id="questionForm" class="space-y-4">
+
+            <div>
+                <label for="Description" class="block text-sm font-medium text-gray-700 mb-1">Mô tả</label>
+                <input type="text" asp-for="Description"
+                       class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                       placeholder="Nhập mô tả..." />
+            </div>
+
+            <div>
+                <label for="Article" class="block text-sm font-medium text-gray-700 mb-1">Đề bài</label>
+                <div id="articleEditor" class="h-40 bg-white border border-gray-300 rounded-lg"></div>
+            </div>
+
+            <div>
+                <label for="Question" class="block text-sm font-medium text-gray-700 mb-1">Câu hỏi</label>
+                <input type="text" id="Question" asp-for="Question"
+                       class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                       placeholder="Nhập câu hỏi..." />
+            </div>
+
+            <div> 
+                <label class="block mb-2 font-medium text-gray-700">Đáp án</label> 
+                <button type="button" id="addOption" class="mb-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"> 
+                    <i class="fas fa-plus me-1"></i> Thêm đáp án
+                </button> 
+                <div id="optionsContainer" class="space-y-2">
+                    @foreach (OptionModel item in Model.Items)
+                        {
+                        <div class="flex items-center justify-between p-2 border rounded-lg bg-gray-50" data-option="@item.Id">
+                                <div class="flex items-center gap-2 flex-1">
+                                    <input type="text" value="@item.OptionText" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Nhập nội dung...">
+                                    <input type="radio" name="correctOption" @(item.Id == Model.AnsweredOptionId ? "checked" : "") value="@item.Id">
+                                </div>
+                                <button type="button" class="ml-4 text-red-500 hover:text-red-700 removeOption">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        }
+                </div> 
+            </div>
+
+            <div>
+                <label for="explanation" class="block text-sm font-medium text-gray-700 mb-1">Giải thích</label>
+                <div id="explanationEditor" class="h-40 bg-white border border-gray-300 rounded-lg"></div>
+            </div>
+
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                Lưu câu hỏi
+            </button>
+            <button type="button" onclick="returnToList()" class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700">
+                Trở về
+            </button>
+        </form>
+    </section>
+
+</main>
+<script>
+    $('#questionBankId').addClass('bg-gray-200');
+    const notyf = new Notyf({
+        duration: 5000,
+        position: { x: 'right', y: 'top' },
+        dismissible: true
+    });
+
+    function logout2() {
+        submitAjax({
+            url: "/tai-khoan/dang-xuat",
+            method: "POST",
+            data: {},
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    notyf.success(res.message || "Đăng xuất thành công!");
+                    if(res.isSuccess){
+                        window.location.href = '/';
+                    }
+                } else {
+                    notyf.error(res.message || "Đăng xuất thất bại!");
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        })
+    }
+
+
+    $(function () {
+        let quillOptions = {};
+        const quillArticle = new Quill('#articleEditor', { theme: 'snow', placeholder:'Nhập nội dung....' });
+        const quillExplanation = new Quill('#explanationEditor', { theme: 'snow', placeholder:'Nhập nội dung....' });
+
+        const articleContent = @Html.Raw(Json.Serialize(Model?.Article ?? ""));
+        const explanationContent = @Html.Raw(Json.Serialize(Model?.Explanation ?? ""));
+
+        if (articleContent.trim() !== "") {
+            quillArticle.root.innerHTML = articleContent;
+        }
+
+        if (explanationContent.trim() !== "") {
+            quillExplanation.root.innerHTML = explanationContent;
+        }
+
+
+        quillOptions['article'] = quillArticle;
+        quillOptions['explanation'] = quillExplanation;
+        
+        $('#addOption').click(function () {
+            let uuid = generateUUID();
+            const optionHtml = `
+                    <div class="flex items-center justify-between p-2 border rounded-lg bg-gray-50" data-option="${uuid}">
+                        <div class="flex items-center gap-2 flex-1">
+                            <input type="text" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Nhập nội dung...">
+                            <input type="radio" name="correctOption" value="${uuid}">
+                        </div>
+                        <button type="button" class="ml-4 text-red-500 hover:text-red-700 removeOption">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+            `;
+            $('#optionsContainer').append(optionHtml);
+        });
+
+        $(document).on('click', '.removeOption', function () {
+            $(this).closest('[data-option]').remove();
+        });
+
+        $('#questionForm').submit(function (e) {
+            e.preventDefault();
+
+            let questionValue = $('#Question').val();
+            if(!questionValue){
+                notyf.error('Không có dữ liệu câu hỏi');
+                return;
+            }
+
+            let correctAnswerId = $('input[name="correctOption"]:checked').val();
+            if(!correctAnswerId){
+                notyf.error('Không có dữ liệu đáp án đúng');
+                return;
+            }
+
+            let options = [];
+            $('#optionsContainer > div').each(function () {
+                const idx = $(this).data('option');
+                const index = $(this).index();
+                const value = $(this).find('input[type="text"]').val();
+                const allow = correctAnswerId === idx;
+                options.push({ SortOrder: index, Id: idx, OptionText: value , IsCorrect:allow});
+            });
+
+            const data = {
+                Id: @ViewBag.Id,
+                Description: $('#Description').val(),
+                Question: questionValue,
+                AnsweredOptionId: correctAnswerId,
+                Article: quillArticle.root.innerHTML,
+                Explanation: quillExplanation.root.innerHTML,
+                Options: JSON.stringify(options),
+            };
+
+            submitAjax({
+                url: "/quan-ly/cap-nhat-cau-hoi",
+                method: "POST",
+                data: data,
+                headers:{
+                    "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                },
+                success: function(res){
+                    if(res.isSuccess){
+                        notyf.success(res.message || "Cập nhật thành công!");
+                        setTimeout(() => {
+                           window.location.href = `/quan-ly/cau-hoi/${res.data}`;
+                        }, 1000);
+                    } else {
+                        notyf.error(res.message || "Cập nhật thất bại!");
+                    }
+                },
+                error: function(xhr){
+                    notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+                }
+            });
+        });
+    
+    });
+
+    function returnToList(){
+        window.location.href = '/quan-ly/ngan-hang-cau-hoi';
+    }
+
+    function generateUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = Math.random() * 16 | 0;
+            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+</script>

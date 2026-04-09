@@ -1,0 +1,231 @@
+﻿@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Câu hỏi";
+    var index = 1;
+}
+@model List<ExamQuestionModel>
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<main class="flex flex-col sm:flex-row flex-1 p-6 gap-4">
+
+    <section class="sm:w-1/2 w-full bg-white shadow rounded-lg overflow-hidden">
+        <div class="flex items-center justify-between p-4 border-b">
+            <div class="flex items-center gap-3">
+                <h2 class="text-xl font-semibold">Ngân hàng câu hỏi</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="openCreate" onclick="window.location.href='/quan-ly/them-cau-hoi'" class="bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700">
+                    <i class="fas fa-plus mr-1"></i> Thêm
+                </button>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <table id="questionTable" class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">STT</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Câu hỏi</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ngày tạo</th>
+                    <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Hành động</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200" id="tableBody">
+                @foreach (ExamQuestionModel item in Model)
+                {
+                    <tr class="hover:bg-blue-50 cursor-pointer" onclick="showDetail(@item.Id)">
+                        <td class="px-3 py-2 text-center">@(index++)</td>
+                        <td class="px-3 py-2">@Html.Raw(item.Question)</td>
+                        <td class="px-3 py-2">@item.CreateDate.ToString("HH:mm dd/MM/yyyy")</td>
+                        <td class="px-3 py-2 text-center">
+                            <div class="flex justify-center gap-2">
+                                <button type="button" onclick="editQuestion(@item.Id)"
+                                        class="bg-yellow-400 hover:bg-yellow-500 text-white px-2 py-1 rounded-md text-xs">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" onclick="deleteQuestion(@item.Id)"
+                                        class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-md text-xs">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+    <section id="detailPanel" class="sm:w-1/2 w-full bg-white shadow rounded-lg p-6 hidden sm:block">
+        <h3 class="text-xl font-semibold mb-2 flex items-center gap-2">
+            <i class="fas fa-info-circle text-blue-600"></i> Chi tiết câu hỏi
+        </h3>
+        <div id="questionDetail" class="text-gray-700 space-y-2">
+            <p>Chọn một câu hỏi ở bên trái để xem chi tiết.</p>
+        </div>
+
+        <div id="loadingSpinner" class="hidden flex justify-center items-center py-6">
+            <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600"></div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    $('#questionBankId').addClass('bg-gray-200');
+    const notyf = new Notyf({
+        duration: 5000,
+        position: { x: 'right', y: 'top' },
+        dismissible: true
+    });
+
+    const detailPanel = document.getElementById("detailPanel");
+    const questionDetail = document.getElementById("questionDetail");
+    const loadingSpinner = document.getElementById("loadingSpinner");
+
+    $(document).ready(function() {
+        $('#questionTable').DataTable({
+            pageLength: 10,
+            lengthMenu: [10,50,100,200],
+            columnDefs: [
+                { orderable: false, targets: 3 }
+            ],
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Tìm kiếm...",
+                paginate: {
+                    previous: "<",
+                    next: ">"
+                }
+            },
+            dom:
+                "<'flex justify-between mb-2'lf>" + 
+                "t" + // table
+                "<'flex justify-between mt-2'ip>" 
+        });
+
+        $('#questionTable tbody').on('click', 'tr', function() {
+            $('#questionTable tbody td').removeClass('bg-blue-100');
+
+            $(this).find('td').addClass('bg-blue-100');
+        });
+    });
+
+    function logout2() {
+        submitAjax({
+            url: "/tai-khoan/dang-xuat",
+            method: "POST",
+            data: {},
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    notyf.success(res.message || "Đăng xuất thành công!");
+                    if(res.isSuccess){
+                        window.location.href = '/';
+                    }
+                } else {
+                    notyf.error(res.message || "Đăng xuất thất bại!");
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        })
+    }
+
+
+    function editQuestion(id) {
+        window.location.href = `/quan-ly/cau-hoi/${id}`;
+    }
+
+    function deleteQuestion(id) {
+        if (confirm("Bạn có muốn xóa ?")) {
+            submitAjax({
+                url: `/quan-ly/xoa-cau-hoi/${id}`,
+                method: "POST",
+                data: {},
+                headers:{
+                    "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+                },
+                success: function(res){
+                   if(res.isSuccess){
+                        notyf.success(res.message || "Xóa thành công!");
+                        setTimeout(() => {
+                           window.location.reload();
+                        }, 1000);
+                    } else {
+                        notyf.error(res.message || "Xóa thất bại!");
+                    }
+                },
+                error: function(xhr){
+                    notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+                }
+            });
+
+        }
+    }
+
+    function showDetail(id) {
+
+        detailPanel.classList.remove("hidden");
+
+        questionDetail.classList.add("hidden");
+        loadingSpinner.classList.remove("hidden");
+
+        submitAjax({
+            url: `/quan-ly/cau-hoi/${id}`,
+            method: "POST",
+            data: {},
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    console.log(res.data);
+
+                    var optionHtml = '';
+                    res.data.items.forEach(item => {
+                        optionHtml += `<li id="${item.id}"><strong>${String.fromCharCode(65 + item.sortOrder)}.</strong> ${item.optionText}</li>`;
+                    })
+
+                    questionDetail.innerHTML = `
+                        <p><strong>ID: ${res.data.id}</strong></p>
+                        <p><strong>Mô tả:</strong> ${res.data.description}</p>
+                        <p><strong>Ngày tạo:</strong> ${res.data.createDateStr}</p>
+                        <hr class="my-3">
+                        <p><strong>Chi tiết:</strong></p>
+                        ${res.data.article}
+                        <p>${res.data.question}</p>
+                        <div>
+                            <ul>
+                            ${optionHtml}
+                            </ul>
+                        </div>
+                        <p>Đáp án đúng:<strong> ${res.data.answeredOptionCharacter}</strong></p>
+                        <p>Giải thích: ${res.data.explanation}</p>
+                        
+                    `;
+                } else {
+                    //notyf.error(res.message || "Lấy thông tin thất bại!");
+                }
+                loadingSpinner.classList.add("hidden");
+                questionDetail.classList.remove("hidden");
+
+                if (window.innerWidth < 640) {
+                    detailPanel.scrollIntoView({ behavior: "smooth" });
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        });
+
+    }
+
+</script>

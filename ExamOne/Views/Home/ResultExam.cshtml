@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Kết quả";
+    ViewData["Exam"] = "Hidden";
+}
+@model ResultExamModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestTokenChild()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<main class="max-w-4xl w-full mx-auto mt-10 bg-white rounded-2xl shadow-lg p-8 text-center relative">
+
+    <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1523580494863-6f3031224c94')]
+            bg-black/40 bg-blend-darken">
+    </div>
+
+    <canvas id="fireworksCanvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
+
+    <h2 class="text-3xl font-bold text-green-600 mb-4">Chúc mừng bạn <span id="userName">@User.FindFirst("FullName")?.Value</span> đã hoàn thành bài test!</h2>
+
+    <p class="text-gray-700 text-lg mb-6">
+        Bạn đã trả lời đúng <strong id="correctAnswers">@Model.CorrectAnswer</strong> trên <strong id="totalQuestions">@Model.TotalQuestions</strong> câu hỏi.
+    </p>
+
+    <div class="flex justify-center gap-4">
+        <button onclick="finishExam()" class="bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+            Hoàn tất
+        </button>
+        <button onclick="reviewExam()" class="d-none bg-gray-500 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+            Xem lại bài làm
+        </button>
+    </div>
+</main>
+
+<script>
+    const canvas = document.getElementById('fireworksCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let fireworks = [];
+    const totalDuration = 3000; 
+    const totalFireworks = Math.floor(Math.random() * 3) + 30; 
+    let spawnTimes = [];
+
+    for (let i = 0; i < totalFireworks; i++) {
+        spawnTimes.push(Math.random() * totalDuration);
+    }
+    spawnTimes.sort((a,b) => a-b); 
+
+    let startTime = null;
+
+    class Firework {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.particles = [];
+            this.createParticles();
+        }
+
+        createParticles() {
+            for (let i = 0; i < 30; i++) {
+                this.particles.push({
+                    x: this.x,
+                    y: this.y,
+                    vx: (Math.random() - 0.5) * 6,
+                    vy: (Math.random() - 0.5) * 6,
+                    alpha: 1,
+                    color: `hsl(${Math.random()*360}, 100%, 50%)`
+                });
+            }
+        }
+
+        update() {
+            this.particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.alpha -= 0.02;
+            });
+            this.particles = this.particles.filter(p => p.alpha > 0);
+        }
+
+        draw(ctx) {
+            this.particles.forEach(p => {
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = p.alpha;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 3, 0, Math.PI*2);
+                ctx.fill();
+            });
+            ctx.globalAlpha = 1;
+        }
+
+        isDone() {
+            return this.particles.length === 0;
+        }
+    }
+
+    function animate(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        while (spawnTimes.length > 0 && elapsed >= spawnTimes[0]) {
+            fireworks.push(new Firework(Math.random() * canvas.width, Math.random() * canvas.height / 2));
+            spawnTimes.shift();
+        }
+
+        fireworks.forEach(fw => {
+            fw.update();
+            fw.draw(ctx);
+        });
+
+        fireworks = fireworks.filter(fw => !fw.isDone());
+
+        if (elapsed < totalDuration || fireworks.length > 0) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    window.onload = () => {
+        requestAnimationFrame(animate);
+    };
+
+    function finishExam(){
+        window.sessionStorage.clear();
+        submitAjax({
+            url: "/bai-thi/ket-thuc",
+            method: "POST",
+            data: {},
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestTokenChild()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    window.location.href = `/`;
+                } else {
+                    notyf.error(res.message || "Thất bại!");
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        })
+    }
+</script>

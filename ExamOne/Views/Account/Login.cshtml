@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "~/Views/Account/_AccountLayout.cshtml";
+    ViewData["Title"] = "Đăng nhập";
+}
+@model AccountModel
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions {
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">ExamOne</h2>
+    <h3 class="text-lg font-semibold text-center text-gray-600 mb-6">Đăng nhập tài khoản</h3>
+
+    <form id="loginForm" method="POST" class="space-y-5">
+        <div>
+            <label for="Username" class="block text-sm font-medium text-gray-700 mb-1">Tài khoản</label>
+            <input type="text" asp-for="Username" required placeholder="Nhập tài khoản"
+                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+        </div>
+
+        <div class="relative">
+            <label for="Password" class="block text-sm font-medium text-gray-700 mb-1">Mật khẩu</label>
+            <input id="PasswordInput" type="password" asp-for="Password" required placeholder="Nhập mật khẩu"
+                   class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none pr-10" />
+            <button type="button" id="togglePassword" class="absolute right-2 top-1/2 transform-translate-y-1/2 text-gray-500">
+                <i class="fas fa-eye"></i>
+            </button>
+        </div>
+
+        <div class="flex items-center justify-between text-sm">
+            <label for="RememberMe" class="flex items-center">
+                <input asp-for="RememberMe" type="checkbox" class="mr-2 accent-blue-600" />
+                Ghi nhớ đăng nhập
+            </label>
+            <a href="#" style="display:none" class="text-blue-600 hover:underline">Quên mật khẩu?</a>
+        </div>
+
+        <button type="submit"
+                class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+            Đăng nhập
+        </button>
+    </form>
+
+    <p class="text-sm text-center text-gray-600 mt-6">
+        Chưa có tài khoản?
+        <a href="/tai-khoan/dang-ki" class="text-blue-600 hover:underline font-medium">Đăng ký ngay</a>
+    </p>
+    <p class="text-sm text-center mt-4">
+        <a href="/" class="text-blue-600 text-center mt-4 hover:underline font-medium">Về trang chủ</a>
+    </p>
+   
+</div>
+<script>
+    const notyf = new Notyf({
+        duration: 5000,
+        position: { x: 'right', y: 'top' },
+        dismissible: true
+    });
+    const passwordInput = document.getElementById('PasswordInput');
+    const togglePassword = document.getElementById('togglePassword');
+    const icon = togglePassword.querySelector('i');
+
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+    });
+
+    $("#loginForm").on("submit", function(e){
+        e.preventDefault(); 
+
+        const formData = $(this).serialize();
+
+        submitAjax({
+            url: "/tai-khoan/dang-nhap",
+            method: "POST",
+            data: formData,
+            headers:{
+                "RequestVerificationToken": '@GetAntiXsrfRequestToken()'
+            },
+            success: function(res){
+                if(res.isSuccess){
+                    notyf.success(res.message || "Đăng nhập thành công!");
+                    if(res.isSuccess){
+                        window.location.href = '/';
+                    }
+                } else {
+                    notyf.error(res.message || "Đăng nhập thất bại!");
+                }
+            },
+            error: function(xhr){
+                notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+            }
+        });
+    });
+</script>
