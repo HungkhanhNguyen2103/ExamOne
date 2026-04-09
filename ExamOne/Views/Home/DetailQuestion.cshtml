@@ -16,15 +16,15 @@
 <!-- Main Question Section -->
 <main id="mainContent" style="height: 64vh;" class="max-w-6xl w-full bg-white rounded-2xl shadow-lg mt-8 flex flex-col lg:flex-row">
 
-    <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('https://images.unsplash.com/photo-1523580494863-6f3031224c94')]
+    <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('/img/background.jpg')]
             bg-black/40 bg-blend-darken">
     </div>
 
     <!-- Left Side: Question -->
     <section class="flex-1 p-8 border-b lg:border-b-0 lg:border-r border-gray-200">
         <h2 class="text-lg font-semibold text-gray-700 flex items-center gap-1">
-            Question <span id="questionIndex" class="text-blue-600"></span>
-            of <span class="text-gray-600">@questionCount</span>
+            Câu <span id="questionIndex" class="text-blue-600"></span>
+            trên <span class="text-gray-600">@questionCount</span>
 
             <!-- SVG Table Icon -->
             <button onclick="showSummary()" class="p-0 flex items-center" title="Bảng câu hỏi">
@@ -41,8 +41,8 @@
     </section>
 
     <!-- Right Side: Options -->
-    <section class="w-full lg:w-1/3 p-8 flex flex-col gap-4">
-        <form class="flex flex-col gap-3" id="optionContent">
+    <section class="w-full lg:w-2/3 p-8 flex flex-col gap-4" style="overflow:auto">
+        <form class="flex flex-col gap-3" id="optionContent" style="overflow-y:auto">
 @*             <label class="flex items-center gap-3 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
                 <input type="radio" name="answer" class="accent-blue-600 w-4 h-4">
                 <span class="text-gray-700 font-medium">35</span>
@@ -116,7 +116,7 @@
     function nextQuestion(){
         var questionIndex = sessionStorage.getItem('questionIndex');
         var questionCount = sessionStorage.getItem('questionCount');
-        if(questionIndex < questionCount){
+        if(Number(questionIndex) < Number(questionCount)){
             sessionStorage.setItem('questionIndex',Number(questionIndex) + 1);
             getContent();
         }

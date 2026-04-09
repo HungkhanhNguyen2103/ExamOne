@@ -54,7 +54,9 @@ namespace ExamOne.Controllers
             var top10RankingBranches = await _scoreService.GetRankingsBranch(10);
             ViewBag.Top10RankingBranches = top10RankingBranches.DataList;
 
-            var intructions = await _examService.GetIntructionExam("");
+            //var intructions = await _examService.GetIntructionExam("");
+
+            //var data = await _examService.AddData();
             //ViewBag.Intructions = intructions.Data.Instructions;
             return View();
         }

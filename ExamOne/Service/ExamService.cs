@@ -7,6 +7,8 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using StackExchange.Redis;
 using System.Text.Json;
+using ClosedXML.Excel;
+using System.Text.RegularExpressions;
 
 namespace ExamOne.Service
 {
@@ -23,6 +25,7 @@ namespace ExamOne.Service
         Task<ResponderData<string>> RemoveExamHistory(string id);
         Task<ResponderData<string>> GetExamData(string key);
         Task<ResponderData<string>> SetExamData(string key, string data);
+        Task<ResponderData<string>> AddData();
         //Task<ResponderData<string>> GetListExamResult(int status);
     }
     public class ExamService : IExamService
@@ -31,14 +34,16 @@ namespace ExamOne.Service
         private ExamOneMongoDBContext _examOneMongoDBContext;
         private readonly UserManager<Account> _userManager;
         private readonly IConnectionMultiplexer _redis;
+        private readonly IWebHostEnvironment _env;
         private readonly IDatabase _db;
         public ExamService(ExamOneDbContext examOneDbContext, ExamOneMongoDBContext examOneMongoDBContext
-            ,IConnectionMultiplexer redis, UserManager<Account> userManager)
+            ,IConnectionMultiplexer redis, UserManager<Account> userManager, IWebHostEnvironment env)
         {
             _examOneDbContext = examOneDbContext;
             _examOneMongoDBContext = examOneMongoDBContext;
             _redis = redis;
             _userManager = userManager;
+            _env = env;
             _db = _redis.GetDatabase();
         }
 
@@ -494,6 +499,139 @@ namespace ExamOne.Service
             var isDone = await _db.StringSetAsync($"{key}",data);
             result.IsSuccess = isDone;
             return result;
+        }
+
+        public async Task<ResponderData<string>> AddData()
+        {
+            var result1 = new ResponderData<string>();
+            try
+            {
+                var result = new List<QuestionBank>();
+                var options = new List<string>();
+                string correctAnswer = null;
+                var path = Path.Combine(_env.ContentRootPath, "data", "result.xlsx");
+
+                using var workbook = new XLWorkbook(path);
+                var ws = workbook.Worksheet(1);
+                int lastRow = ws.LastRowUsed().RowNumber();
+                int row = 3;
+                while (row <= lastRow)
+                {
+                    QuestionBank current = null;
+                    while (true)
+                    {
+                        var raw = ws.Cell(row, 1).GetString();
+
+                        if (string.IsNullOrWhiteSpace(raw))
+                            break;
+
+                        var cell = Normalize(raw);
+
+                        // 🔥 Câu hỏi
+                        if (Regex.IsMatch(cell, @"^Câu\s*\d+", RegexOptions.IgnoreCase))
+                        {
+                            // save câu trước
+                            if (current != null)
+                            {
+                                current.Items = BuildItems(options, correctAnswer);
+                                result.Add(current);
+                            }
+
+                            current = new QuestionBank
+                            {
+                                Question = cell,
+                                CreateDate = DateTime.Now,
+                                CreatedBy = "admin",
+                                Type = "SingleChoice",
+                                Article = "<p><br></p>",
+                                Explanation = "<p><br></p>",
+                                Description = ""
+                            };
+
+                            options = new List<string>();
+                            correctAnswer = null;
+                        }
+                        // 🔥 Option (A. B. C. D. E...)
+                        else if (Regex.IsMatch(cell, @"^[A-Z]\.", RegexOptions.IgnoreCase))
+                        {
+                            options.Add(cell);
+                        }
+                        // 🔥 Đáp án đúng
+                        else if (cell.StartsWith("Đáp án đúng", StringComparison.OrdinalIgnoreCase))
+                        {
+                            var match = Regex.Match(cell, @"[A-Z]");
+
+                            if (match.Success)
+                            {
+                                correctAnswer = match.Value.ToUpper();
+                                row++;
+                                break;
+                            }
+                        }
+
+                        row++;
+
+                    }
+
+                    // 👉 thêm câu cuối
+                    current.Items = BuildItems(options, correctAnswer);
+                    result.Add(current);
+
+                }
+
+                _examOneDbContext.QuestionBanks.AddRange(result);
+                await _examOneDbContext.SaveChangesAsync();
+                return result1;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            //return result1;
+        }
+
+        // 🔥 Normalize text (xử lý HTML + spacing)
+        private string Normalize(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return string.Empty;
+
+            // remove HTML nếu có
+            input = Regex.Replace(input, "<.*?>", "");
+
+            // normalize space
+            input = Regex.Replace(input, @"\s+", " ");
+
+            return input.Trim();
+        }
+
+        // 🔥 Build JSON Items
+        private string BuildItems(List<string> options, string correctAnswer)
+        {
+            var items = new List<object>();
+
+            for (int i = 0; i < options.Count; i++)
+            {
+                var option = options[i];
+
+                // lấy key A/B/C...
+                var key = option.Substring(0, 1).ToUpper();
+
+                // lấy text sau A.
+                var text = Regex.Replace(option, @"^[A-Z]\.\s*", "").Trim();
+
+                items.Add(new
+                {
+                    SortOrder = i,
+                    Id = Guid.NewGuid().ToString(),
+                    OptionText = text,
+                    IsCorrect = key == correctAnswer
+                });
+            }
+
+            return JsonSerializer.Serialize(items);
         }
     }
 }
