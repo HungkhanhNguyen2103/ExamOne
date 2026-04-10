@@ -45,6 +45,18 @@ builder.Services.AddSingleton<ExamOneMongoDBContext>();
 builder.Services.AddDbContext<ExamOneDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ExamOneDb")));
 
+var googleConfig = builder.Configuration.GetSection("GoogleSSO");
+builder.Services.AddAuthentication()
+.AddGoogle(options =>
+{
+    options.ClientId = googleConfig["ClientId"];
+    options.ClientSecret = googleConfig["ClientSecret"];
+
+    options.Scope.Add("profile");
+    options.Scope.Add("email");
+    // options.CallbackPath = "/auth/google/callback";
+});
+
 builder.Services.AddIdentity<Account, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
@@ -87,6 +99,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseRouting();
 app.UseAuthentication();

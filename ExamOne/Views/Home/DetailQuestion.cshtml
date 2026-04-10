@@ -14,7 +14,7 @@
     }
 }
 <!-- Main Question Section -->
-<main id="mainContent" style="height: 64vh;" class="max-w-6xl w-full bg-white rounded-2xl shadow-lg mt-8 flex flex-col lg:flex-row">
+<main id="mainContent" style="height: 64vh;" class="max-w-6xl w-full bg-white rounded-2xl shadow-lg mt-[7rem] flex flex-col lg:flex-row">
 
     <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('/img/background.jpg')]
             bg-black/40 bg-blend-darken">
@@ -76,6 +76,9 @@
     let questions = @questions;
 
     $(document).ready(() => {
+        document.getElementById('footageBoxId').classList.add('d-none');
+        $('.menu-item').addClass('d-none');
+        $('.logo-item').hide();
         sessionStorage.setItem('questionCount',@questionCount);
         $('.tracking-wider1').removeClass('d-none');
         //progressSummary(null,null);
@@ -110,7 +113,7 @@
     $(document).on('change', '.option-answer', function() {
         let answerId = $(this).val();
         let questionIndex = sessionStorage.getItem('questionIndex');
-        progressSummary(questionIndex,answerId);
+        progressSummary(Number(questionIndex),answerId);
     });
 
     function nextQuestion(){
@@ -215,10 +218,10 @@
         $('#backQuestion').removeClass('bg-blue-600').addClass('bg-blue-400');
         $('#nextQuestionText').text('Câu tiếp theo');
         $('#nextQuestionIcon').show();
-        if(questionIndex > 1 && questionIndex <= @questionCount){
+        if(Number(questionIndex) > 1 && Number(questionIndex) <= Number(@questionCount)){
             $('#backQuestion').prop('disabled', false);
             $('#backQuestion').removeClass('bg-blue-400').addClass('bg-blue-600');
-            if(questionIndex == @questionCount){
+            if(Number(questionIndex) == Number(@questionCount)){
                 $('#nextQuestionText').text('Hoàn tất');
                 $('#nextQuestionIcon').hide();
             }
@@ -252,7 +255,7 @@
             
             setTimeout(() => {
                 let answerId = $(`input[name="answer-${item.Id}"]:checked`).val() ?? null;
-                progressSummary(questionIndex,answerId);
+                progressSummary(Number(questionIndex),answerId);
             },100);
         }
 

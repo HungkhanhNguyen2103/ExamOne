@@ -2,6 +2,7 @@
 using ExamOne.Entity;
 using ExamOne.Helper;
 using ExamOne.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,6 +18,9 @@ namespace ExamOne.Service
         Task<ResponderData<BranchModel>> GetBranches();
         Task<ResponderData<string>> UpdateProfile(ProfileModel model);
         Task<ResponderData<string>> ChangePassword(PasswordModel model);
+
+        AuthenticationProperties GetGoogleLoginUrlAsync(string redirectUrl);
+        Task<ResponderData<string>> HandleGoogleLoginAsync();
     }
     public class AccountService : IAccountService
     {
@@ -24,6 +28,7 @@ namespace ExamOne.Service
         private readonly UserManager<Account> _userManager;
         private readonly SignInManager<Account> _signInManager;
         private readonly string defaultAvatarLink = "/img/user.jpg";
+        //private readonly IHttpContextAccessor _httpContextAccessor;
         private IImageManagement _imageManagement;
         public AccountService(ExamOneDbContext examOneDbContext,
             UserManager<Account> userManager,SignInManager<Account> signInManager, IImageManagement imageManagement)
@@ -32,6 +37,7 @@ namespace ExamOne.Service
             _userManager = userManager;
             _signInManager = signInManager;
             _imageManagement = imageManagement;
+            //_httpContextAccessor = httpContextAccessor;
         }
         public async Task<ResponderData<string>> Login(AccountModel model)
         {
@@ -200,7 +206,9 @@ namespace ExamOne.Service
             }
 
             var avatarLink = user.Avatar;
-            if(!model.Avatar.Contains("http"))
+
+            var isOldAvatar = model.Avatar.Contains(avatarLink);
+            if(!model.Avatar.Contains("http") && !isOldAvatar)
             {
                 var resultAvatar = await _imageManagement.UpdateAvatar(model.UserName, model.Avatar);
                 if (!resultAvatar.IsSuccess)
@@ -292,6 +300,85 @@ namespace ExamOne.Service
             }
             result.Message = "Cập nhật lỗi";
             return result;
+        }
+
+        public AuthenticationProperties GetGoogleLoginUrlAsync(string redirectUrl)
+        {
+            var properties = _signInManager
+                .ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+
+            return properties;
+        }
+
+        public async Task<ResponderData<string>> HandleGoogleLoginAsync()
+        {
+            var responder = new ResponderData<string>();
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+
+            if (info == null)
+            {
+                responder.Message = "Không lấy được thông tin từ Google";
+                return responder;
+            }
+
+            var email = info.Principal.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+            if (string.IsNullOrEmpty(email))
+            {
+                responder.Message = "Không lấy được email người dùng từ Google";
+                return responder;
+            }
+
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user != null)
+            {
+                var random = DateTime.Now.Ticks;
+                var claims = new List<Claim>
+                {
+                    new Claim("FullName", user.FullName),
+                    new Claim("Email", user.Email),
+                    new Claim("BranchCode", user.BranchCode),
+                    new Claim("Avatar", $"{user.Avatar}?v={random}" ?? defaultAvatarLink)
+
+                };
+                await _signInManager.SignInWithClaimsAsync(user, isPersistent: true, claims);
+                responder.IsSuccess = true;
+                responder.Message = "Đăng nhập thành công";
+                return responder;
+            }
+
+            var name = info.Principal.FindFirst(ClaimTypes.Name)?.Value;
+            //var avatar = info.Principal.FindFirst("picture")?.Value;
+
+            var user2 = new Account
+            {
+                UserName = email,
+                Email = email,
+                FullName = name,
+                //Avatar = avatar,
+                BranchCode = "1"
+            };
+
+            var result = await _userManager.CreateAsync(user2);
+
+            if (result.Succeeded)
+            {
+                var random = DateTime.Now.Ticks;
+                await _userManager.AddToRoleAsync(user2, "User");
+                var claims = new List<Claim>
+                {
+                    new Claim("FullName", user2.FullName),
+                    new Claim("Email", user2.Email),
+                    new Claim("BranchCode", user2.BranchCode),
+                    //new Claim("Avatar", $"{user2.Avatar}?v={random}")
+
+                };
+                await _signInManager.SignInWithClaimsAsync(user2, isPersistent: false, claims);
+                //await _signInManager.SignInAsync(user, isPersistent: false);
+                responder.IsSuccess = true;
+                return responder;
+            }
+            responder.Message = "Tạo tài khoản không thành công";
+            return responder;
         }
     }
 }

@@ -14,6 +14,7 @@
     <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">ExamOne</h2>
     <h3 class="text-lg font-semibold text-center text-gray-600 mb-6">Đăng nhập tài khoản</h3>
 
+
     <form id="loginForm" method="POST" class="space-y-5">
         <div>
             <label for="Username" class="block text-sm font-medium text-gray-700 mb-1">Tài khoản</label>
@@ -30,6 +31,7 @@
             </button>
         </div>
 
+
         <div class="flex items-center justify-between text-sm">
             <label for="RememberMe" class="flex items-center">
                 <input asp-for="RememberMe" type="checkbox" class="mr-2 accent-blue-600" />
@@ -44,7 +46,27 @@
         </button>
     </form>
 
-    <p class="text-sm text-center text-gray-600 mt-6">
+    <div class="flex items-center gap-3 my-4">
+        <div class="flex-1 h-px bg-gray-300"></div>
+        <span class="text-gray-500 text-sm">Hoặc</span>
+        <div class="flex-1 h-px bg-gray-300"></div>
+    </div>
+
+    <button style="margin:auto" type="button" onclick="loginGoogle()"
+            class="flex items-center justify-center gap-3 w-full max-w-full
+          px-4 py-2 bg-white border border-gray-300 rounded-lg
+          shadow-sm hover:shadow-md transition">
+
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+             class="w-5 h-5" />
+
+        <span class="text-sm font-medium text-gray-700">
+            Đăng nhập bằng Google
+        </span>
+    </button>
+
+
+    <p style="display:none" class=" text-sm text-center text-gray-600 mt-6">
         Chưa có tài khoản?
         <a href="/tai-khoan/dang-ki" class="text-blue-600 hover:underline font-medium">Đăng ký ngay</a>
     </p>
@@ -98,4 +120,26 @@
             }
         });
     });
+
+    function loginGoogle() {
+        const width = 500;
+        const height = 600;
+
+        const left = (screen.width / 2) - (width / 2);
+        const top = (screen.height / 2) - (height / 2);
+
+        const popup = window.open(
+            '/tai-khoan/dang-nhap-google',
+            'googleLogin',
+            `width=${width},height=${height},top=${top},left=${left}`
+        );
+
+        // optional: check khi popup đóng
+        const timer = setInterval(() => {
+            if (popup.closed) {
+                clearInterval(timer);
+                location.reload(); 
+            }
+        }, 1000);
+    }
 </script>

@@ -27,6 +27,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
 
+        .tracking-wider1{
+            color:white;
+        }
+
         .returnList{
             cursor:pointer;
         }
@@ -47,13 +51,13 @@
     </style>
 </head>
 <body class="bg-slate-100 min-h-screen flex flex-col items-center font-sans">
-    <header class="w-full fixed top-0 z-50 px-4 py-3 bg-blue-600">
+    <header id="headerBoxId" class="w-full fixed top-0 z-50 px-4 py-3 bg-blue-600 hideBox">
         <div class="max-w-full mx-auto bg-gradient-to-r from-blue-600 to-blue-500
                 rounded-full px-6 py-3 flex items-center justify-between shadow-lg">
 
             <!-- LEFT: LOGO -->
             <div class="flex items-center gap-3">
-                <a href="/">
+                <a href="@(ViewData["Exam"] == "Hidden" ? "#" : "/")">
                     <img src="~/img/logo2.png" class="h-10 w-auto" alt="logo" />
                 </a>
             </div>
@@ -96,9 +100,14 @@
             <div class="flex items-center gap-4">
 
                 <!-- MOBILE BUTTON -->
-                <button id="menuBtn" class="md:hidden text-white text-2xl">
+                <button id="menuBtn" class="md:hidden @(ViewData["Exam"] == "Hidden" ? "hidden" : "") text-white text-2xl">
                     ☰
                 </button>
+
+                <div class="flex flex-col items-end">
+                    <span class="text-xs opacity-75 tracking-wider1 d-none">Thời gian còn lại</span>
+                    <span id="tracking-wider" class="text-xl font-bold tracking-wider tracking-wider1 d-none">00:00</span>
+                </div>
 
                 @if (!User.Identity.IsAuthenticated)
                 {
@@ -111,8 +120,7 @@
                 {
                     <!-- USER DROPDOWN -->
                     <div class="relative" id="userMenu">
-                        <button onclick="toggleUserMenu()"
-                                class="flex items-center gap-2 text-white">
+                        <button class="flex items-center gap-2 text-white @(ViewData["Exam"] == "Hidden" ? "" : "toggleUserMenu") ">
                             <img src="@User.FindFirst("Avatar")?.Value"
                                  class="w-8 h-8 rounded-full border border-white" />
 
@@ -142,7 +150,7 @@
                                 Thông tin cá nhân
                             </a>
 
-                            <a href="/doi-mat-khau" class="block px-4 py-2 hover:bg-gray-100">
+                            <a style="display:none" href="/doi-mat-khau" class="block px-4 py-2 hover:bg-gray-100">
                                 Đổi mật khẩu
                             </a>
 
@@ -180,7 +188,7 @@
         </svg>
     </button>
     <!-- Footer -->
-    <section class="w-full bg-blue-600 text-white">
+    <section id="footageBoxId" class="w-full bg-blue-600 text-white hideBox">
 
         <div class="max-w-7xl mx-auto px-4 py-6">
 
@@ -229,6 +237,11 @@
 
     </section>
     <script>
+        document.querySelector(".hideBox")?.addEventListener("click", function () {
+            toggleUserMenu();
+        });
+
+
         const notyf = new Notyf({
             duration: 5000,
             position: { x: 'right', y: 'top' },
@@ -329,6 +342,7 @@
 
             if (current) setActive(current);
         });
+
     </script>
 </body>
 </html>

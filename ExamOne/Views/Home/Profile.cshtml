@@ -9,7 +9,7 @@
         return Xsrf.GetAndStoreTokens(Context).RequestToken;
     }
 }
-<main class="max-w-4xl w-full mx-auto mt-10 mb-20 bg-white rounded-2xl shadow-lg p-8 text-center relative">
+<main class="max-w-4xl w-full mx-auto mt-10 mb-20 bg-white rounded-2xl shadow-lg p-8 text-center relative mt-[7rem]">
 
     <!-- Background -->
     <div class="z-[-1] fixed inset-0 bg-cover bg-center
@@ -59,7 +59,7 @@
         </div>
 
         <!-- CCCD -->
-        <div>
+        <div style="display:none">
             <label class="font-semibold">CCCD</label>
             <input asp-for="CCCD" type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg" />
         </div>
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Chi đoàn -->
-        <div>
+        <div style="display:none">
             <label class="font-semibold">Chi đoàn</label>
             <input asp-for="Location" type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"/>
         </div>
@@ -130,6 +130,12 @@
 </main>
 
 <script>
+    $(document).ready(function() {
+        document.getElementById('headerBoxId').classList.add('d-none');
+        document.getElementById('footageBoxId').classList.add('d-none');
+    });
+
+
     function previewAvatar(event) {
         const file = event.target.files[0];
         if (!file) return;
