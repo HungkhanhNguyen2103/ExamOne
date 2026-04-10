@@ -7,7 +7,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,154 +47,128 @@
     </style>
 </head>
 <body class="bg-slate-100 min-h-screen flex flex-col items-center font-sans">
+    <header class="w-full fixed top-0 z-50 px-4 py-3 bg-blue-600">
+        <div class="max-w-full mx-auto bg-gradient-to-r from-blue-600 to-blue-500
+                rounded-full px-6 py-3 flex items-center justify-between shadow-lg">
 
-    <!-- Header -->
-    <header class="w-full sticky top-0 z-50 bg-blue-600 text-white flex justify-between items-center px-6 py-4 shadow-md">
-        <!-- Logo + Name -->
-        <div class="flex items-center gap-2 @(ViewData["Exam"] == "Hidden" ? "" : "returnList")">
-            <button class="rounded-full">
-                <img src="~/img/logo2.png" alt="logo" style="height:50px"/>
-@*                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-                </svg> *@
-            </button>
-            <span class="text-lg font-semibold"></span>
-        </div>
-
-        <!-- Timer + User -->
-        <div class="flex items-center gap-6">
-            <!-- Timer -->
-            <div class="flex flex-col items-end">
-                <span class="text-xs opacity-75 tracking-wider1 d-none">Thời gian còn lại</span>
-                <span id="tracking-wider" class="text-xl font-bold tracking-wider tracking-wider1 d-none">00:00</span>
+            <!-- LEFT: LOGO -->
+            <div class="flex items-center gap-3">
+                <a href="/">
+                    <img src="~/img/logo2.png" class="h-10 w-auto" alt="logo" />
+                </a>
             </div>
-@*             <button class="bg-white text-blue-600 text-sm font-medium px-3 py-1 rounded-md hover:bg-blue-50 transition">
-                Hide Time
-            </button> *@
 
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <div class="flex items-center gap-3">
+            <!-- CENTER: MENU (DESKTOP) -->
+            <nav class="hidden md:flex items-center gap-10 text-white font-medium">
+
+                <a href="#home"
+                   data-target="home"
+                   class="menu-item relative group transition
+                        @(ViewContext.RouteData.Values["action"]?.ToString() == "Index"
+                           ? "text-white"
+                           : "opacity-80 hover:opacity-100")">
+
+                    Trang chủ
+
+                    <span class="underline absolute left-0 -bottom-1 h-[2px] bg-white transition-all duration-300
+                            @(ViewContext.RouteData.Values["action"]?.ToString() == "Index"
+                                      ? "w-full"
+                                      : "w-0 group-hover:w-full")">
+                    </span>
+                </a>
+
+                <a href="#theLeId" data-target="theLeId"
+                   class="menu-item relative group opacity-80 transition">
+                    Thể lệ
+                    <span class="underline absolute left-0 -bottom-1 h-[2px] bg-white w-0 transition-all duration-300"></span>
+                </a>
+
+                <a href="#rankingListId" data-target="rankingListId"
+                   class="menu-item relative group opacity-80 transition">
+                    Bảng xếp hạng
+                    <span class="underline absolute left-0 -bottom-1 h-[2px] bg-white w-0 transition-all duration-300"></span>
+                </a>
+
+
+            </nav>
+
+            <!-- RIGHT -->
+            <div class="flex items-center gap-4">
+
+                <!-- MOBILE BUTTON -->
+                <button id="menuBtn" class="md:hidden text-white text-2xl">
+                    ☰
+                </button>
+
+                @if (!User.Identity.IsAuthenticated)
+                {
                     <a href="tai-khoan/dang-nhap"
-                       class="bg-white text-blue-600 font-medium px-4 py-2 rounded-lg border border-blue-200
-                          hover:bg-blue-50 transition">
+                       class="text-white font-medium hover:underline">
                         Đăng nhập
                     </a>
-
-                    <a href="tai-khoan/dang-ki"
-                       class="bg-yellow-400 text-blue-900 font-semibold px-4 py-2 rounded-lg shadow
-                          hover:bg-yellow-300 transition">
-                        Đăng ký
-                    </a>
-                </div>
-            }
-            else
-            {
-
-                <!-- User Menu -->
-                @if (ViewData["Exam"] == "Hidden")
-                {
-                    <div class="relative" x-data="{ open: false }">
-                        <button class="flex items-center gap-2 px-3 py-2 rounded-lg transition">
-                            <img src="@User.FindFirst("Avatar")?.Value" class="w-8 h-8 rounded-full border border-blue-300" alt="avatar">
-                            <span class="font-medium">@User.FindFirst("FullName")?.Value</span>
-                        </button>
-                    </div>
                 }
                 else
                 {
-                    <div class="relative" x-data="{ open: false }">
-                        <button @@click="open = !open" class="flex items-center gap-2 hover:bg-blue-400 px-3 py-2 rounded-lg transition">
-                            <img src="@User.FindFirst("Avatar")?.Value" class="w-8 h-8 rounded-full border border-blue-300" alt="avatar">
-                            <span class="font-medium">@User.FindFirst("FullName")?.Value</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
+                    <!-- USER DROPDOWN -->
+                    <div class="relative" id="userMenu">
+                        <button onclick="toggleUserMenu()"
+                                class="flex items-center gap-2 text-white">
+                            <img src="@User.FindFirst("Avatar")?.Value"
+                                 class="w-8 h-8 rounded-full border border-white" />
+
+                            <span class="hidden sm:block font-medium">
+                                @User.FindFirst("FullName")?.Value
+                            </span>
                         </button>
 
-                        <!-- Dropdown -->
-                        <div x-show="open"
-                             @@click.away="open = false"
-                             x-transition
-                             style="width:200px"
-                             class="absolute right-0 mt-2 bg-white text-gray-700 rounded-lg shadow-md border border-gray-100 overflow-hidden z-50">
-                            <div class="px-4 py-3 border-b border-gray-100">
-                                <p class="text-sm font-medium">@User.FindFirst("FullName")?.Value</p>
+                        <!-- DROPDOWN -->
+                        <div id="userDropdown"
+                             class="hidden absolute right-0 mt-3 w-52 bg-white text-gray-700
+                                    rounded-xl shadow-lg overflow-hidden">
+
+                            <div class="px-4 py-3 border-b">
+                                <p class="font-medium">@User.FindFirst("FullName")?.Value</p>
                                 <p class="text-xs text-gray-500">@User.FindFirst("Email")?.Value</p>
                             </div>
+
                             @if (User.IsInRole("Admin"))
                             {
-                                <a href="/quan-ly"
-                                   class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="h-4 w-4 text-blue-500"
-                                         fill="none" viewBox="0 0 24 24"
-                                         stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M3 3h7v7H3V3zM14 3h7v4h-7V3zM14 11h7v10h-7V11zM3 11h7v10H3V11z" />
-                                    </svg>
-                                    <span class="text-blue-600 font-medium">Trang quản lý</span>
+                                <a href="/quan-ly" class="block px-4 py-2 hover:bg-gray-100">
+                                    Trang quản lý
                                 </a>
                             }
-                            <a href="/thong-tin-ca-nhan"
-                               class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4 text-blue-500"
-                                     fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.314 0-6 2.014-6 4.5V21h12v-2.5c0-2.486-2.686-4.5-6-4.5z" />
-                                </svg>
-                                <span class="text-blue-600 font-medium">Thông tin cá nhân</span>
-                            </a>
-                            <a href="/doi-mat-khau"
-                               class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4 text-blue-500"
-                                     fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor"
-                                     role="img" aria-label="Change password icon">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M7 11V8a5 5 0 0110 0v3" />
-                                    <rect x="4" y="11" width="16" height="10" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 15v-1a1 1 0 10-2 0v1a1 1 0 002 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M16.5 8.5l-6 6L9 18l3.5-.5 6-6L16.5 8.5z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M18.5 6.5l-1 1" />
-                                </svg>
 
-                                <span class="text-blue-600 font-medium">Đổi mật khẩu</span>
-                            </a>
-                            <a href="/bai-thi"
-                               class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                     class="h-4 w-4 text-blue-500"
-                                     fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M12 8c1.657 0 3 .895 3 2v1h-6v-1c0-1.105 1.343-2 3-2zM5 13h14v6H5v-6z" />
-                                </svg>
-                                <span class="text-blue-600 font-medium">Làm bài thi</span>
+                            <a href="/thong-tin-ca-nhan" class="block px-4 py-2 hover:bg-gray-100">
+                                Thông tin cá nhân
                             </a>
 
-                            <button onclick="logout()" class="w-full text-left px-4 py-2 hover:bg-gray-50 text-sm flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1m0-10V5m-6 7h.01" />
-                                </svg>
-                                <span class="text-red-500 font-medium">Đăng xuất</span>
+                            <a href="/doi-mat-khau" class="block px-4 py-2 hover:bg-gray-100">
+                                Đổi mật khẩu
+                            </a>
+
+                            <a href="/bai-thi" class="block px-4 py-2 hover:bg-gray-100">
+                                Làm bài thi
+                            </a>
+
+                            <button onclick="logout()"
+                                    class="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100">
+                                Đăng xuất
                             </button>
                         </div>
                     </div>
-
                 }
-
-            }
-
+            </div>
         </div>
-    </header>
-    
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu"
+             class="hidden md:hidden mt-3 mx-auto max-w-7xl bg-blue-600 text-white rounded-2xl shadow-lg p-4">
+
+            <a href="/" class="block py-2 border-b border-white/20">Trang chủ</a>
+            <a href="/the-le" class="block py-2 border-b border-white/20">Thể lệ</a>
+            <a href="/bang-xep-hang" class="block py-2">Bảng xếp hạng</a>
+        </div>
+    </header>    
     @RenderBody()
     <button id="scrollTopBtn"
             class="fixed bottom-20 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg
@@ -206,9 +180,54 @@
         </svg>
     </button>
     <!-- Footer -->
-    <footer class="fixed bottom-0 left-0 bg-blue-700 text-white text-center py-4 mt-12 w-full">
-        <p class="text-sm">© 2025 Hệ thống thi Thanh Niên Số</p>
-    </footer>
+    <section class="w-full bg-blue-600 text-white">
+
+        <div class="max-w-7xl mx-auto px-4 py-6">
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <!-- LEFT: BAN TỔ CHỨC -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-4 uppercase">
+                        Ban tổ chức
+                    </h3>
+
+                    <p class="font-semibold mb-2">
+                        ĐOÀN THANH NIÊN – HỘI LHTN – HỘI LHPN<br>
+                        PHƯỜNG HỒNG AN
+                    </p>
+
+                    <p class="text-sm mb-2">
+                        Địa chỉ: TDP Nam Hòa, phường Hồng An, TP. Hải Phòng
+                    </p>
+
+                    <p class="text-sm">
+                        Fanpage: Tuổi trẻ phường Hồng An
+                    </p>
+                </div>
+
+                <div class="flex justify-center md:justify-end">
+
+
+                    <!-- QR CODE -->
+                    <div class="bg-white p-2 rounded-lg shadow-md">
+                        <img src="/img/qr.jpg" alt="QR Code" class="w-60 h-60 object-contain" />
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="w-full bg-gradient-to-r from-blue-700 to-blue-600 py-4 text-center">
+            <p class="text-sm text-white">
+                Copyright © HKmychioca 2026. Designed and developed by HKmychioca
+            </p>
+        </footer>
+
+    </section>
     <script>
         const notyf = new Notyf({
             duration: 5000,
@@ -258,6 +277,57 @@
 
         $('.returnList').on('click', function(){
             window.location.href = '/';
+        });
+
+        // mobile menu
+        document.getElementById("menuBtn")?.addEventListener("click", function () {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        });
+
+        // user dropdown
+        function toggleUserMenu() {
+            document.getElementById("userDropdown").classList.toggle("hidden");
+        }
+
+        // click outside close
+        document.addEventListener("click", function (e) {
+            const menu = document.getElementById("userMenu");
+            if (menu && !menu.contains(e.target)) {
+                document.getElementById("userDropdown")?.classList.add("hidden");
+            }
+        });
+
+        const sections = document.querySelectorAll("section[id]");
+        const menuItems = document.querySelectorAll(".menu-item");
+
+        function setActive(id) {
+            menuItems.forEach(item => {
+                const underline = item.querySelector(".underline");
+
+                if (item.dataset.target === id) {
+                    item.classList.remove("opacity-80");
+                    underline.classList.add("w-full");
+                } else {
+                    item.classList.add("opacity-80");
+                    underline.classList.remove("w-full");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120; // offset header
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            if (current) setActive(current);
         });
     </script>
 </body>

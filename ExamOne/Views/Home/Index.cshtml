@@ -8,24 +8,51 @@
 
 }
 <main class="bg-slate-100 w-full">
-    <section class="w-full h-64 bg-cover bg-center flex items-center justify-center text-white"
+
+    <section id="home" class="w-full bg-blue-600 pt-10">
+
+        <div class="max-w-7xl mx-auto px-4 py-10">
+
+            <!-- BANNER CARD -->
+            <div class="relative rounded-[20px] overflow-hidden" style="height:400px">
+
+                <!-- BACKGROUND IMAGE -->
+                <img src="~/img/background.jpg"
+                     class="h-full absolute w-full" style="margin-top: 2rem;border-radius: 20px;" />
+
+
+            </div>
+
+        </div>
+
+        <!-- TITLE BAR -->
+        <div class="w-full bg-gradient-to-r from-blue-700 to-blue-600 py-6">
+            <div class="max-w-7xl mx-auto text-center px-4">
+                <h2 class="text-white text-lg md:text-3xl font-semibold tracking-widest uppercase">
+                    Cuộc thi trực tuyến “Tìm hiểu luật phòng chống ma túy”
+                </h2>
+            </div>
+        </div>
+
+    </section>
+@*     <section class="w-full h-64 bg-cover bg-center flex items-center justify-center text-white"
              style="background-image: url('/img/background.jpg');height:800px">
         <div class="bg-black/80 p-6 rounded-2xl text-center w-11/12 md:w-2/3">
             <h1 class="text-3xl md:text-4xl font-bold mb-2">Cuộc thi Trắc nghiệm Tìm hiểu luật phòng chống Ma Túy</h1>
             <p class="text-sm md:text-base opacity-90">Nâng cao hiểu biết, lan tỏa tri thức, thúc đẩy luật phòng chống Ma Túy tại phường Hồng An</p>
         </div>
-    </section>
+    </section> *@
 
     <!-- Giới thiệu -->
     <section class="py-12 max-w-7xl px-10 mx-auto bg-slate-100">
         <h2 class="text-2xl font-bold text-blue-700 mb-4">Giới thiệu về hệ thống</h2>
         <p class="text-gray-700 leading-relaxed">
-            Hệ thống thi trắc nghiệm trực tuyến dành cho Thanh Niên Số của phường Hồng An. Nền tảng giúp các bạn trẻ
-            tiếp cận cuộc thi một cách dễ dàng, nhanh chóng và chính xác. Mọi kết quả đều được lưu trữ và xếp hạng minh bạch,
-            hỗ trợ phường trong công tác tổng hợp và đánh giá.
+            Cuộc thi trắc nghiệm trực tuyến tìm hiểu pháp luật phòng, chống ma túy được xây dựng bởi Tuổi trẻ Hồng An, 
+            nhằm nâng cao nhận thức, 
+            bồi đắp hiểu biết và lan tỏa tri thức pháp luật trong cộng đồng.
         </p>
     </section>
-    <section class="relative py-10 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32
+    <section id="theLeId" class="scroll-mt-24 relative py-10 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32
                 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start"
              x-data="streamText()"
              x-init="start()">
@@ -33,18 +60,18 @@
         <!-- LEFT: TEXT -->
         <div class="flex flex-col">
             <h2 class="text-2xl font-bold text-blue-700">
-                <span class="text-blue-600">Lộ trình</span>
+                <span class="text-blue-600">Thể lệ cuộc thi</span>
             </h2>
 
             <!-- Wrapper text -->
-            <div class="mb-6 min-h-[6rem]">
+            <div class="mb-6 min-h-[22rem]">
                 <p class="leading-relaxed text-gray-700 whitespace-pre-line text-lg">
                     <span x-html="output"></span><span class="inline-block animate-blink">|</span>
                 </p>
             </div>
 
             <button onclick="window.location.href='/bai-thi'" class="mt-auto px-7 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition w-max">
-                Bắt đầu bài thi ngay
+                Tham gia thi ngay
             </button>
         </div>
 
@@ -81,16 +108,33 @@
     </style>
 
     <script>
+
+        // Cuộc thi trắc nghiệm trực tuyến tìm hiểu pháp luật phòng, chống ma túy do Tuổi trẻ Hồng An xây dựng, nhằm nâng cao nhận thức và lan tỏa tri thức pháp luật trong cộng đồng.
+
+        // Hình thức thi:
+        // Thí sinh tham gia thi trực tuyến trên hệ thống với các câu hỏi trắc nghiệm.
+
+        // Cách thức tham gia:
+        // Truy cập website, điền thông tin cá nhân và bắt đầu làm bài thi.
+
+        // Cách tính điểm:
+        // Dựa trên số câu trả lời đúng và thời gian hoàn thành bài thi.
+
+        // Quy định:
+        // Mỗi thí sinh có thể tham gia nhiều lần. Nghiêm cấm mọi hành vi gian lận trong quá trình thi.
         function streamText() {
             return {
-                part1: `<strong>Vòng 1: “Test”</strong>`,
-                part2: `<strong>Vòng 2: “1 QR – 1 Câu chuyện”</strong> Mỗi chi đoàn tạo một mã QR dẫn đến 1 sản phẩm số do mình làm. Khi chấm, ban giám khảo chỉ cần “quét QR” để khám phá.`,
+                part1: 'Cuộc thi trắc nghiệm trực tuyến tìm hiểu pháp luật phòng, chống ma túy do Tuổi trẻ Hồng An xây dựng, nhằm nâng cao nhận thức và lan tỏa tri thức pháp luật trong cộng đồng.\n',
+                part2: `<strong>Hình thức thi:</strong> Thí sinh tham gia thi trực tuyến trên hệ thống với các câu hỏi trắc nghiệm.\n`,
+                part3: `<strong>Cách thức tham gia:</strong> Truy cập website, điền thông tin cá nhân và bắt đầu làm bài thi.\n`,
+                part4: `<strong>Cách tính điểm:</strong> Dựa trên số câu trả lời đúng và thời gian hoàn thành bài thi.\n`,
+                part5: `<strong>Quy định:</strong> Mỗi thí sinh có thể tham gia nhiều lần. Nghiêm cấm mọi hành vi gian lận trong quá trình thi.`,
                 output: '',
                 index: 0,
                 fullText: '',
 
                 start() {
-                    this.fullText = this.part1 + this.part2;
+                    this.fullText = this.part1 + this.part2 + this.part3 + this.part4 + this.part5;
                     this.type();
                 },
 
@@ -98,14 +142,14 @@
                     if (this.index < this.fullText.length) {
                         this.output += this.fullText[this.index];
                         this.index++;
-                        setTimeout(() => this.type(), 50);
+                        setTimeout(() => this.type(), 25);
                     }
                 }
             }
         }
     </script>
     <!-- Top điểm nhân viên -->
-    <section class="py-16 bg-gradient-to-b from-white to-slate-100">
+    <section class="py-16 bg-gradient-to-b from-white to-slate-100 d-none">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Bảng Xếp Hạng Chi Đoàn</h2>
 
@@ -186,7 +230,7 @@
         </div>
     </section>
 
-    <section class="py-16 bg-gradient-to-b from-white to-slate-100 mb-10">
+    <section id="rankingListId" class="scroll-mt-24 py-16 bg-gradient-to-b from-white to-slate-100 mb-10">
         <div class="max-w-5xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Bảng Xếp Hạng Cá nhân</h2>
 
