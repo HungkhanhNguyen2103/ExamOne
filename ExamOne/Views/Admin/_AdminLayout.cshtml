@@ -135,7 +135,7 @@
                         <img src="@User.FindFirst("Avatar")?.Value" class="w-8 h-8 rounded-full border border-blue-300" alt="avatar" />
                         <div>
                             <div class="font-medium">@User.FindFirst("FullName")?.Value</div>
-                            <div class="text-xs">@User.FindFirst("Email")?.Value</div>
+                            @* <div class="text-xs">@User.Identity.Name</div> *@
                         </div>
                     </div>
                 </div>

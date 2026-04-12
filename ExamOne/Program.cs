@@ -2,6 +2,8 @@ using ExamOne;
 using ExamOne.Entity;
 using ExamOne.Helper;
 using ExamOne.Service;
+//using Microsoft.AspNetCore.Authentication.Cookies;
+//using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -45,17 +47,22 @@ builder.Services.AddSingleton<ExamOneMongoDBContext>();
 builder.Services.AddDbContext<ExamOneDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ExamOneDb")));
 
-var googleConfig = builder.Configuration.GetSection("GoogleSSO");
-builder.Services.AddAuthentication()
-.AddGoogle(options =>
-{
-    options.ClientId = googleConfig["ClientId"];
-    options.ClientSecret = googleConfig["ClientSecret"];
+//var googleConfig = builder.Configuration.GetSection("GoogleSSO");
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+//})
+//.AddCookie()
+//.AddGoogle(options =>
+//{
+//    options.ClientId = googleConfig["ClientId"];
+//    options.ClientSecret = googleConfig["ClientSecret"];
 
-    options.Scope.Add("profile");
-    options.Scope.Add("email");
-    // options.CallbackPath = "/auth/google/callback";
-});
+//    options.Scope.Add("profile");
+//    options.Scope.Add("email");
+//    // options.CallbackPath = "/auth/google/callback";
+//});
 
 builder.Services.AddIdentity<Account, IdentityRole>(options =>
 {

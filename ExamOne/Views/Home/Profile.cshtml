@@ -9,14 +9,14 @@
         return Xsrf.GetAndStoreTokens(Context).RequestToken;
     }
 }
-<main class="max-w-4xl w-full mx-auto mt-10 mb-20 bg-white rounded-2xl shadow-lg p-8 text-center relative mt-[7rem]">
+<main class="max-w-4xl w-[90%] mx-auto mt-10 mb-20 bg-white rounded-2xl shadow-lg p-8 text-center relative">
 
     <!-- Background -->
     <div class="z-[-1] fixed inset-0 bg-cover bg-center
         bg-[url('/img/background.jpg')]
         bg-black/40 bg-blend-darken">
     </div>
-
+    <h3 class="text-lg font-semibold text-center text-gray-600 mb-6">Thông tin cá nhân</h3>
     <!-- Fireworks -->
     @* <canvas id="fireworksCanvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-0"></canvas> *@
 
@@ -53,12 +53,12 @@
 
         <!-- User -->
         <div>
-            <label class="font-semibold">Tài khoản</label>
+            <label class="font-semibold">Số điện thoại</label>
             <input type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"
                    asp-for="UserName" />
         </div>
 
-        <!-- CCCD -->
+@*         <!-- CCCD -->
         <div style="display:none">
             <label class="font-semibold">CCCD</label>
             <input asp-for="CCCD" type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg" />
@@ -69,10 +69,10 @@
             <label class="font-semibold">Email</label>
             <input type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"
                    value="@User.FindFirst("Email")?.Value" />
-        </div>
+        </div> *@
 
         <!-- Chi đoàn -->
-        <div style="display:none">
+        <div>
             <label class="font-semibold">Chi đoàn</label>
             <input asp-for="Location" type="text" disabled class="w-full mt-1 px-4 py-2 bg-gray-100 border rounded-lg"/>
         </div>
@@ -90,10 +90,69 @@
         </div>
     </form>
 
-    <hr class="my-8">
+    <div class="flex items-center gap-3 my-4">
+        <div class="flex-1 h-px bg-gray-300"></div>
+        <span class="text-gray-500 text-sm">Kết quả bài trắc nghiệm (tốt nhất)</span>
+        <div class="flex-1 h-px bg-gray-300"></div>
+    </div>
+
+    <div class="mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div class="bg-green-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-500">Số câu đúng</p>
+                <p class="text-xl md:text-2xl font-bold text-green-600">@Model.TotalCorrectAnswer / @Model.TotalQuestions</p>
+            </div>
+
+            <div class="bg-blue-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-500">Thời gian</p>
+                <p class="text-xl md:text-2xl font-bold text-blue-600">@Model.DurationTime</p>
+            </div>
+
+            <div class="bg-yellow-50 p-4 rounded-xl">
+                <p class="text-sm text-gray-500">Thứ hạng</p>
+                <p class="text-xl md:text-2xl font-bold text-yellow-600">#@Model.Rank</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex items-center gap-3 my-4">
+        <div class="flex-1 h-px bg-gray-300"></div>
+        <span class="text-gray-500 text-sm">Lịch sử làm bài</span>
+        <div class="flex-1 h-px bg-gray-300"></div>
+    </div>
+
+    <div class="flex flex-col gap-4">
+        @foreach (var item in Model.ExamDisplays)
+        {
+            <!-- ITEM -->
+            <div class="flex justify-between items-center p-4 rounded-xl border bg-gray-50 hover:shadow-md transition">
+
+                <div>
+                    <p class="font-semibold text-gray-800">Lần thi #@(item.Index + 1)</p>
+                    <p class="text-sm text-gray-500">@item.CreateDate</p>
+                </div>
+
+                <div class="flex items-center gap-6 text-sm">
+                    <div class="text-center">
+                        <p class="text-gray-400">Đúng</p>
+                        <p class="font-bold text-green-600">@item.CorrectAnswer/@item.TotalAnswer</p>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="text-gray-400">Thời gian</p>
+                        <p class="font-bold text-blue-600">@item.Duration</p>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
 
     <!-- Kết quả bài thi -->
-    @if(Model.ExamStatus == ProfileStatus.Marked)
+@*     @if(Model.ExamStatus == ProfileStatus.Marked)
     {
         <h2 class="text-3xl font-bold text-green-600 mb-4">
             Chúc mừng bạn đã hoàn thành bài test!
@@ -118,14 +177,41 @@
     }
     else if(Model.ExamStatus == ProfileStatus.NotYet)
     {
-        <h2 class="text-3xl font-bold text-red-600 mb-4">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">
             Bạn đã sẵn sàng làm bài test chưa ?
         </h2>
 
         <button onclick="window.location.href='/bai-thi'" class="mt-auto px-7 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition w-max">
             Bắt đầu bài thi ngay
         </button>
+    } *@
+
+@*     <div class="flex items-center gap-3 my-4">
+        <div class="flex-1 h-px bg-gray-300"></div>
+        <span class="text-gray-500 text-sm">Xếp hạng</span>
+        <div class="flex-1 h-px bg-gray-300"></div>
+    </div> *@
+
+@*     <div class="">
+
+        <div class="flex items-center justify-between bg-gradient-to-r from-yellow-400 to-orange-400 text-white p-4 rounded-xl shadow">
+            <div>
+                <p class="text-sm">Thứ hạng của bạn</p>
+                <p class="text-2xl font-bold">#@Model.Rank</p>
+            </div>
+
+        </div>
+    </div> *@
+
+    @if (Model.ExamStatus == ProfileStatus.NotYet)
+    {
+        <div class="mt-4">
+            <button onclick="window.location.href='/bai-thi'" class="mt-auto mt-4 px-7 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition w-max">
+                Bắt đầu bài thi ngay
+            </button>
+        </div>
     }
+
 
 </main>
 
@@ -179,7 +265,7 @@
             Avatar: $('#AvatarBase64').val(),
             FullName: $('#fullName').val()
         };
-        console.log(formData);
+        //console.log(formData);
 
         submitAjax({
             url: "/tai-khoan/thong-tin-ca-nhan",

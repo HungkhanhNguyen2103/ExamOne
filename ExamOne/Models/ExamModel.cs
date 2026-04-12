@@ -11,4 +11,14 @@
         public List<ExamQuestionModel> Questions { get; set; } = new List<ExamQuestionModel>();
         public bool IsComplete { get; set; }
     }
+
+    public class ExamDisplayModel
+    {
+        public string ID { get; set; }
+        public int Index { get; set; }
+        public string CreateDate { get; set; }
+        public int CorrectAnswer { get; set; }
+        public int TotalAnswer { get; set; }
+        public string Duration { get; set; }
+    }
 }

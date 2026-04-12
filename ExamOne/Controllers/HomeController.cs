@@ -90,10 +90,10 @@ namespace ExamOne.Controllers
             //var examDataResult = Request.Cookies[_aes.ExamDataKey];
             var examDataResult = await _examService.GetExamData(key);
             var examData = examDataResult.IsSuccess ? examDataResult.Data : string.Empty;
-            if (string.IsNullOrEmpty(examData))
-            {
-                return Redirect("/tai-khoan/truy-cap");
-            }
+            //if (string.IsNullOrEmpty(examData))
+            //{
+            //    return Redirect("/tai-khoan/truy-cap");
+            //}
             return View();
         }
 

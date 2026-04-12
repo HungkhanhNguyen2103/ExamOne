@@ -4,18 +4,16 @@ namespace ExamOne.Models
 {
     public class AccountModel
     {
-        [Display(Name = "Tên đăng nhập")]
+        [Display(Name = "Số điện thoại")]
         public string? Username { get; set; }
         [Display(Name = "Mật khẩu")]
         public string? Password { get; set; }
         [Display(Name = "Mật khẩu xác nhận")]
         public string? PasswordConfirm { get; set; }
-        [Display(Name = "Email")]
-        public string? Email { get; set; }
+        public string? Email { get; set; } = "default@gmail.com";
         [Display(Name = "Họ tên")]
         public string? FullName { get; set; }
-        [Display(Name = "Căn cước")]
-        public string? CCCD { get; set; }
+        public string? CCCD { get; set; } = "12345678910";
         [Display(Name = "Tỉnh/thành phố")]
         public string? ProvinceCode { get; set; } = "31"; // thanh pho Hai Phong
         [Display(Name = "Xã/phường")]

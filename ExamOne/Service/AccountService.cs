@@ -118,19 +118,19 @@ namespace ExamOne.Service
                 return responder;
             }
 
-            userValidate = await _userManager.FindByEmailAsync(model.Email);
-            if (userValidate != null)
-            {
-                responder.Message = "Email đã được sử dụng";
-                return responder;
-            }
+            //userValidate = await _userManager.FindByEmailAsync(model.Email);
+            //if (userValidate != null)
+            //{
+            //    responder.Message = "Email đã được sử dụng";
+            //    return responder;
+            //}
 
-            userValidate = await _userManager.Users.FirstOrDefaultAsync(c => c.CCCD == model.CCCD);
-            if (userValidate != null)
-            {
-                responder.Message = "CCCD đã được sử dụng";
-                return responder;
-            }
+            //userValidate = await _userManager.Users.FirstOrDefaultAsync(c => c.CCCD == model.CCCD);
+            //if (userValidate != null)
+            //{
+            //    responder.Message = "CCCD đã được sử dụng";
+            //    return responder;
+            //}
 
             var user = new Account
             {
@@ -152,7 +152,7 @@ namespace ExamOne.Service
                 var claims = new List<Claim>
                 {
                     new Claim("FullName", user.FullName),
-                    new Claim("Email", user.Email),
+                    new Claim("Email", user.UserName),
                     new Claim("BranchCode", user.BranchCode),
                     new Claim("Avatar", $"{user.Avatar}?v={random}")
 

@@ -202,14 +202,15 @@ namespace ExamOne.Service
                 return result;
             }
 
-            var resultExam = await _examOneMongoDBContext.ExamHistories.Find(c => c.ExamId == data.Id && c.CreatedBy == createBy).FirstOrDefaultAsync();
+            var resultExam = await _examOneMongoDBContext.ExamHistories.Find(c => c.ExamId == data.Id && c.CreatedBy == createBy).ToListAsync();
+            int limitExam = 3;
 
             result.Data = new ExamModel
             {
                 DurationMinutes = data.DurationMinutes,
                 Instructions = data.Instructions,
                 TotalQuestions = data.TotalQuestions,
-                IsComplete = resultExam != null ? true : false,
+                IsComplete = resultExam.Count >= limitExam ? true : false,
                 ExamId = data.Id
             };
             result.IsSuccess = true;

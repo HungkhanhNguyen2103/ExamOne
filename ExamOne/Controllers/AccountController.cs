@@ -33,39 +33,39 @@ namespace ExamOne.Controllers
             return Json(result);
         }
 
-        [Route("dang-nhap-google")]
-        //[ValidateAntiForgeryToken]
-        [HttpGet]
-        public IActionResult LoginGoogle()
-        {
-            var redirectUrl = Url.Action("GoogleResponse", "Account");
-            var properties = _accountService.GetGoogleLoginUrlAsync(redirectUrl);
-            return Challenge(properties, "Google");
-        }
+        //[Route("dang-nhap-google")]
+        ////[ValidateAntiForgeryToken]
+        //[HttpGet]
+        //public IActionResult LoginGoogle()
+        //{
+        //    var redirectUrl = Url.Action("GoogleResponse", "Account");
+        //    var properties = _accountService.GetGoogleLoginUrlAsync(redirectUrl);
+        //    return Challenge(properties, "Google");
+        //}
 
-        [Route("dang-nhap-google-tra-ve")]
-        public async Task<IActionResult> GoogleResponse()
-        {
-            var result = await _accountService.HandleGoogleLoginAsync();
+        //[Route("dang-nhap-google-tra-ve")]
+        //public async Task<IActionResult> GoogleResponse()
+        //{
+        //    var result = await _accountService.HandleGoogleLoginAsync();
 
-            if (!result.IsSuccess)
-            {
-                return Content("<script>window.close();</script>", "text/html");
-            }
+        //    if (!result.IsSuccess)
+        //    {
+        //        return Content("<script>window.close();</script>", "text/html");
+        //    }
 
-            return Content(@"
-                    <script>
-                        window.opener.location.reload();
-                        window.close();
-                    </script>
-                ", "text/html");
+        //    return Content(@"
+        //            <script>
+        //                window.opener.location.reload();
+        //                window.close();
+        //            </script>
+        //        ", "text/html");
 
-            //if (!result.IsSuccess)
-            //{
-            //    return RedirectToAction("Login");
-            //}
-            //return RedirectToAction("Index", "Home");
-        }
+        //    //if (!result.IsSuccess)
+        //    //{
+        //    //    return RedirectToAction("Login");
+        //    //}
+        //    //return RedirectToAction("Index", "Home");
+        //}
 
         [CustomAuthorize]
         [ValidateAntiForgeryToken]

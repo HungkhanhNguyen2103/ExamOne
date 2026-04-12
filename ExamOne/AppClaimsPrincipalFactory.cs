@@ -25,10 +25,10 @@ namespace ExamOne
                 identity.AddClaim(new Claim("FullName", user.FullName));
             }
 
-            if (!string.IsNullOrEmpty(user.Email))
-            {
-                identity.AddClaim(new Claim("Email", user.Email));
-            }
+            //if (!string.IsNullOrEmpty(user.Email))
+            //{
+            //    identity.AddClaim(new Claim("Email", user.UserName));
+            //}
 
             if (!string.IsNullOrEmpty(user.BranchCode))
             {

@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Bài thi";
+    ViewData["ExamStart"] = "Hidden";
     var isSuccess = ViewBag.IsSuccess;
 }
 @model ResponderData<ExamModel>
@@ -10,86 +11,109 @@
         return Xsrf.GetAndStoreTokens(Context).RequestToken;
     }
 }
-<main class="max-w-6xl w-full mt-8 bg-white rounded-2xl shadow-lg p-8 mt-[7rem]">
-    <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('/img/background.jpg')]
+<style>
+    p{
+        text-align: justify !important;
+        text-justify: inter-word !important;
+    }
+
+    span {
+        font-size: 16px;
+    }
+</style>
+<div class="min-h-screen max-w-10xl flex items-center justify-center">
+
+    <div class="max-w-full w-[90%] mt-8 bg-white rounded-2xl shadow-lg p-8 mt-[7rem] mx-4">
+        <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('/img/background.jpg')]
             bg-black/40 bg-blend-darken">
-    </div>
-    <div style="max-height: 23rem;overflow: auto;" class="mb-4">
-        @Html.Raw(@Model.Data?.Instructions.Replace("$${minute}",Model.Data.DurationMinutes.ToString()))
-    </div>
-    <hr />
-    @if (!Model.Data.IsComplete)
-    {
-        <div x-data="{ open: false }" style="justify-content:center" class="flex items-start mt-4">
-            <button @@click="open = true" type="button" class="mr-2 gap-2 bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
-                Bắt đầu
-            </button>
-            <button type="button" onclick="window.location.href='/'" class="ml-2 gap-2 bg-gray-600 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
-                Trở về
-            </button>
-            <div x-show="open"
-                 x-cloak
-                 @@keydown.escape.window="open = false">
-
+        </div>
+        <div style="max-height: 23rem;overflow: auto;" class="mb-4">
+            <p class="paragraph-justify">
+                @Html.Raw(@Model.Data?.Instructions.Replace("$${minute}", Model.Data.DurationMinutes.ToString()))
+            </p>
+        </div>
+        <hr />
+        @if (!Model.Data.IsComplete)
+        {
+            <div x-data="{ open: false }" style="justify-content:center" class="flex items-start mt-4">
+                <button @@click="open = true" type="button" class="mr-2 gap-2 bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+                    Bắt đầu
+                </button>
+                <button type="button" onclick="window.location.href='/'" class="ml-2 gap-2 bg-gray-600 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+                    Trở về
+                </button>
                 <div x-show="open"
-                     x-transition.opacity
-                     class="fixed inset-0 bg-black/50 z-40"
-                     @@click="open = false"></div>
+                     x-cloak
+                     @@keydown.escape.window="open = false">
 
-                <div x-show="open"
-                     x-transition
-                     class="fixed inset-0 z-50 flex items-center justify-center">
+                    <div x-show="open"
+                         x-transition.opacity
+                         class="fixed inset-0 bg-black/50 z-40"
+                         @@click="open = false"></div>
 
-                    <div class="bg-white w-11/12 max-w-lg rounded-2xl shadow-lg p-5 relative">
+                    <div x-show="open"
+                         x-transition
+                         class="fixed inset-0 z-50 flex items-center justify-center">
 
-                        <!-- NÚT ĐÓNG -->
-                        <button type="button" @@click="open = false"
-                                class="absolute top-10 right-10 text-gray-400 hover:text-gray-600">
-                            ✕
-                        </button>
+                        <div class="bg-white w-11/12 max-w-lg rounded-2xl shadow-lg p-5 relative">
 
-                        <!-- HEADER ĐÓNG KHUNG -->
-                        <div class="mb-4 p-4 bg-gray-100 border border-gray-300 rounded-xl">
-                            <h2 class="text-xl font-semibold text-gray-800">
-                                Bài thi trắc nghiệm
-                            </h2>
-                        </div>
-
-                        <!-- NỘI DUNG -->
-                        <div class="mb-6">
-                            <b>Bạn có chắc rằng mình đã đọc xong toàn bộ hướng dẫn chưa?</b>
-                            <p>Bạn sẽ không thể xem lại chúng sau khi bài trắc nghiệm bắt đầu.</p>
-                        </div>
-
-                        <hr />
-
-                        <!-- BUTTON -->
-                        <div class="flex justify-end mt-4">
-                            <button type="button" onclick="start()"
-                                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md transition">
-                                Bắt đầu
-                            </button>
-
+                            <!-- NÚT ĐÓNG -->
                             <button type="button" @@click="open = false"
-                                    class="ml-4 flex items-center gap-2 bg-gray-600 hover:bg-gray-600 text-white px-6 py-2 rounded-lg shadow-md transition">
-                                Trở về
+                                    class="absolute top-10 right-10 text-gray-400 hover:text-gray-600">
+                                ✕
                             </button>
+
+                            <!-- HEADER ĐÓNG KHUNG -->
+                            <div class="mb-4 p-4 bg-gray-100 border border-gray-300 rounded-xl">
+                                <h2 class="text-xl font-semibold text-gray-800">
+                                    Bài thi trắc nghiệm
+                                </h2>
+                            </div>
+
+                            <!-- NỘI DUNG -->
+                            <div class="mb-6">
+                                <b>Bạn có chắc rằng mình đã đọc xong toàn bộ hướng dẫn chưa?</b>
+                                <p>Bạn sẽ không thể xem lại chúng sau khi bài trắc nghiệm bắt đầu.</p>
+                            </div>
+
+                            <hr />
+
+                            <!-- BUTTON -->
+                            <div class="flex justify-end mt-4">
+                                <button type="button" onclick="start()"
+                                        class="flex items-center gap-2 bg-blue-600 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md transition">
+                                    Bắt đầu
+                                </button>
+
+                                <button type="button" @@click="open = false"
+                                        class="ml-4 flex items-center gap-2 bg-gray-600 hover:bg-gray-600 text-white px-6 py-2 rounded-lg shadow-md transition">
+                                    Trở về
+                                </button>
+                            </div>
+
                         </div>
-
                     </div>
+
                 </div>
-
             </div>
-        </div>
-    }
+        }
 
-    else
-    {
-        <div class="flex items-start mt-4 justify-center">
-            <span>Bạn đã hoàn thành xong bài trắc nghiệm</span>
-        </div>
-    }
-</main>
+        else
+        {
+            <div class="flex items-start mt-4 justify-center">
+                <span>Bạn đã hoàn thành hết lượt bài trắc nghiệm</span>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" onclick="window.location.href='/'" class="mt-4 gap-2 bg-gray-600 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+                    Trở về
+                </button>
+            </div>
+        }
+    </div>
+
+
+</div>
+
 <script>
     $(document).ready(function() {
         if('@isSuccess' != 'True'){

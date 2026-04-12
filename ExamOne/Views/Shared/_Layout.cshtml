@@ -26,6 +26,13 @@
     <script src="~/js/event.js" asp-append-version="true"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
+        .d-none{
+            display:none;
+        }
+
+        .text-font-size span {
+            font-size:16px;
+        }
 
         .tracking-wider1{
             color:white;
@@ -37,6 +44,11 @@
 
         .d-none{
             display:none;
+        }
+        
+        .paragraph-justify{
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         #scrollTopBtn {
@@ -74,10 +86,7 @@
 
                     Trang chủ
 
-                    <span class="underline absolute left-0 -bottom-1 h-[2px] bg-white transition-all duration-300
-                            @(ViewContext.RouteData.Values["action"]?.ToString() == "Index"
-                                      ? "w-full"
-                                      : "w-0 group-hover:w-full")">
+                    <span class="underline absolute left-0 -bottom-1 h-[2px] bg-white w-full transition-all duration-300">
                     </span>
                 </a>
 
@@ -100,7 +109,7 @@
             <div class="flex items-center gap-4">
 
                 <!-- MOBILE BUTTON -->
-                <button id="menuBtn" class="md:hidden @(ViewData["Exam"] == "Hidden" ? "hidden" : "") text-white text-2xl">
+                <button id="menuBtn" class="md:hidden @(ViewData["Exam"] == "Hidden" || ViewData["ExamStart"] == "Hidden" ? "hidden" : "") text-white text-2xl">
                     ☰
                 </button>
 
@@ -136,7 +145,7 @@
 
                             <div class="px-4 py-3 border-b">
                                 <p class="font-medium">@User.FindFirst("FullName")?.Value</p>
-                                <p class="text-xs text-gray-500">@User.FindFirst("Email")?.Value</p>
+                                @* <p class="text-xs text-gray-500">@User.FindFirst("Email")?.Value</p> *@
                             </div>
 
                             @if (User.IsInRole("Admin"))
@@ -150,7 +159,7 @@
                                 Thông tin cá nhân
                             </a>
 
-                            <a style="display:none" href="/doi-mat-khau" class="block px-4 py-2 hover:bg-gray-100">
+                            <a href="/doi-mat-khau" class="block px-4 py-2 hover:bg-gray-100">
                                 Đổi mật khẩu
                             </a>
 
@@ -170,11 +179,11 @@
 
         <!-- MOBILE MENU -->
         <div id="mobileMenu"
-             class="hidden md:hidden mt-3 mx-auto max-w-7xl bg-blue-600 text-white rounded-2xl shadow-lg p-4">
+             class="hidden @(ViewData["Exam"] == "Hidden" ? "d-none" : "") md:hidden mt-3 mx-auto max-w-7xl bg-blue-600 text-white rounded-2xl shadow-lg p-4">
 
-            <a href="/" class="block py-2 border-b border-white/20">Trang chủ</a>
-            <a href="/the-le" class="block py-2 border-b border-white/20">Thể lệ</a>
-            <a href="/bang-xep-hang" class="block py-2">Bảng xếp hạng</a>
+            <a href="#home" data-target="home" class="block py-2 border-b border-white/20">Trang chủ</a>
+            <a href="#theLeId" data-target="theLeId" class="block py-2 border-b border-white/20">Thể lệ</a>
+            <a href="#rankingListId" data-target="rankingListId" class="block py-2">Bảng xếp hạng</a>
         </div>
     </header>    
     @RenderBody()
@@ -237,7 +246,7 @@
 
     </section>
     <script>
-        document.querySelector(".hideBox")?.addEventListener("click", function () {
+        document.querySelector(".toggleUserMenu")?.addEventListener("click", function () {
             toggleUserMenu();
         });
 
@@ -319,6 +328,7 @@
                 const underline = item.querySelector(".underline");
 
                 if (item.dataset.target === id) {
+                    console.log(id);
                     item.classList.remove("opacity-80");
                     underline.classList.add("w-full");
                 } else {
