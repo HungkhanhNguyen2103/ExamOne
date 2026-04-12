@@ -24,7 +24,7 @@ services:
     volumes:
       - /root/docker/volumes/examone/content_root_path/wwwroot:/app/wwwroot
       - /root/docker/volumes/examone/resource:/app/Resource
-      - /root/docker/volumes/examone/logs:/app/Logs
+      - /root/docker/volumes/examone/logs:/app/logs
     restart: always
     environment:
       ASPNETCORE_ENVIRONMENT: "Production"
@@ -55,13 +55,13 @@ services:
 #     MEILI_MASTER_KEY: "d0552b41536279a0ad88bd595327b96f01176a60c2243e906c52ac02375f9bc1"
 #   restart: always
 #
-  # redis:
-    # image: redis
-    # container_name: redis_server
-    # ports:
-      # - "6379:6379"
-    # restart: always
-    # command: redis-server --requirepass KNoSyl4rp61kACZ1
+   redis:
+     image: redis
+     container_name: redis_server
+     ports:
+       - "6379:6379"
+     restart: always
+     command: redis-server --requirepass KNoSyl4rp61kACZ1
   
 networks:
   default:
