@@ -238,7 +238,7 @@
             <div data-aos="fade-right" class="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
 
                 <!-- TOP 2 -->
-                <div class="bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-gray-300 transform md:translate-y-6 hover:scale-105 transition">
+                <div class="order-2 md:order-1 bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-gray-300 transform md:translate-y-6 hover:scale-105 transition">
                     <img src="@(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].Avatar : "/img/user.jpg")" class="w-14 h-14 mx-auto mb-3" />
                     <h3 class="font-bold text-gray-700 text-lg">#2 - @(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].Name : "No data")</h3>
                     <p class="text-gray-600">Điểm: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 2 ? top10RankingPersons[1].CorrectAnswer : "No data")</span></p>
@@ -246,7 +246,7 @@
                 </div>
 
                 <!-- TOP 1 -->
-                <div class="bg-white w-72 text-center rounded-2xl shadow-xl p-8 border-t-8 border-yellow-400 transform hover:scale-110 transition">
+                <div class="order-1 md:order-2 bg-white w-72 text-center rounded-2xl shadow-xl p-8 border-t-8 border-yellow-400 transform hover:scale-110 transition">
                     <img src="@(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].Avatar : "/img/user.jpg")" class="w-16 h-16 mx-auto mb-3" />
                     <h3 class="font-bold text-yellow-700 text-xl">#1 - @(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].Name : "No data")</h3>
                     <p class="text-gray-700 text-lg">Điểm: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 1 ? top10RankingPersons[0].CorrectAnswer : "No data")</span></p>
@@ -254,7 +254,7 @@
                 </div>
 
                 <!-- TOP 3 -->
-                <div class="bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-orange-300 transform md:translate-y-6 hover:scale-105 transition">
+                <div class="order-3 md:order-3 bg-white w-60 text-center rounded-2xl shadow-lg p-6 border-t-4 border-orange-300 transform md:translate-y-6 hover:scale-105 transition">
                     <img src="@(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].Avatar : "/img/user.jpg")" class="w-14 h-14 mx-auto mb-3" />
                     <h3 class="font-bold text-orange-700 text-lg">#3 - @(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].Name : "No data")</h3>
                     <p class="text-gray-600">Điểm: <span class="font-semibold text-green-600">@(top10RankingPersons.Count >= 3 ? top10RankingPersons[2].CorrectAnswer : "No data")</span></p>

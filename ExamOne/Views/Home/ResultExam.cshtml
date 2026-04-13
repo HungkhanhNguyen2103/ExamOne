@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Kết quả";
     ViewData["Exam"] = "Hidden";
+    string isEstimate2 = ViewBag.IsEstimate2;
 }
 @model ResultExamModel
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
@@ -143,7 +144,7 @@
     $(document).ready(() => {
         document.getElementById('footageBoxId').classList.add('d-none');
         isEstimated = window.sessionStorage.getItem('isEstimated');
-        if(isEstimated === 'False'){
+        if(isEstimated === 'False' && '@isEstimate2' == 'False'){
             $('#estimatedParticipantsBox').removeClass('d-none');
         }
         $('.menu-item').addClass('d-none');
@@ -152,7 +153,7 @@
 
     function finishExam(){
         let estimateValue = 0;
-        if(isEstimated === 'False'){
+        if(isEstimated === 'False' && '@isEstimate2' == 'False'){
             let estimate = document.getElementById('estimatedParticipants');
             if(estimate.value == null || Number(estimate.value) <= 0){
                 notyf.error('Vui lòng nhập giá trị hợp lệ !');

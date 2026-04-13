@@ -4,6 +4,7 @@ namespace ExamOne.Helper
 {
     public class Constant
     {
+        public static int RetryCount = 3;
         public static DateTime GetDateTimeVN()
         {
             var timezone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");

@@ -42,10 +42,10 @@ namespace ExamOne.Service
                     _logger.LogError(ex, "Error in MyRedisService");
                 }
 
-                _logger.LogInformation("Waiting 2 minutes before next run...");
+                _logger.LogInformation("Waiting 1 minutes before next run...");
                 try
                 {
-                    await Task.Delay(TimeSpan.FromMinutes(2), stoppingToken);
+                    await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
                 }
                 catch (TaskCanceledException)
                 {
@@ -68,7 +68,7 @@ namespace ExamOne.Service
                 {
                     var redisResult = await _db.StringGetAsync($"exam:{item.Id}");
                     var redisResult2 = await _db.StringGetAsync($"time:{item.Id}");
-                    var redisResult3 = await _db.StringGetAsync($"estimate:{item.Id}");
+                    var redisResult3 = await _db.StringGetAsync($"estimate:{item.CreatedBy}");
                     if (!string.IsNullOrEmpty(redisResult3))
                     {
                         var exists = await _examOneMongoDBContext.Estimates

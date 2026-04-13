@@ -59,7 +59,7 @@ namespace ExamOne.Service
             data.EstimateCount = estimate != null ? estimate.EstimateCount : 0;
 
             var examResultList = await _examOneMongoDBContext.ExamHistories.Find(c => c.CreatedBy == username).SortBy(x => x.StartDate).ToListAsync();
-            if(examResultList.Count >= 3) data.ExamStatus = ProfileStatus.Marked;
+            if(examResultList.Count >= Constant.RetryCount) data.ExamStatus = ProfileStatus.Marked;
             data.ExamDisplays = examResultList.Select((c,ind) => new ExamDisplayModel
             {
                 ID = c.Id,
@@ -86,28 +86,25 @@ namespace ExamOne.Service
                 var questions = JsonSerializer.Deserialize<List<QuestionBank>>(examResult.Items ?? "[]") ?? new List<QuestionBank>();
                 data.TotalQuestions = questions.Count;
 
-                if (data.ExamStatus == ProfileStatus.Marked)
-                {
-                    var bestPerUser = await _examOneMongoDBContext.ExamHistories.Aggregate()
-                        .Match(x => x.ExamId == examResult.ExamId)
-                        .SortByDescending(x => x.TotalCorrectAnswers)
-                        .ThenBy(x => x.ComplatedDuration)
-                        .Group(x => x.CreatedBy, g => new
-                        {
-                            UserId = g.Key,
-                            Best = g.First()
-                        })
-                        .Project(x => x.Best)
-                        .ToListAsync();
+                var bestPerUser = await _examOneMongoDBContext.ExamHistories.Aggregate()
+                    .Match(x => x.ExamId == examResult.ExamId)
+                    .SortByDescending(x => x.TotalCorrectAnswers)
+                    .ThenBy(x => x.ComplatedDuration)
+                    .Group(x => x.CreatedBy, g => new
+                    {
+                        UserId = g.Key,
+                        Best = g.First()
+                    })
+                    .Project(x => x.Best)
+                    .ToListAsync();
 
-                    var betterCount = bestPerUser.Count(x =>
-                        x.TotalCorrectAnswers > examResult.TotalCorrectAnswers ||
-                        (x.TotalCorrectAnswers == examResult.TotalCorrectAnswers &&
-                         x.ComplatedDuration < examResult.ComplatedDuration)
-                    );
+                var betterCount = bestPerUser.Count(x =>
+                    x.TotalCorrectAnswers > examResult.TotalCorrectAnswers ||
+                    (x.TotalCorrectAnswers == examResult.TotalCorrectAnswers &&
+                     x.ComplatedDuration < examResult.ComplatedDuration)
+                );
 
-                    data.Rank = betterCount + 1;
-                }
+                data.Rank = betterCount + 1;
             }
 
             result.Data = data;   

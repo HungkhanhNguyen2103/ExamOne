@@ -73,6 +73,7 @@ namespace ExamOne.Service
                 result.Message = "Lưu kết quả thi không thành công";
                 return result;
             }
+
             //var answers = JsonSerializer.Deserialize<List<AnswerModel>>(model.ExamAnswer ?? "[]") ?? new List<AnswerModel>();
 
             //caculate score
@@ -203,7 +204,7 @@ namespace ExamOne.Service
             }
 
             var resultExam = await _examOneMongoDBContext.ExamHistories.Find(c => c.ExamId == data.Id && c.CreatedBy == createBy).ToListAsync();
-            int limitExam = 3;
+            int limitExam = Constant.RetryCount;
 
             var exists = await _examOneMongoDBContext.Estimates
                         .Find(x => x.CreatedBy == createBy)

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.IdentityModel.Tokens;
+using MongoDB.Bson.Serialization.Serializers;
+
 
 //using Newtonsoft.Json;
 using System.Diagnostics;
@@ -126,7 +128,8 @@ namespace ExamOne.Controllers
                 result.IsSuccess = true;
                 return Json(result);
             }
-            var key = $"estimate:{model.sId}";
+            var createBy = User.Identity?.Name;
+            var key = $"estimate:{createBy}";
             var resultData = await _examService.SetExamData(key, model.estimateValue.ToString());
             return Json(resultData);
         }
@@ -148,6 +151,15 @@ namespace ExamOne.Controllers
             {
                 return Redirect("/tai-khoan/truy-cap");
             }
+            var createBy = User.Identity?.Name;
+            var key3 = $"estimate:{createBy}";
+            var resultRedis3 = await _examService.GetExamData(key3);
+            if (resultRedis3.IsSuccess && !string.IsNullOrEmpty(resultRedis3.Data))
+            {
+                ViewBag.IsEstimate2 = resultRedis3.Data;
+            }
+            else ViewBag.IsEstimate2 = "False";
+
             var result = new ResponderData<ExamModel>();
             result.IsSuccess = true;
             result.Data = JsonSerializer.Deserialize<ExamModel>(examData) ?? new ExamModel();
