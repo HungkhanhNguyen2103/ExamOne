@@ -24,14 +24,14 @@
     }
 </style>
 <!-- Main Question Section -->
-<main id="mainContent" style="height: 64vh;" class="max-w-6xl w-[96%] mx-4 bg-white rounded-2xl shadow-lg mt-[8rem] flex flex-col lg:flex-row">
+<main id="mainContent" class="h-full md:h-[64vh] max-w-6xl w-[96%] mx-4 bg-white rounded-2xl shadow-lg mt-[8rem] flex flex-col lg:flex-row">
 
     <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('/img/background.jpg')]
             bg-black/40 bg-blend-darken">
     </div>
 
     <!-- Left Side: Question -->
-    <section class="flex-1 p-8 border-b lg:border-b-0 lg:border-r border-gray-200">
+    <section class="flex-1 h-[35%] md:h-full p-8 border-b lg:border-b-0 lg:border-r border-gray-200">
         <h2 class="text-lg font-semibold text-gray-700 flex items-center gap-1">
             Câu <span id="questionIndex" class="text-blue-600"></span>
             trên <span class="text-gray-600">@questionCount</span>
@@ -51,7 +51,7 @@
     </section>
 
     <!-- Right Side: Options -->
-    <section class="w-full lg:w-2/3 p-8 flex flex-col gap-4" style="overflow:auto">
+    <section class="w-full h-[65%] md:h-full lg:w-2/3 p-8 flex flex-col gap-4" style="overflow:auto">
         <form class="flex flex-col gap-3" id="optionContent" style="overflow-y:auto">
 @*             <label class="flex items-center gap-3 p-3 border rounded-lg hover:bg-blue-50 cursor-pointer">
                 <input type="radio" name="answer" class="accent-blue-600 w-4 h-4">
