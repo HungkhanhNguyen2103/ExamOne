@@ -1,8 +1,10 @@
-using ExamOne.Models;
+﻿using ExamOne.Models;
 using ExamOne.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.IdentityModel.Tokens;
+
 //using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Security.Cryptography;
@@ -90,10 +92,10 @@ namespace ExamOne.Controllers
             //var examDataResult = Request.Cookies[_aes.ExamDataKey];
             var examDataResult = await _examService.GetExamData(key);
             var examData = examDataResult.IsSuccess ? examDataResult.Data : string.Empty;
-            //if (string.IsNullOrEmpty(examData))
-            //{
-            //    return Redirect("/tai-khoan/truy-cap");
-            //}
+            if (string.IsNullOrEmpty(examData))
+            {
+                return Redirect("/tai-khoan/truy-cap");
+            }
             return View();
         }
 
@@ -110,16 +112,30 @@ namespace ExamOne.Controllers
         [Route("bai-thi/ket-thuc")]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public IActionResult DoneExam()
+        public async Task<IActionResult> DoneExam(DoneExamRequest model)
         {
             var result = new ResponderData<string>();
-            result.IsSuccess = true;
-            return Json(result);
+            if(string.IsNullOrEmpty(model.sId) || model.estimateValue < 0)
+            {
+                result.Message = "Dữ liệu dự đoán không hợp lệ";
+                return Json(result);
+            }
+
+            if(model.estimateValue == 0)
+            {
+                result.IsSuccess = true;
+                return Json(result);
+            }
+            var key = $"estimate:{model.sId}";
+            var resultData = await _examService.SetExamData(key, model.estimateValue.ToString());
+            return Json(resultData);
         }
 
         [Route("bai-thi/ket-qua")]
         public async Task<IActionResult> ResultExam(string sId)
         {
+            ViewBag.SId = sId;
+            //return View(new ResultExamModel());
             var key = $"questions:{sId}";
             var examDataResult = await _examService.GetExamData(key);
             var examData = examDataResult.IsSuccess ? examDataResult.Data : string.Empty;

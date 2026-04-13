@@ -2,6 +2,7 @@
     ViewData["Title"] = "Bài thi";
     ViewData["ExamStart"] = "Hidden";
     var isSuccess = ViewBag.IsSuccess;
+    var isEstimated = Model.Data?.IsEstimated;
 }
 @model ResponderData<ExamModel>
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
@@ -135,6 +136,7 @@
             success: function(res){
                 if(res.isSuccess){
                     sessionStorage.setItem("examSessionId", res.data);
+                    sessionStorage.setItem("isEstimated", '@isEstimated');
                     window.location.href = `/bai-thi/khoi-dong?sId=${res.data}`;
                 } else {
                     notyf.error(res.message || "Thất bại!");

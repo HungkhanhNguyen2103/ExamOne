@@ -53,6 +53,11 @@ namespace ExamOne.Service
                 CCCD = user.CCCD,
                 Location = Constant.GetLocation(branch.Name),
             };
+
+            var estimate = await _examOneMongoDBContext.Estimates.Find(x => x.CreatedBy == username).FirstOrDefaultAsync();
+            data.EstimateDisplay = estimate != null ? estimate.EstimateCount + " người" : "Không có dữ liệu";
+            data.EstimateCount = estimate != null ? estimate.EstimateCount : 0;
+
             var examResultList = await _examOneMongoDBContext.ExamHistories.Find(c => c.CreatedBy == username).SortBy(x => x.StartDate).ToListAsync();
             if(examResultList.Count >= 3) data.ExamStatus = ProfileStatus.Marked;
             data.ExamDisplays = examResultList.Select((c,ind) => new ExamDisplayModel

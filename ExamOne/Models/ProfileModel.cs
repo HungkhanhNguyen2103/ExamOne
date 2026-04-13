@@ -12,7 +12,8 @@
         public string? CCCD { get; set; }
         public string? FullName { get; set; }
         public int Rank { get; set; }
-
+        public int EstimateCount { get; set; }
+        public string? EstimateDisplay { get; set; }
         public List<ExamDisplayModel> ExamDisplays { get; set; } = new List<ExamDisplayModel>();
     }
 

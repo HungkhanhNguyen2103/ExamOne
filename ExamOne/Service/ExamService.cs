@@ -205,12 +205,17 @@ namespace ExamOne.Service
             var resultExam = await _examOneMongoDBContext.ExamHistories.Find(c => c.ExamId == data.Id && c.CreatedBy == createBy).ToListAsync();
             int limitExam = 3;
 
+            var exists = await _examOneMongoDBContext.Estimates
+                        .Find(x => x.CreatedBy == createBy)
+                        .AnyAsync();
+
             result.Data = new ExamModel
             {
                 DurationMinutes = data.DurationMinutes,
                 Instructions = data.Instructions,
                 TotalQuestions = data.TotalQuestions,
                 IsComplete = resultExam.Count >= limitExam ? true : false,
+                IsEstimated = exists,
                 ExamId = data.Id
             };
             result.IsSuccess = true;

@@ -85,7 +85,7 @@
 
             <button type="button" onclick="window.location.href='/'"
                     class="bg-gray-600 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
-                Trờ về
+                Trở về
             </button>
         </div>
     </form>
@@ -105,7 +105,7 @@
 
             <div class="bg-blue-50 p-4 rounded-xl">
                 <p class="text-sm text-gray-500">Thời gian</p>
-                <p class="text-xl md:text-2xl font-bold text-blue-600">@Model.DurationTime</p>
+                <p class="text-xl md:text-2xl font-bold text-blue-600">@(Model.DurationTime ?? "0s")</p>
             </div>
 
             <div class="bg-yellow-50 p-4 rounded-xl">
@@ -113,6 +113,15 @@
                 <p class="text-xl md:text-2xl font-bold text-yellow-600">#@Model.Rank</p>
             </div>
         </div>
+    </div>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+        <p class="text-sm text-gray-500">
+            📊 Dự đoán số lượng thí sinh tham gia:
+        </p>
+        <p class="text-xl md:text-2xl font-bold text-blue-600 mt-1">
+            <span id="estimatedParticipants">@Model.EstimateDisplay</span>
+        </p>
     </div>
 
 
@@ -126,7 +135,7 @@
         @foreach (var item in Model.ExamDisplays)
         {
             <!-- ITEM -->
-            <div class="flex justify-between items-center p-4 rounded-xl border bg-gray-50 hover:shadow-md transition">
+            <div class="flex justify-between items-center p-4 px-1 md:px-4 rounded-xl border bg-gray-50 hover:shadow-md transition">
 
                 <div>
                     <p class="font-semibold text-gray-800">Lần thi #@(item.Index + 1)</p>

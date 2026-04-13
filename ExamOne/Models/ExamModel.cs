@@ -10,6 +10,7 @@
         public DateTime StartTime { get; set; }
         public List<ExamQuestionModel> Questions { get; set; } = new List<ExamQuestionModel>();
         public bool IsComplete { get; set; }
+        public bool IsEstimated { get; set; }
     }
 
     public class ExamDisplayModel

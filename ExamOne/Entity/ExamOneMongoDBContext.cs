@@ -13,6 +13,7 @@ namespace ExamOne.Entity
         }
 
         public IMongoCollection<ExamHistory> ExamHistories => _database.GetCollection<ExamHistory>(typeof(ExamHistory).Name);
+        public IMongoCollection<Estimate> Estimates => _database.GetCollection<Estimate>(typeof(Estimate).Name);
     }
 
     public class MongoDbSettings

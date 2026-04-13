@@ -11,7 +11,7 @@
     }
 }
 <div class="min-h-screen max-w-10xl flex items-center justify-center">
-    <main class="max-w-4xl w-[90%] mx-4 mx-auto bg-white rounded-2xl shadow-lg p-8 text-center relative">
+    <main class="max-w-4xl w-[90%] mx-4 mx-auto bg-white rounded-2xl shadow-lg p-4 md:p-8 text-center relative">
 
         <div class="z-[-1] fixed inset-0 bg-cover bg-center bg-[url('/img/background.jpg')]
             bg-black/40 bg-blend-darken">
@@ -19,19 +19,30 @@
 
         <canvas id="fireworksCanvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-0"></canvas>
 
-        <h2 class="text-3xl font-bold text-green-600 mb-4">Chúc mừng bạn <span id="userName">@User.FindFirst("FullName")?.Value</span> đã hoàn thành bài trắc nghiệm!</h2>
+        <h2 class="text-2xl font-bold text-green-600 mb-4">Chúc mừng bạn <span id="userName">@User.FindFirst("FullName")?.Value</span> đã hoàn thành bài trắc nghiệm!</h2>
 
-        <p class="text-gray-700 text-lg mb-6">
+        <p class="text-gray-700 text-small md:text-lg mb-6">
             Bạn đã trả lời đúng <strong id="correctAnswers">@Model.CorrectAnswer</strong> trên <strong id="totalQuestions">@Model.TotalQuestions</strong> câu hỏi.
         </p>
+
+        <div id="estimatedParticipantsBox" class="d-none bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+            <p class="text-gray-700 text-sm md:text-base">
+                📊 Dự đoán số lượng thí sinh tham gia:
+            </p>
+            <p class="text-2xl font-bold text-blue-600 mt-1">
+                <input id="estimatedParticipants"
+                       type="number"
+                       class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+            </p>
+        </div>
 
         <div class="flex justify-center gap-4">
             <button onclick="finishExam()" class="bg-blue-600 hover:bg-blue-400 text-white px-6 py-2 rounded-lg shadow-md transition">
                 Hoàn tất
             </button>
-            <button onclick="reviewExam()" class="d-none bg-gray-500 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
+@*             <button onclick="reviewExam()" class="d-none bg-gray-500 hover:bg-gray-400 text-white px-6 py-2 rounded-lg shadow-md transition">
                 Xem lại bài làm
-            </button>
+            </button> *@
         </div>
     </main>
 
@@ -128,18 +139,33 @@
         requestAnimationFrame(animate);
     };
 
+    let isEstimated = null;
     $(document).ready(() => {
         document.getElementById('footageBoxId').classList.add('d-none');
+        isEstimated = window.sessionStorage.getItem('isEstimated');
+        if(isEstimated === 'False'){
+            $('#estimatedParticipantsBox').removeClass('d-none');
+        }
         $('.menu-item').addClass('d-none');
         $('.logo-item').hide();
     })
 
     function finishExam(){
+        let estimateValue = 0;
+        if(isEstimated === 'False'){
+            let estimate = document.getElementById('estimatedParticipants');
+            if(estimate.value == null || Number(estimate.value) <= 0){
+                notyf.error('Vui lòng nhập giá trị hợp lệ !');
+                return;
+            }
+            estimateValue = Number(estimate.value);
+        }
         window.sessionStorage.clear();
+        let data = {sId: '@ViewBag.SId' ,estimateValue};
         submitAjax({
             url: "/bai-thi/ket-thuc",
             method: "POST",
-            data: {},
+            data: data,
             headers:{
                 "RequestVerificationToken": '@GetAntiXsrfRequestTokenChild()'
             },

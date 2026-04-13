@@ -68,6 +68,26 @@ namespace ExamOne.Service
                 {
                     var redisResult = await _db.StringGetAsync($"exam:{item.Id}");
                     var redisResult2 = await _db.StringGetAsync($"time:{item.Id}");
+                    var redisResult3 = await _db.StringGetAsync($"estimate:{item.Id}");
+                    if (!string.IsNullOrEmpty(redisResult3))
+                    {
+                        var exists = await _examOneMongoDBContext.Estimates
+                                    .Find(x => x.CreatedBy == item.CreatedBy)
+                                    .AnyAsync();
+                        if (!exists)
+                        {
+                            var estimate = new Estimate
+                            {
+                                ExamId = item.Id,
+                                CreatedBy = item.CreatedBy,
+                                EstimateCount = int.Parse(redisResult3.ToString()),
+                                StartDate = Constant.GetDateTimeVN()
+                            };
+                            await _examOneMongoDBContext.Estimates.InsertOneAsync(estimate);
+                            await _db.KeyDeleteAsync($"estimate:{item.Id}");
+                        }
+
+                    }
                     if (redisResult.IsNullOrEmpty || redisResult2.IsNullOrEmpty)
                     {
                         _logger.LogError($"ID {item.Id}: not found");
