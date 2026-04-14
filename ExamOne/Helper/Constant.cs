@@ -21,7 +21,8 @@ namespace ExamOne.Helper
 
         public static string GetLocation(string branchName)
         {
-            return $"{branchName}, phường Hồng An, thành phố Hải Phòng";
+            //, phường Hồng An, thành phố Hải Phòng
+            return $"{branchName}";
         }
     }
 }

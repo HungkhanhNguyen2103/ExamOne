@@ -84,15 +84,9 @@
                 </select>
             </div> *@
             <div class="w-full">
-                <label for="BranchCode" class="block font-semibold mb-1 text-gray-700">Chi đoàn <span class="text-red-500">*</span></label>
-                <select asp-for="BranchCode" required
-                        class="w-full border rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                    <option value="">Chọn chi đoàn</option>
-                    @foreach (BranchModel item in ViewBag.Branches)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
+                <label for="BranchCode" class="block font-semibold mb-1 text-gray-700">Đơn vị <span class="text-red-500">*</span></label>
+                <input type="text" asp-for="BranchCode" required placeholder="Nhập đơn vị"
+                       class="w-full border rounded-lg p-2.5 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
             </div>
         </div>
         <button type="submit"

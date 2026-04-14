@@ -38,12 +38,12 @@ namespace ExamOne.Service
                 result.Message = "Thông tin không hợp lệ";
                 return result;
             }
-            var branch = await _examOneDbContext.Branches.FirstOrDefaultAsync(c => c.Id.ToString() == user.BranchCode);
-            if (branch == null)
-            {
-                result.Message = "Thông tin không hợp lệ";
-                return result;
-            }
+            //var branch = await _examOneDbContext.Branches.FirstOrDefaultAsync(c => c.Id.ToString() == user.BranchCode);
+            //if (branch == null)
+            //{
+            //    result.Message = "Thông tin không hợp lệ";
+            //    return result;
+            //}
             var random = DateTime.Now.Ticks;
             var data = new ProfileModel
             {
@@ -51,7 +51,7 @@ namespace ExamOne.Service
                 Avatar = $"{user.Avatar}?v={random}",
                 FullName = user.FullName,
                 CCCD = user.CCCD,
-                Location = Constant.GetLocation(branch.Name),
+                Location = Constant.GetLocation(user.BranchCode),
             };
 
             var estimate = await _examOneMongoDBContext.Estimates.Find(x => x.CreatedBy == username).FirstOrDefaultAsync();
