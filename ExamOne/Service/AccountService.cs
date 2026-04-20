@@ -83,7 +83,7 @@ namespace ExamOne.Service
                 new Claim("Avatar", $"{user.Avatar}?v={random}" ?? defaultAvatarLink)
 
             };
-            await _signInManager.SignInWithClaimsAsync(user, isPersistent: model.RememberMe, claims);
+            await _signInManager.SignInWithClaimsAsync(user, isPersistent: true, claims);
 
             responder.IsSuccess = true;
             return responder;
@@ -157,7 +157,7 @@ namespace ExamOne.Service
                     new Claim("Avatar", $"{user.Avatar}?v={random}")
 
                 };
-                await _signInManager.SignInWithClaimsAsync(user, isPersistent: false, claims);
+                await _signInManager.SignInWithClaimsAsync(user, isPersistent: true, claims);
                 //await _signInManager.SignInAsync(user, isPersistent: false);
                 responder.IsSuccess = true;
                 return responder;

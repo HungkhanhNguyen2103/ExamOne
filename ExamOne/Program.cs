@@ -77,6 +77,8 @@ builder.Services.AddIdentity<Account, IdentityRole>(options =>
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(40);
+    options.SlidingExpiration = true;
     options.LoginPath = "/tai-khoan/dang-nhap";
     options.LogoutPath = "/tai-khoan/dang-xuat";
     options.AccessDeniedPath = "/tai-khoan/truy-cap";

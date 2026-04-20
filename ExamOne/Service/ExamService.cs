@@ -320,7 +320,7 @@ namespace ExamOne.Service
                 var item1 = new ExamProgressModel
                 {
                     Id = item.Id,
-                    StartDate = item.StartDate,
+                    StartDate = Constant.GetDateTimeFromMongo(item.StartDate),
                     BranchCode = item.BranchCode,
                     //BranchName = Constant.GetLocation(branch.Name),
                     //BranchNameShort = branch.Name,
@@ -333,8 +333,8 @@ namespace ExamOne.Service
                     item1.ExamStatus = ExamStatus.Done;
                     item1.TotalCorrectAnswers = item.TotalCorrectAnswers;
                     item1.ComplatedDuration = GetDurationString(item.ComplatedDuration);
-                    item1.EndDate = item.EndDate;
-                    item1.MarkDate = item.MarkDate;
+                    item1.EndDate = Constant.GetDateTimeFromMongo(item.EndDate);
+                    item1.MarkDate = Constant.GetDateTimeFromMongo(item.MarkDate);
                 }
                 else if(!string.IsNullOrEmpty(item.Items)) item1.ExamStatus = ExamStatus.InProgress;
                 else item1.ExamStatus = ExamStatus.NotYet;
@@ -385,8 +385,8 @@ namespace ExamOne.Service
                 item1.ExamStatus = ExamStatus.Done;
                 item1.TotalCorrectAnswers = examHistory.TotalCorrectAnswers;
                 item1.ComplatedDuration = GetDurationString(examHistory.ComplatedDuration);
-                item1.EndDate = Constant.GetDateTimeFromMongo(examHistory.EndDate);
-                item1.MarkDate = Constant.GetDateTimeFromMongo(examHistory.MarkDate);
+                item1.EndDate = examHistory.EndDate;
+                item1.MarkDate = examHistory.MarkDate;
                 var answers = JsonSerializer.Deserialize<List<AnswerModel>>(examHistory.SelectedAnswers ?? "[]") ?? new List<AnswerModel>();
                 item1.SelectedAnswers = answers;
                 var questionBanks = JsonSerializer.Deserialize<List<QuestionBank>>(examHistory.Items ?? "[]") ?? new List<QuestionBank>();
@@ -412,7 +412,7 @@ namespace ExamOne.Service
                             result.Message = "Đáp án không hợp lệ";
                             return result;
                         }
-                        var characterUser = (char)(character + userAnswer2.SortOrder);
+                        var characterUser = (char)(baseChar + userAnswer2.SortOrder);
                         characterUser2 = characterUser.ToString();
                     }
                     else
