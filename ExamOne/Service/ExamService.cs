@@ -300,16 +300,16 @@ namespace ExamOne.Service
                 .Sort(Builders<ExamHistory>.Sort.Descending(x => x.StartDate))
                 .ToListAsync();
 
-            var branches = await _examOneDbContext.Branches.ToListAsync();
+            //var branches = await _examOneDbContext.Branches.ToListAsync();
 
             foreach (var item in listExamHistory)
             {
-                var branch = branches.FirstOrDefault(c => c.Id.ToString() == item.BranchCode);
-                if(branch == null)
-                {
-                    response.Message = "Dữ liệu không hợp lệ";
-                    return response;
-                }
+                //var branch = branches.FirstOrDefault(c => c.Id.ToString() == item.BranchCode);
+                //if(branch == null)
+                //{
+                //    response.Message = "Dữ liệu không hợp lệ";
+                //    return response;
+                //}
 
                 var user = await _userManager.FindByNameAsync(item.CreatedBy);
                 if(user == null)
@@ -322,8 +322,8 @@ namespace ExamOne.Service
                     Id = item.Id,
                     StartDate = item.StartDate,
                     BranchCode = item.BranchCode,
-                    BranchName = Constant.GetLocation(branch.Name),
-                    BranchNameShort = branch.Name,
+                    //BranchName = Constant.GetLocation(branch.Name),
+                    //BranchNameShort = branch.Name,
                     CreatedBy = item.CreatedBy,
                     CreatedFullName = user.FullName,
                 };
@@ -362,9 +362,9 @@ namespace ExamOne.Service
                 result.Message = "Thông tin không hợp lệ";
                 return result;
             }
-            var branch = await _examOneDbContext.Branches.FirstOrDefaultAsync(c => c.Id.ToString() == examHistory.BranchCode);
+            //var branch = await _examOneDbContext.Branches.FirstOrDefaultAsync(c => c.Id.ToString() == examHistory.BranchCode);
             var user = await _userManager.FindByNameAsync(examHistory.CreatedBy);
-            if (user == null || branch == null)
+            if (user == null)
             {
                 result.Message = "Thông tin không hợp lệ";
                 return result;
@@ -374,8 +374,8 @@ namespace ExamOne.Service
                 Id = examHistory.Id,
                 StartDate = Constant.GetDateTimeFromMongo(examHistory.StartDate),
                 BranchCode = examHistory.BranchCode,
-                BranchName = Constant.GetLocation(branch.Name),
-                BranchNameShort = branch.Name,
+                BranchName = examHistory.BranchCode,
+                BranchNameShort = examHistory.BranchCode,
                 CreatedBy = examHistory.CreatedBy,
                 CreatedFullName = user.FullName,
             };

@@ -204,7 +204,7 @@ namespace ExamOne.Service
 
                 if (user != null)
                 {
-                    var branch = branches.FirstOrDefault(c => c.Id.ToString() == user.BranchCode);
+                    //var branch = branches.FirstOrDefault(c => c.Id.ToString() == user.BranchCode);
                     var random = DateTime.Now.Ticks;
 
                     response.DataList.Add(new RankingModel
@@ -214,7 +214,7 @@ namespace ExamOne.Service
                         UserName = item.CreatedBy,
                         Name = user.FullName,
                         CorrectAnswer = item.TotalCorrectAnswers,
-                        BranchName = branch != null ? Constant.GetLocation(branch.Name) : "No data",
+                        BranchName = item.BranchCode,
                         CompletionTime = GetDurationString(item.ComplatedDuration)
                     });
                 }
