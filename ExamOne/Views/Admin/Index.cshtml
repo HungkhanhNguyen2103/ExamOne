@@ -37,7 +37,7 @@
         </table>
     </section>
 
-    <section style="max-height:50rem" class="sm:w-full w-full bg-white shadow rounded-lg overflow-hidden">
+    <section class="sm:w-full w-full bg-white shadow rounded-lg overflow-hidden">
         <div class="flex items-center justify-between p-4 border-b">
             <div class="flex items-center gap-3">
                 <h2 class="text-xl font-semibold">Bảng xếp hạng cá nhân</h2>
@@ -63,7 +63,7 @@
                 {
                     <tr class="hover:bg-blue-50 cursor-pointer">
                         <td class="px-3 py-2 text-center">@item.Rank</td>
-                        <td class="px-3 py-2">@item.Name</td>
+                        <td class="px-3 py-2">@item.Name <br /> <small>@item.UserName</small></td>
                         <td class="px-3 py-2">@item.BranchName</td>
                         <td class="px-3 py-2">@item.TryExamCount</td>
                         <td class="px-3 py-2">@item.TryExamSuccessCount / @item.TryExamPendingCount / @item.TryExamErrorCount</td>
