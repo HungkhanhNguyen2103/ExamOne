@@ -84,7 +84,7 @@ namespace ExamOne.Service
                                 StartDate = Constant.GetDateTimeVN()
                             };
                             await _examOneMongoDBContext.Estimates.InsertOneAsync(estimate);
-                            await _db.KeyDeleteAsync($"estimate:{item.Id}");
+                            await _db.KeyDeleteAsync($"estimate:{item.CreatedBy}");
                         }
 
                     }
