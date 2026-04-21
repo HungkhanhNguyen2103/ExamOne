@@ -51,6 +51,9 @@
                     <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Xếp hạng</th>
                     <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Họ tên</th>
                     <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Chi đoàn</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Số bài làm</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hoàn thành / Đang làm / Không hợp lệ</th>
+                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Dự đoán số lượng</th>
                     <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Thời gian làm bài</th>
                     <th class="px-3 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Điểm</th>
                 </tr>
@@ -62,6 +65,9 @@
                         <td class="px-3 py-2 text-center">@item.Rank</td>
                         <td class="px-3 py-2">@item.Name</td>
                         <td class="px-3 py-2">@item.BranchName</td>
+                        <td class="px-3 py-2">@item.TryExamCount</td>
+                        <td class="px-3 py-2">@item.TryExamSuccessCount / @item.TryExamPendingCount / @item.TryExamErrorCount</td>
+                        <td class="px-3 py-2">@item.EstimatePersonValue</td>
                         <td class="px-3 py-2 text-center">@item.CompletionTime</td>
                         <td class="px-3 py-2 text-center">@item.CorrectAnswer</td>
                     </tr>

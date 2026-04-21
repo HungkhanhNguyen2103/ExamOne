@@ -14,6 +14,7 @@ namespace ExamOne.Entity
         public int TotalCorrectAnswers { get; set; }
         public double ComplatedDuration { get; set; }
         public bool IsLoad { get; set; }
+        public int? RetryCount { get; set; }
         public string? CreatedBy { get; set; }
         public string? BranchCode { get; set; }
         public DateTime StartDate { get; set; }

@@ -10,6 +10,11 @@
         public int CorrectAnswer { get; set; }
         public string? CompletionTime { get; set; }
         public double ComplatedDuration { get; set; }
+        public int TryExamCount { get; set; }
+        public int TryExamErrorCount { get; set; }
+        public int TryExamSuccessCount { get; set; }
+        public int TryExamPendingCount { get; set; }
+        public int EstimatePersonValue { get; set; }
     }
 
     public class RankingBranchModel

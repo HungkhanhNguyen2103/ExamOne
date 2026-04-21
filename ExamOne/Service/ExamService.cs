@@ -100,6 +100,7 @@ namespace ExamOne.Service
                 CreatedBy = createBy,
                 BranchCode = branchCode,
                 IsLoad = false,
+                RetryCount = 0,
                 StartDate = DateTime.Now
             };
 

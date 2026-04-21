@@ -202,6 +202,14 @@ namespace ExamOne.Service
             {
                 var user = await _userManager.FindByNameAsync(item.CreatedBy);
 
+                var estimate = new Estimate();
+                var examResult = new List<ExamHistory>();
+                if(limit == -1)
+                {
+                    estimate = await _examOneMongoDBContext.Estimates.Find(x => x.CreatedBy == item.CreatedBy).FirstOrDefaultAsync();
+                    examResult = await _examOneMongoDBContext.ExamHistories.Find(x => x.CreatedBy == item.CreatedBy).ToListAsync();
+                }
+
                 if (user != null)
                 {
                     //var branch = branches.FirstOrDefault(c => c.Id.ToString() == user.BranchCode);
@@ -215,7 +223,12 @@ namespace ExamOne.Service
                         Name = user.FullName,
                         CorrectAnswer = item.TotalCorrectAnswers,
                         BranchName = item.BranchCode,
-                        CompletionTime = GetDurationString(item.ComplatedDuration)
+                        EstimatePersonValue = estimate != null ? estimate.EstimateCount : 0,
+                        CompletionTime = GetDurationString(item.ComplatedDuration),
+                        TryExamCount = examResult.Count,
+                        TryExamSuccessCount = examResult.Count(x => !string.IsNullOrEmpty(x.SelectedAnswers)),
+                        TryExamErrorCount = examResult.Count(x => x.RetryCount >= 3),
+                        TryExamPendingCount = examResult.Count(x => x.RetryCount < 3 && string.IsNullOrEmpty(x.SelectedAnswers))
                     });
                 }
             }
