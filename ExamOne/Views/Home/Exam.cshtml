@@ -81,7 +81,7 @@
 
                             <!-- BUTTON -->
                             <div class="flex justify-end mt-4">
-                                <button type="button" onclick="start()"
+                                <button type="button" onclick="start(this)"
                                         class="flex items-center gap-2 bg-blue-600 hover:bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md transition">
                                     Bắt đầu
                                 </button>
@@ -124,8 +124,11 @@
         document.getElementById('footageBoxId').classList.add('d-none');
         $('.menu-item').addClass('d-none');
     });
+    let isSubmitting = false;
 
-    function start() {
+    function start(el) {
+        if(isSubmitting) return;
+        $(el).prop("disabled", true);
         submitAjax({
             url: "/bai-thi",
             method: "POST",
@@ -140,12 +143,19 @@
                     window.location.href = `/bai-thi/khoi-dong?sId=${res.data}`;
                 } else {
                     notyf.error(res.message || "Thất bại!");
+                    resetButton(el);
                 }
             },
             error: function(xhr){
                 notyf.error("Có lỗi xảy ra khi gửi dữ liệu!");
+                resetButton(el);
             }
         })
+    }
+
+    function resetButton(el) {
+        isSubmitting = false;
+        $(el).prop("disabled", false);
     }
 
 </script>
