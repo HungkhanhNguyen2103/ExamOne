@@ -22,6 +22,7 @@
     {
         NotYet,
         InProgress,
-        Done
+        Done,
+        Error
     }
 }
