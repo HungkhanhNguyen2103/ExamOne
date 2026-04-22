@@ -100,7 +100,7 @@ namespace ExamOne.Service
                 CreatedBy = createBy,
                 BranchCode = branchCode,
                 IsLoad = false,
-                RetryCount = 0,
+                //RetryCount = 0,
                 StartDate = DateTime.Now
             };
 
@@ -302,7 +302,7 @@ namespace ExamOne.Service
                 .ToListAsync();
 
             //var branches = await _examOneDbContext.Branches.ToListAsync();
-
+            var yesterday = DateTime.Today.AddDays(-1);
             foreach (var item in listExamHistory)
             {
                 //var branch = branches.FirstOrDefault(c => c.Id.ToString() == item.BranchCode);
@@ -337,7 +337,10 @@ namespace ExamOne.Service
                     item1.EndDate = Constant.GetDateTimeFromMongo(item.EndDate);
                     item1.MarkDate = Constant.GetDateTimeFromMongo(item.MarkDate);
                 }
-                else if(!string.IsNullOrEmpty(item.Items)) item1.ExamStatus = ExamStatus.InProgress;
+                //else if(!string.IsNullOrEmpty(item.Items) && (item.RetryCount.HasValue && item.RetryCount >= 3)) item1.ExamStatus = ExamStatus.Error;
+                else if(!string.IsNullOrEmpty(item.Items) && Constant.GetDateTimeFromMongo(item.StartDate) > yesterday ) item1.ExamStatus = ExamStatus.InProgress;
+                else if(!string.IsNullOrEmpty(item.Items) && Constant.GetDateTimeFromMongo(item.StartDate) < yesterday ) item1.ExamStatus = ExamStatus.Error;
+
                 else item1.ExamStatus = ExamStatus.NotYet;
 
                 response.DataList.Add(item1);

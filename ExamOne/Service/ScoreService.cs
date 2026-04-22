@@ -197,7 +197,7 @@ namespace ExamOne.Service
             }
 
             int rank = 1;
-
+            var yesterday = DateTime.Today.AddDays(-1);
             foreach (var item in bestPerUser)
             {
                 var user = await _userManager.FindByNameAsync(item.CreatedBy);
@@ -227,8 +227,8 @@ namespace ExamOne.Service
                         CompletionTime = GetDurationString(item.ComplatedDuration),
                         TryExamCount = examResult.Count,
                         TryExamSuccessCount = examResult.Count(x => !string.IsNullOrEmpty(x.SelectedAnswers)),
-                        TryExamErrorCount = examResult.Count(x => x.RetryCount >= 3),
-                        TryExamPendingCount = examResult.Count(x => x.RetryCount < 3 && string.IsNullOrEmpty(x.SelectedAnswers))
+                        TryExamErrorCount = examResult.Count(x => string.IsNullOrEmpty(x.SelectedAnswers) && Constant.GetDateTimeFromMongo(x.StartDate) < yesterday),
+                        TryExamPendingCount = examResult.Count(x => string.IsNullOrEmpty(x.SelectedAnswers) && Constant.GetDateTimeFromMongo(x.StartDate) > yesterday)
                     });
                 }
             }

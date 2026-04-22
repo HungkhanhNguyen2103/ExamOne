@@ -63,7 +63,11 @@ namespace ExamOne.Service
                 _logger.LogInformation("Checking Redis connection at: {time}", DateTime.Now);
                 TimeSpan max = TimeSpan.FromMinutes(20);
                 //return;
-                var examHistories = await _examOneMongoDBContext.ExamHistories.Find(c => string.IsNullOrEmpty(c.SelectedAnswers) && c.RetryCount < 3).ToListAsync();
+                var today = DateTime.Today;
+                var tomorrow = today.AddDays(1);
+                var examHistories = await _examOneMongoDBContext.ExamHistories.Find(c => string.IsNullOrEmpty(c.SelectedAnswers)
+                            && c.StartDate >= today
+                            && c.StartDate < tomorrow).ToListAsync();
                 foreach (var item in examHistories)
                 {
                     var redisResult = await _db.StringGetAsync($"exam:{item.Id}");
@@ -90,11 +94,11 @@ namespace ExamOne.Service
                     }
                     if (redisResult.IsNullOrEmpty || redisResult2.IsNullOrEmpty)
                     {
-                        var retryCount = item.RetryCount + 1;
-                        _logger.LogError($"ID {item.Id}: not found. Retry: {retryCount}");
-                        var update2 = Builders<ExamHistory>.Update
-                                    .Set(x => x.RetryCount, retryCount);
-                        await _examOneMongoDBContext.ExamHistories.UpdateOneAsync(c => c.Id == item.Id, update2);
+                        //var retryCount = (item.RetryCount ?? 0) + 1;
+                        _logger.LogError($"ID {item.Id}: not found.");
+                        //var update2 = Builders<ExamHistory>.Update
+                        //            .Set(x => x.RetryCount, retryCount);
+                        //await _examOneMongoDBContext.ExamHistories.UpdateOneAsync(c => c.Id == item.Id, update2);
                         continue;
                     }
                     var answers = JsonSerializer.Deserialize<List<AnswerModel>>(redisResult.ToString() ?? "[]") ?? new List<AnswerModel>();
