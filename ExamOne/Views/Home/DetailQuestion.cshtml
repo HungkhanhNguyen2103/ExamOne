@@ -134,9 +134,27 @@
             getContent();
         }
         else{
-            if(confirm("Bạn có muốn nộp bài ?")){
-                submitExam();
-            }
+            Swal.fire({
+                title: 'Xác nhận',
+                text: 'Bạn có muốn nộp bài?',
+                icon: 'question',
+                showCancelButton: true,
+                showDenyButton: true,
+                confirmButtonText: 'Nộp bài',
+                denyButtonText: 'Kiểm tra',
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    submitExam();
+                }
+                else if (result.isDenied) {
+                    showSummary();
+                }
+            });
+
+            // if(confirm("Bạn có muốn nộp bài ?")){
+            //     submitExam();
+            // }
         }
 
     }
