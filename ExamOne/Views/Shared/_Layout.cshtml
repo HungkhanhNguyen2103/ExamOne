@@ -28,6 +28,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
+
+
         .d-none{
             display:none;
         }
@@ -131,6 +133,7 @@
                 {
                     <!-- USER DROPDOWN -->
                     <div class="relative" id="userMenu">
+
                         <button class="flex items-center gap-2 text-white @(ViewData["Exam"] == "Hidden" ? "" : "toggleUserMenu") ">
                             <img src="@User.FindFirst("Avatar")?.Value"
                                  class="w-8 h-8 rounded-full border border-white" />

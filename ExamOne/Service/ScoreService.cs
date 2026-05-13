@@ -175,8 +175,11 @@ namespace ExamOne.Service
         {
             var response = new ResponderData<RankingModel>();
 
-            var branches = await _examOneDbContext.Branches.ToListAsync();
+            var yesterday = DateTime.Today.AddDays(-1);
 
+            // =========================
+            // BEST RESULT PER USER
+            // =========================
             var bestPerUser = await _examOneMongoDBContext.ExamHistories.Aggregate()
                 .Match(x => !string.IsNullOrEmpty(x.SelectedAnswers))
                 .SortByDescending(x => x.TotalCorrectAnswers)
@@ -196,44 +199,101 @@ namespace ExamOne.Service
                 bestPerUser = bestPerUser.Take(limit).ToList();
             }
 
+            var userNames = bestPerUser
+                .Select(x => x.CreatedBy)
+                .Distinct()
+                .ToList();
+
+            // =========================
+            // LOAD USERS 1 QUERY
+            // =========================
+            var users = await _userManager.Users
+                .Where(x => userNames.Contains(x.UserName))
+                .ToListAsync();
+
+            var userDict = users.ToDictionary(x => x.UserName, x => x);
+
+            // =========================
+            // LOAD ESTIMATE 1 QUERY
+            // =========================
+            Dictionary<string, Estimate> estimateDict = new();
+
+            if (limit == -1)
+            {
+                var estimates = await _examOneMongoDBContext.Estimates
+                    .Find(x => userNames.Contains(x.CreatedBy))
+                    .ToListAsync();
+
+                estimateDict = estimates
+                    .GroupBy(x => x.CreatedBy)
+                    .ToDictionary(x => x.Key, x => x.First());
+            }
+
+            // =========================
+            // LOAD EXAM STATS 1 QUERY
+            // =========================
+            Dictionary<string, dynamic> examStatsDict = new();
+
+            if (limit == -1)
+            {
+                var examHistories = await _examOneMongoDBContext.ExamHistories
+                    .Find(x => userNames.Contains(x.CreatedBy))
+                    .ToListAsync();
+
+                examStatsDict = examHistories
+                    .GroupBy(x => x.CreatedBy)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => new
+                        {
+                            TryExamCount = g.Count(),
+                            TryExamSuccessCount = g.Count(x => !string.IsNullOrEmpty(x.SelectedAnswers)),
+                            TryExamErrorCount = g.Count(x =>
+                                string.IsNullOrEmpty(x.SelectedAnswers) &&
+                                Constant.GetDateTimeFromMongo(x.StartDate) < yesterday),
+
+                            TryExamPendingCount = g.Count(x =>
+                                string.IsNullOrEmpty(x.SelectedAnswers) &&
+                                Constant.GetDateTimeFromMongo(x.StartDate) > yesterday)
+                        } as dynamic
+                    );
+            }
+
+            // =========================
+            // BUILD RESULT
+            // =========================
             int rank = 1;
-            var yesterday = DateTime.Today.AddDays(-1);
+
             foreach (var item in bestPerUser)
             {
-                var user = await _userManager.FindByNameAsync(item.CreatedBy);
+                if (!userDict.TryGetValue(item.CreatedBy, out var user))
+                    continue;
 
-                var estimate = new Estimate();
-                var examResult = new List<ExamHistory>();
-                if(limit == -1)
+                estimateDict.TryGetValue(item.CreatedBy, out var estimate);
+                examStatsDict.TryGetValue(item.CreatedBy, out var examStats);
+
+                var random = DateTime.Now.Ticks;
+
+                response.DataList.Add(new RankingModel
                 {
-                    estimate = await _examOneMongoDBContext.Estimates.Find(x => x.CreatedBy == item.CreatedBy).FirstOrDefaultAsync();
-                    examResult = await _examOneMongoDBContext.ExamHistories.Find(x => x.CreatedBy == item.CreatedBy).ToListAsync();
-                }
+                    Rank = rank++,
+                    Avatar = $"{user.Avatar}?v={random}",
+                    UserName = item.CreatedBy,
+                    Name = user.FullName,
+                    CorrectAnswer = item.TotalCorrectAnswers,
+                    BranchName = item.BranchCode,
+                    EstimatePersonValue = estimate?.EstimateCount ?? 0,
+                    CompletionTime = GetDurationString(item.ComplatedDuration),
 
-                if (user != null)
-                {
-                    //var branch = branches.FirstOrDefault(c => c.Id.ToString() == user.BranchCode);
-                    var random = DateTime.Now.Ticks;
-
-                    response.DataList.Add(new RankingModel
-                    {
-                        Rank = rank++,
-                        Avatar = $"{user.Avatar}?v={random}",
-                        UserName = item.CreatedBy,
-                        Name = user.FullName,
-                        CorrectAnswer = item.TotalCorrectAnswers,
-                        BranchName = item.BranchCode,
-                        EstimatePersonValue = estimate != null ? estimate.EstimateCount : 0,
-                        CompletionTime = GetDurationString(item.ComplatedDuration),
-                        TryExamCount = examResult.Count,
-                        TryExamSuccessCount = examResult.Count(x => !string.IsNullOrEmpty(x.SelectedAnswers)),
-                        TryExamErrorCount = examResult.Count(x => string.IsNullOrEmpty(x.SelectedAnswers) && Constant.GetDateTimeFromMongo(x.StartDate) < yesterday),
-                        TryExamPendingCount = examResult.Count(x => string.IsNullOrEmpty(x.SelectedAnswers) && Constant.GetDateTimeFromMongo(x.StartDate) > yesterday)
-                    });
-                }
+                    TryExamCount = examStats?.TryExamCount ?? 0,
+                    TryExamSuccessCount = examStats?.TryExamSuccessCount ?? 0,
+                    TryExamErrorCount = examStats?.TryExamErrorCount ?? 0,
+                    TryExamPendingCount = examStats?.TryExamPendingCount ?? 0
+                });
             }
 
             response.IsSuccess = true;
+
             return response;
         }
 

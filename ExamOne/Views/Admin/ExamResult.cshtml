@@ -182,12 +182,14 @@
             },
             success: function(res){
                 if(res.isSuccess){
-                    console.log(res.data);
+                    //console.log(res.data);
                     html += `
                         <p><strong>Họ tên:</strong> ${res.data.createdFullName}</p>
+                        <p><strong>Tài khoản:</strong> ${res.data.userName}</p>
                         <p><strong>Chi nhánh:</strong> ${res.data.branchName}</p>
                         <p><strong>Thời gian làm bài:</strong> ${res.data.complatedDuration ?? ''}</p>
                         <p><strong>Điểm:</strong> ${res.data.totalCorrectAnswers}</p>
+                        <p><strong>Dự đoán số lượng:</strong> ${res.data.estimateCount}</p>
                         <hr class="my-3">
                     `;
 

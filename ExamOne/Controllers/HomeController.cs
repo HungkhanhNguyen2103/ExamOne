@@ -2,6 +2,7 @@
 using ExamOne.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Bson.Serialization.Serializers;
@@ -107,6 +108,16 @@ namespace ExamOne.Controllers
         public async Task<IActionResult> CompleteExam(ExamAnswerModel model)
         {
             var result = await _examService.CompleteExam(model);
+            return Json(result);
+        }
+
+        [Route("bai-thi/du-doan")]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public async Task<IActionResult> EstimateStudent(EstimateModel model)
+        {
+            model.CreateBy = User.Identity?.Name;
+            var result = await _examService.EstimateStudent(model);
             return Json(result);
         }
 

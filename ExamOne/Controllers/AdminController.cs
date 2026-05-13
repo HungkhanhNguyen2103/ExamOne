@@ -28,8 +28,8 @@ namespace ExamOne.Controllers
             var top10RankingPersons = await _scoreService.GetRankingsPerson(-1);
             ViewBag.RankingPersons = top10RankingPersons.DataList;
 
-            var top10RankingBranches = await _scoreService.GetRankingsBranch(-1);
-            ViewBag.RankingBranches = top10RankingBranches.DataList;
+            //var top10RankingBranches = await _scoreService.GetRankingsBranch(-1);
+            ViewBag.RankingBranches = new List<RankingBranchModel>();
             return View();
         }
 

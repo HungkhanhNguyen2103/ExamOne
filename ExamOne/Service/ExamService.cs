@@ -15,6 +15,7 @@ namespace ExamOne.Service
     public interface IExamService
     {
         Task<ResponderData<ExamModel>> GetIntructionExam(string createBy);
+        Task<ResponderData<bool>> EstimateStudent(EstimateModel model);
         Task<ResponderData<string>> SettingExam(ExamModel model);
         Task<ResponderData<string>> CompleteExam(ExamAnswerModel model);
         ResponderData<ResultExamModel> ResultExam(ExamModel model,string selectedAnswers);
@@ -296,59 +297,109 @@ namespace ExamOne.Service
         {
             var response = new ResponderData<ExamProgressModel>();
 
+            var yesterday = DateTime.Today.AddDays(-1);
+
+            // =========================
+            // LOAD EXAM HISTORY
+            // =========================
             var listExamHistory = await _examOneMongoDBContext.ExamHistories
                 .Find(_ => true)
-                .Sort(Builders<ExamHistory>.Sort.Descending(x => x.StartDate))
+                .SortByDescending(x => x.StartDate)
                 .ToListAsync();
 
-            //var branches = await _examOneDbContext.Branches.ToListAsync();
-            var yesterday = DateTime.Today.AddDays(-1);
+            // =========================
+            // GET DISTINCT USERNAMES
+            // =========================
+            var userNames = listExamHistory
+                .Select(x => x.CreatedBy)
+                .Where(x => !string.IsNullOrEmpty(x))
+                .Distinct()
+                .ToList();
+
+            // =========================
+            // LOAD USERS
+            // =========================
+            var users = await _userManager.Users
+                .Where(x => userNames.Contains(x.UserName))
+                .ToListAsync();
+
+            var userDict = users.ToDictionary(x => x.UserName, x => x);
+
+            // =========================
+            // LOAD ESTIMATES
+            // =========================
+            //var estimates = await _examOneMongoDBContext.Estimates
+            //    .Find(x => userNames.Contains(x.CreatedBy))
+            //    .ToListAsync();
+
+
+            //var estimateCountDict = estimates
+            //    .GroupBy(x => x.CreatedBy)
+            //    .ToDictionary(
+            //        g => g.Key,
+            //        g => g.First().EstimateCount
+            //    );
+
+            // =========================
+            // BUILD RESULT
+            // =========================
+            response.DataList = new List<ExamProgressModel>(listExamHistory.Count);
+
             foreach (var item in listExamHistory)
             {
-                //var branch = branches.FirstOrDefault(c => c.Id.ToString() == item.BranchCode);
-                //if(branch == null)
-                //{
-                //    response.Message = "Dữ liệu không hợp lệ";
-                //    return response;
-                //}
-
-                var user = await _userManager.FindByNameAsync(item.CreatedBy);
-                if(user == null)
+                if (!userDict.TryGetValue(item.CreatedBy, out var user))
                 {
-                    response.Message = "Dữ liệu không hợp lệ";
-                    return response;
+                    continue;
                 }
-                var item1 = new ExamProgressModel
+
+                var startDate = Constant.GetDateTimeFromMongo(item.StartDate);
+
+                var model = new ExamProgressModel
                 {
                     Id = item.Id,
-                    StartDate = Constant.GetDateTimeFromMongo(item.StartDate),
+                    StartDate = startDate,
                     BranchCode = item.BranchCode,
-                    //BranchName = Constant.GetLocation(branch.Name),
-                    //BranchNameShort = branch.Name,
                     CreatedBy = item.CreatedBy,
                     CreatedFullName = user.FullName,
+
+                    //EstimateCount = estimateCountDict.TryGetValue(item.CreatedBy, out var count)
+                    //    ? count
+                    //    : 0
                 };
 
-                if (!string.IsNullOrEmpty(item.Items) && !string.IsNullOrEmpty(item.SelectedAnswers))
+                var hasItems = !string.IsNullOrEmpty(item.Items);
+                var hasAnswers = !string.IsNullOrEmpty(item.SelectedAnswers);
+
+                if (hasItems && hasAnswers)
                 {
-                    item1.ExamStatus = ExamStatus.Done;
-                    item1.TotalCorrectAnswers = item.TotalCorrectAnswers;
-                    item1.ComplatedDuration = GetDurationString(item.ComplatedDuration);
-                    item1.EndDate = Constant.GetDateTimeFromMongo(item.EndDate);
-                    item1.MarkDate = Constant.GetDateTimeFromMongo(item.MarkDate);
+                    model.ExamStatus = ExamStatus.Done;
+                    model.TotalCorrectAnswers = item.TotalCorrectAnswers;
+                    model.ComplatedDuration = GetDurationString(item.ComplatedDuration);
+                    model.EndDate = Constant.GetDateTimeFromMongo(item.EndDate);
+                    model.MarkDate = Constant.GetDateTimeFromMongo(item.MarkDate);
                 }
-                //else if(!string.IsNullOrEmpty(item.Items) && (item.RetryCount.HasValue && item.RetryCount >= 3)) item1.ExamStatus = ExamStatus.Error;
-                else if(!string.IsNullOrEmpty(item.Items) && Constant.GetDateTimeFromMongo(item.StartDate) > yesterday ) item1.ExamStatus = ExamStatus.InProgress;
-                else if(!string.IsNullOrEmpty(item.Items) && Constant.GetDateTimeFromMongo(item.StartDate) < yesterday ) item1.ExamStatus = ExamStatus.Error;
+                else if (hasItems && startDate > yesterday)
+                {
+                    model.ExamStatus = ExamStatus.InProgress;
+                }
+                else if (hasItems && startDate < yesterday)
+                {
+                    model.ExamStatus = ExamStatus.Error;
+                }
+                else
+                {
+                    model.ExamStatus = ExamStatus.NotYet;
+                }
 
-                else item1.ExamStatus = ExamStatus.NotYet;
-
-                response.DataList.Add(item1);
+                response.DataList.Add(model);
             }
+
             response.IsSuccess = true;
+
+
             return response;
         }
-
+        
         private string GetDurationString(double totalMiliseconds)
         {
             var timeSpan = TimeSpan.FromMilliseconds(totalMiliseconds);
@@ -366,6 +417,9 @@ namespace ExamOne.Service
                 result.Message = "Thông tin không hợp lệ";
                 return result;
             }
+
+            var estimateValue = await _examOneMongoDBContext.Estimates.Find(c => c.CreatedBy == examHistory.CreatedBy).FirstOrDefaultAsync();
+
             //var branch = await _examOneDbContext.Branches.FirstOrDefaultAsync(c => c.Id.ToString() == examHistory.BranchCode);
             var user = await _userManager.FindByNameAsync(examHistory.CreatedBy);
             if (user == null)
@@ -382,6 +436,8 @@ namespace ExamOne.Service
                 BranchNameShort = examHistory.BranchCode,
                 CreatedBy = examHistory.CreatedBy,
                 CreatedFullName = user.FullName,
+                UserName = user.UserName,
+                EstimateCount = estimateValue != null ? estimateValue.EstimateCount : 0
             };
 
             if (!string.IsNullOrEmpty(examHistory.Items) && !string.IsNullOrEmpty(examHistory.SelectedAnswers))
@@ -643,6 +699,29 @@ namespace ExamOne.Service
             }
 
             return JsonSerializer.Serialize(items);
+        }
+
+        public async Task<ResponderData<bool>> EstimateStudent(EstimateModel model)
+        {
+            var result = new ResponderData<bool>();
+            var exists = await _examOneMongoDBContext.Estimates
+            .Find(x => x.CreatedBy == model.CreateBy)
+            .AnyAsync();
+            if (!exists)
+            {
+                var estimate = new Estimate
+                {
+                    ExamId = null,
+                    CreatedBy = model.CreateBy,
+                    EstimateCount = model.EstimateValue,
+                    StartDate = Constant.GetDateTimeVN()
+                };
+                await _examOneMongoDBContext.Estimates.InsertOneAsync(estimate);
+                result.IsSuccess = true;
+                result.Message = "Dự đoán thành công";
+            }
+            else result.Message = "Đã tồn tại";
+            return result;
         }
     }
 }
