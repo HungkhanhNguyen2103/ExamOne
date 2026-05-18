@@ -221,6 +221,8 @@ namespace ExamOne.Service
                 IsEstimated = exists,
                 ExamId = data.Id
             };
+
+            result.Data.IsComplete = true;
             result.IsSuccess = true;
             return result;
         }
